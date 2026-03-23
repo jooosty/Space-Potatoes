@@ -7,4 +7,3 @@ for (let i = 0; i < 200; i++) {
   star.style.animationDelay = Math.random() * 5 + 's';
   starsContainer.appendChild(star);
 }
- 
