@@ -241,7 +241,6 @@ nav {
 
 @media (max-width: 480px) {
   .nav-links { display: none; }
-  .hero h1   { font-size: 1.8rem; }
 }
 
 /* ── BURGER MENU ── */
