@@ -59,7 +59,7 @@ nav {
 
 .star {
   position: absolute;
-  width: 4px; height: 4px;
+  width: 5px; height: 5px;
   background: #2a2c4a;
   border-radius: 50%;
   animation: twinkle 3s infinite ease-in-out;
@@ -99,7 +99,7 @@ nav {
 }
 .hero-stats {
   display: flex;
-  gap: 40px;
+  gap: 25px;
   margin-top: 28px;
   align-items: flex-end;
 }
@@ -107,7 +107,7 @@ nav {
 .hero-num {
   font-family: 'Orbitron', sans-serif;
   font-weight: 900;
-  font-size: 2.2rem;
+  font-size: 1.5rem;
   line-height: 1;
   color: #fff;
 }
@@ -129,9 +129,9 @@ nav {
 
 .black-hole {
   position: absolute;
-  bottom: 5%;
+  bottom: 0%;
   left: 50%;
-  width: 66%; height: 66%;
+  width: 90%; height: 90%;
   background: black;
   border-radius: 50%;
   transform: translateX(-50%);
@@ -144,7 +144,7 @@ nav {
   will-change: box-shadow, transform;
 }
 
-.purple-shadow {
+.orange-shadow {
   position: absolute;
   top: 10%;
   left: 50%;
