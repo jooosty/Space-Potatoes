@@ -59,7 +59,7 @@ nav {
 
 .star {
   position: absolute;
-  width: 4px; height: 4px;
+  width: 5px; height: 5px;
   background: #2a2c4a;
   border-radius: 50%;
   animation: twinkle 3s infinite ease-in-out;
