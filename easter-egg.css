@@ -10,13 +10,14 @@
 }
 #egg-overlay.visible {
   opacity: 1;
-  pointer-events: all;
+  pointer-events: none;
 }
 #egg-canvas {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
+  pointer-events: none;
 }
 .black-hole.clicked {
   animation: click-flash 0.15s ease !important;
