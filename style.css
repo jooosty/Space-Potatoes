@@ -1,14 +1,213 @@
-:root{
-    --main-color:#181932;
-    --font-color:white;
-    --secondary-fontcolor:#EB5D34;
-    --contact-button:#44AABD;
-}
-   
-body{
-    background-color:var(--main-color);
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background: radial-gradient(ellipse at center, black, #1a1a1a);
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  color: white;
 }
 
-img{
-    width: 10%; 
+/* ── NAVBAR ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 60px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent);
+}
+
+.nav-logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: #EB5D34;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: color 0.25s;
+}
+.nav-links a:hover { color: #EB5D34; }
+
+/* ⭐ STERREN */
+.stars {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  width: 4px; height: 4px;
+  background: #2a2c4a;
+  border-radius: 50%;
+  animation: twinkle 3s infinite ease-in-out;
+  box-shadow: 0 0 6px #2a2c4a;
+}
+
+/* 📦 LAYOUT */
+.hero {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  height: 100vh;
+  padding: 0 80px;
+}
+
+/* 📝 TEKST */
+.hero h1 {
+  font-size: 4rem;
+  margin: 0;
+}
+.hero p {
+  font-size: 1.5rem;
+  color: #EB5D34;
+  margin-top: 10px;
+}
+
+/* 🌀 BLACK HOLE */
+.black-hole-container {
+  position: relative;
+  width: clamp(180px, 25vw, 340px);
+  height: clamp(180px, 25vw, 340px);
+  flex-shrink: 0;
+}
+
+.black-hole {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  width: 66%; height: 66%;
+  background: black;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  box-shadow:
+    0 0 20px 5px  #EB5D34,
+    0 0 40px 10px #EB5D34,
+    0 0 60px 15px #EB5D34;
+  animation: neon-glow 3s infinite ease-in-out;
+  will-change: box-shadow, transform;
+}
+
+.purple-shadow {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  width: 150%; height: 150%;
+  border-radius: 50%;
+  transform: translate(-50%, 0);
+  z-index: 1;
+  background: radial-gradient(circle, rgba(235, 93, 52, 0.2), transparent 70%);
+  animation: wave-color-motion 5s infinite ease-in-out;
+  will-change: transform;
+}
+
+/* ── SCROLL INDICATOR ── */
+.scroll-hint {
+  position: fixed;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  animation: fadeInUp 1s 1.2s both;
+}
+
+.scroll-hint .arrow {
+  width: 18px; height: 18px;
+  border-right: 1px solid rgba(235,93,52,0.7);
+  border-bottom: 1px solid rgba(235,93,52,0.7);
+  transform: rotate(45deg);
+  animation: bounce-arrow 1.6s ease-in-out infinite;
+}
+
+/* ✨ ANIMATIES */
+@keyframes neon-glow {
+  0%, 100% {
+    box-shadow:
+      0 0 20px 5px  #EB5D34,
+      0 0 40px 10px #EB5D34,
+      0 0 60px 15px #EB5D34;
+  }
+  50% {
+    box-shadow:
+      0 0 30px 10px #EB5D34,
+      0 0 50px 15px #EB5D34,
+      0 0 70px 30px #EB5D34;
+  }
+}
+
+@keyframes wave-color-motion {
+  0%   { transform: translate(-50%, 0) scale(1);   }
+  50%  { transform: translate(-50%, 0) scale(1.2); }
+  100% { transform: translate(-50%, 0) scale(1);   }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 1;   transform: scale(1);   }
+  50%       { opacity: 0.3; transform: scale(0.7); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateX(-50%) translateY(12px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+@keyframes bounce-arrow {
+  0%, 100% { transform: rotate(45deg) translateY(0);   opacity: 0.6; }
+  50%       { transform: rotate(45deg) translateY(5px); opacity: 1;   }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  nav { padding: 18px 24px; }
+  .nav-links { gap: 20px; }
+
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 32px;
+    gap: 40px;
+  }
+
+  .hero h1 { font-size: 2.4rem; }
+  .hero p  { font-size: 1.1rem; }
+}
+
+@media (max-width: 480px) {
+  .nav-links { display: none; }
+  .hero h1   { font-size: 1.8rem; }
 }
