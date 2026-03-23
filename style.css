@@ -129,7 +129,7 @@ nav {
 
 .black-hole {
   position: absolute;
-  bottom: 0%;
+  bottom: 5%;
   left: 50%;
   width: 90%; height: 90%;
   background: black;
@@ -232,7 +232,7 @@ nav {
     align-items: center;
     text-align: center;
     padding: 0 32px;
-    gap: 40px;
+    gap: 75px;
   }
 
   .hero h1 { font-size: 2.4rem; }
