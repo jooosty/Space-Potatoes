@@ -1,89 +1,96 @@
 <!DOCTYPE html>
 <html lang="nl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nebula Xplorer</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="easter-egg.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nebula Xplorer</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="easter-egg.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <span class="nav-logo">Nebula Xplorer</span>
+      <ul class="nav-links">
+        <li><a href="#">Mission</a></li>
+        <li><a href="#">Science</a></li>
+        <li><a href="#">Crew</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <button class="burger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
 
-  <!-- Navbar -->
-  <nav>
-    <span class="nav-logo">Nebula Xplorer</span>
-    <ul class="nav-links">
-      <li><a href="#">Mission</a></li>
-      <li><a href="#">Science</a></li>
-      <li><a href="#">Crew</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-    <button class="burger" aria-label="Menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
+    <!-- Sterren achtergrond -->
+    <div class="stars"></div>
 
-  <!-- Sterren achtergrond -->
-  <div class="stars"></div>
-
-  <!-- Hero -->
-  <div class="hero">
-    <div class="hero-text">
-      <h1>Nebula Xplorer</h1>
-      <p class="hero-tagline">Mission in Development</p>
-      <p class="hero-subtitle">
-        X-ray Observer for Binary-Linked Astrophysics — tracking black holes, jets,
-        and the unknown at the edge of spacetime.
-      </p>
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <span class="hero-num">400+</span>
-          <span class="hero-lbl">Students</span>
-        </div>
-        <div class="hero-stat">
-          <span class="hero-num">14</span>
-          <span class="hero-lbl">Institutions</span>
-        </div>
-        <div class="hero-stat">
-          <span class="hero-num">1</span>
-          <span class="hero-lbl">Telescope</span>
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-text">
+        <h1>Nebula Xplorer</h1>
+        <p class="hero-tagline">Mission in Development</p>
+        <p class="hero-subtitle">
+          X-ray Observer for Binary-Linked Astrophysics — tracking black holes,
+          jets, and the unknown at the edge of spacetime.
+        </p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-num">400+</span>
+            <span class="hero-lbl">Students</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-num">14</span>
+            <span class="hero-lbl">Institutions</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-num">1</span>
+            <span class="hero-lbl">Telescope</span>
+          </div>
         </div>
       </div>
+      <div class="black-hole-container">
+        <div class="purple-shadow"></div>
+        <div class="black-hole"></div>
+      </div>
     </div>
-    <div class="black-hole-container">
-      <div class="purple-shadow"></div>
-      <div class="black-hole"></div>
+
+    <!-- Scroll hint -->
+    <div class="scroll-hint">
+      <span>Explore Mission</span>
+      <div class="arrow"></div>
     </div>
-  </div>
 
-  <!-- Scroll hint -->
-  <div class="scroll-hint">
-    <span>Explore Mission</span>
-    <div class="arrow"></div>
-  </div>
+    <!-- Easter egg overlay -->
+    <div id="egg-overlay">
+      <canvas id="egg-canvas"></canvas>
+    </div>
 
-  <!-- Easter egg overlay -->
-  <div id="egg-overlay">
-    <canvas id="egg-canvas"></canvas>
-  </div>
+    <script src="script.js"></script>
+    <script src="easter-egg.js"></script>
 
-  <script src="script.js"></script>
-  <script src="easter-egg.js"></script>
+    <footer>
+      <ul>
+        <li><a> Niels Bohrweg 4</a></li>
+        <li><a>2333 CA Leiden</a></li>
+        <li><a>The Netherlands</a></li>
+        <li><a>+31 (0)88 777 56 00</a></li>
+      </ul>
 
-  <footer>
-    <ul> 
-    <li><a> Niels Bohrweg 4</a>  </li>
-    <li><a>2333 CA Leiden</a>  </li>
-    <li> <a>The Netherlands</a>  </li>
-    <li><a>+31 (0)88 777 56 00</a>  </li>
-  </ul>
+      <ul>
+        <li><a> Landleven 12</a></li>
+        <li><a>9747 AD Groningen</a></li>
+        <li><a>The Netherlands</a></li>
+        <li><a>+31 (0)50 363 40 74</a></li>
+      </ul>
 
-<ul> 
-      <li><a> Landleven 12</a>  </li>
-      <li><a>9747 AD Groningen</a>  </li>
-      <li> <a>The Netherlands</a>  </li>
-      <li><a>+31 (0)50 363 40 74</a>  </li>
-    </ul>
-  </footer>
-</body>
+      <ul>
+       <li>  <a href="" target="_self">Nieuwsbrief</a></li>
+      </ul>
+ 
+	<img src="images/logobenefit.svg" alt="logo benefit">
+   
+
+    </footer>
+  </body>
 </html>
