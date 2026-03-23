@@ -1,0 +1,14 @@
+:root{
+    --main-color:#181932;
+    --font-color:white;
+    --secondary-fontcolor:#EB5D34;
+    --contact-button:#44AABD;
+}
+   
+body{
+    background-color:var(--main-color);
+}
+
+img{
+    width: 10%; 
+}
