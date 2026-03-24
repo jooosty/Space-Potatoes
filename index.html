@@ -1020,6 +1020,170 @@
 
 
 
+
+    <!-- ── READOUT ELECTRONICS ── -->
+    <section class="readout-section reveal">
+      <div class="section-tag">Electronics</div>
+      <h2 class="section-title">Readout<br><em>Electronics</em></h2>
+      <p class="section-body">
+        Two hot-redundant Instrument Readout Units (IRUs) convert photon detection pulses from the
+        12 Silicon Drift Detectors into calibrated energy and precise UTC timestamps,
+        then relay science data to the spacecraft C&amp;DH system.
+      </p>
+      <div class="readout-grid">
+
+        <!-- Signal chain -->
+        <div>
+          <div class="section-tag" style="margin-bottom:20px;">Signal Chain</div>
+          <div class="signal-chain">
+
+            <div class="chain-row">
+              <div class="chain-block">
+                <div class="chain-label">Detector (×12 SDD)</div>
+                <div class="chain-val">Amptek FastSDD — X-ray photon absorbed → voltage pulse, height ∝ photon energy (3.6 mV/keV). Rise time ~65 ns.</div>
+              </div>
+            </div>
+            <div class="chain-connector"></div>
+
+            <div class="chain-row">
+              <div class="chain-block">
+                <div class="chain-label">Pre-amplifier</div>
+                <div class="chain-val">Amptek PA-210 charge-sensitive amplifier. Integrates detector current pulse into voltage step. 130V bias via Cockroft-Walton generator.</div>
+              </div>
+            </div>
+            <div class="chain-connector"></div>
+
+            <div class="chain-row">
+              <div class="chain-block">
+                <div class="chain-label">ADC</div>
+                <div class="chain-val">TI ADC3683-SP — 18-bit, up to 65 MSPS, space-qualified. LVDS output interface. COTS variant (ADC3683) used for EM/prototyping.</div>
+              </div>
+            </div>
+            <div class="chain-connector"></div>
+
+            <div class="chain-row">
+              <div class="chain-block">
+                <div class="chain-label">FPGA — Digital Pulse Processor</div>
+                <div class="chain-val">Microchip RT PolarFire RTPF5000 — radiation-hardened. Replaces legacy analogue shaping filters. Extracts photon energy &amp; timing at full flexibility.</div>
+              </div>
+            </div>
+            <div class="chain-connector"></div>
+
+            <div class="chain-row">
+              <div class="chain-block">
+                <div class="chain-label">MCU</div>
+                <div class="chain-val">Microchip SAM3X8ERT — in-flight FPGA reprogramming capability. Novel feature enabling firmware updates after launch.</div>
+              </div>
+            </div>
+            <div class="chain-connector"></div>
+
+            <div class="chain-row">
+              <div class="chain-block">
+                <div class="chain-label">Local Oscillator + GPS Timestamp</div>
+                <div class="chain-val">Microchip 2105 series oscillator (1 ppm stability). GPS absolute timestamp anchors the local clock — 1 µs timing resolution maintained without drift.</div>
+              </div>
+            </div>
+            <div class="chain-connector"></div>
+
+            <div class="chain-row">
+              <div class="chain-block">
+                <div class="chain-label">Output → C&amp;DH</div>
+                <div class="chain-val">RS485 redundant bus. Each photon packet: absolute time (s) + photon energy (eV) + timestamp (µs). Max data rate: 76.4 kbps. CCSDS-based packet format.</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- IRU specs -->
+        <div>
+          <div class="section-tag" style="margin-bottom:20px;">IRU Technical Budget</div>
+          <div class="iru-specs">
+            <div class="iru-spec-section">Configuration</div>
+            <div class="iru-spec-row"><span class="iru-spec-key">Number of IRUs</span><span class="iru-spec-val">2 (hot-redundant)</span></div>
+            <div class="iru-spec-row"><span class="iru-spec-key">Architecture</span><span class="iru-spec-val">Concept 4 (dual 6×FPM)</span></div>
+            <div class="iru-spec-row"><span class="iru-spec-key">Detectors per IRU</span><span class="iru-spec-val">6 Focal Plane Modules</span></div>
+            <div class="iru-spec-row"><span class="iru-spec-key">Timing resolution</span><span class="iru-spec-val">1 µs</span></div>
+
+            <div class="iru-spec-section">Physical</div>
+            <div class="iru-spec-row"><span class="iru-spec-key">Enclosure size (2 IRUs)</span><span class="iru-spec-val">13.91 × 13.91 × 5.9 cm</span></div>
+            <div class="iru-spec-row"><span class="iru-spec-key">Mass</span><span class="iru-spec-val">0.952 kg (mainly shielding)</span></div>
+            <div class="iru-spec-row"><span class="iru-spec-key">Wall thickness</span><span class="iru-spec-val">3 mm aluminium</span></div>
+
+            <div class="iru-spec-section">Power &amp; Cost</div>
+            <div class="iru-spec-row"><span class="iru-spec-key">Peak power</span><span class="iru-spec-val">35.72 W</span></div>
+            <div class="iru-spec-row"><span class="iru-spec-key">Component cost (2 IRUs)</span><span class="iru-spec-val">~$249,708</span></div>
+            <div class="iru-spec-row"><span class="iru-spec-key">Max data rate</span><span class="iru-spec-val">76.4 kbps</span></div>
+
+            <div class="iru-spec-section">Key Components</div>
+            <div class="iru-spec-row"><span class="iru-spec-key">Pre-amp</span><span class="iru-spec-val">Amptek PA-210</span></div>
+            <div class="iru-spec-row"><span class="iru-spec-key">ADC</span><span class="iru-spec-val">TI ADC3683-SP (18-bit, 65 MSPS)</span></div>
+            <div class="iru-spec-row"><span class="iru-spec-key">FPGA</span><span class="iru-spec-val">Microchip RT PolarFire RTPF5000</span></div>
+            <div class="iru-spec-row"><span class="iru-spec-key">MCU</span><span class="iru-spec-val">Microchip SAM3X8ERT</span></div>
+            <div class="iru-spec-row"><span class="iru-spec-key">Oscillator</span><span class="iru-spec-val">Microchip 2105 (1 ppm)</span></div>
+            <div class="iru-spec-row"><span class="iru-spec-key">Bias voltage</span><span class="iru-spec-val">130V (Cockroft-Walton)</span></div>
+            <div class="iru-spec-row"><span class="iru-spec-key">Interface</span><span class="iru-spec-val">RS485 / SpaceWire optional</span></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── SYSTEM MODES ── -->
+    <section class="modes-section reveal">
+      <div class="section-tag">Operations</div>
+      <h2 class="section-title">System<br><em>Modes</em></h2>
+      <p class="section-body">
+        Six operational modes govern the spacecraft's behaviour throughout the mission.
+        The spacecraft transitions between modes autonomously or by ground command.
+      </p>
+      <div class="modes-grid">
+
+        <div class="mode-card">
+          <div class="mode-num">Mode 01</div>
+          <div class="mode-badge nominal">Launch</div>
+          <div class="mode-name">Launch Mode</div>
+          <div class="mode-desc">From launch to spacecraft separation. All on-board equipment is off except essential systems. Battery fully charged before launch. No solar power generated.</div>
+        </div>
+
+        <div class="mode-card">
+          <div class="mode-num">Mode 02</div>
+          <div class="mode-badge nominal">Acquisition</div>
+          <div class="mode-name">Sun Acquisition Mode</div>
+          <div class="mode-desc">From separation until nominal Sun-pointing attitude is achieved. No energy from solar arrays yet — batteries supply power. Only essential functions active: thermal management, AOCS, and communications.</div>
+        </div>
+
+        <div class="mode-card active-mode">
+          <div class="mode-num">Mode 03</div>
+          <div class="mode-badge safe">Safe Mode</div>
+          <div class="mode-name">Safe Mode</div>
+          <div class="mode-desc">Used for failure recovery. Only units essential to the spacecraft's survival conditions are active: Sun pointing, thermal control, power management. Communications enabled to facilitate return to nominal mode.</div>
+        </div>
+
+        <div class="mode-card">
+          <div class="mode-num">Mode 04</div>
+          <div class="mode-badge nominal">Nominal</div>
+          <div class="mode-name">Stand-by Mode</div>
+          <div class="mode-desc">Applicable when not thrusting nor acquiring science data. All on-board equipment is on except the instrument, which is in stand-by. Also used for communications and housekeeping operations.</div>
+        </div>
+
+        <div class="mode-card active-mode">
+          <div class="mode-num">Mode 05</div>
+          <div class="mode-badge science">Science</div>
+          <div class="mode-name">Science Mode</div>
+          <div class="mode-desc">S/C configuration where scientific observations are being made by the X-ray instrument. All other units are on. IRUs recording photon energy and timestamps at full data rate. Primary operational mode.</div>
+        </div>
+
+        <div class="mode-card">
+          <div class="mode-num">Mode 06</div>
+          <div class="mode-badge nominal">Manoeuvre</div>
+          <div class="mode-name">Orbit Control Mode</div>
+          <div class="mode-desc">Applicable when performing orbital manoeuvres using the Dawn 4U Cubedrive propulsion module. All on-board equipment is on except the instrument, which is in stand-by.</div>
+        </div>
+
+      </div>
+    </section>
+
   </div><!-- /#instrument -->
 
   <!-- Easter egg overlay -->

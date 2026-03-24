@@ -28,52 +28,19 @@ const components = {
         desc: 'On-Board Computer, Thermal Control Module, and Inertial Measurement Unit. MLI (multi-layer insulation) across the S/C external structure reduces temperature gradients during orbital operations, dampening thermal cycling expansion/contraction loads. Highly conductive aluminium frame members combined with insulating CFRP panels allow targeted thermal management. Active in all modes except Launch Mode.' },
 };
 
-const panel      = document.getElementById('sat-panel');
-const panelDef   = document.getElementById('sat-panel-default');
-const panelInfo  = document.getElementById('sat-panel-info');
-const panelNum   = document.getElementById('sat-panel-num');
-const panelName  = document.getElementById('sat-panel-name');
-const panelDesc  = document.getElementById('sat-panel-desc');
-
-let activeHs = null;
-
-if (panel) {
-  document.querySelectorAll('.hs').forEach(hs => {
-    hs.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const id = parseInt(hs.dataset.id);
-      const c  = components[id];
-
-      // Update active hotspot styling
-      if (activeHs) activeHs.classList.remove('active');
-      hs.classList.add('active');
-      activeHs = hs;
-
-      // Fill panel
-      panelNum.textContent  = `Component ${id < 10 ? '0'+id : id}`;
-      panelName.textContent = c.name;
-      panelDesc.textContent = c.desc;
-
-      panelDef.style.display  = 'none';
-      panelInfo.style.display = 'block';
-      panel.classList.add('active');
-    });
-  });
-}
-
 // ── Additional diagram component data ──
 const diagComponents = {
   ext: {
-    1: { name: 'Star Tracker Module',    desc: 'Two ST-16RT2 trackers on a milled Al 6061-T6 hub (SurTec 650 coated). One aligned with instrument boresight; second tilted 30° for continuous sky visibility. Closed by a formed coversheet; baffles installed after coversheet. Mounted via four M5 connections to the CRFP endplate. External mounting required — internal cut-outs would violate minimum insert spacing and create stress concentrations.' },
-    2: { name: 'Propulsion Module',      desc: 'Al 6061-T6 Dawn 4U Cubedrive (300×300×94 mm) with SurTec 650 coating and stiffened ribs. Mounted externally aligned with spacecraft CoG (stowed x=453.9 mm, y=−1.0 mm, z=43.1 mm) to prevent induced tumbling. Bolted to the bus CFRP sandwich panel via specialised inserts. Central cutout for nozzle clearance.' },
-    3: { name: '2× S-band Antennas',    desc: 'Mounted Z- and X+ directions, Earth-facing during nominal pointing. Max data rate: 76.4 kbps via RS485. Spacing reserved for harness routing and thermal interfaces per ECSS-E-HB-32-22. Insulating washers or sleeves electrically isolate dissimilar metals to prevent galvanic corrosion in the LEO environment.' },
-    4: { name: '4× Coarse Sun Sensors', desc: '4 units on orthogonal faces for near 360° sun vector coverage. Critical during Sun Acquisition Mode (post-separation, battery-only power) and Safe Mode. Structural inserts spaced per ECSS-E-HB-32-22 — minimum edge-to-insert centre: 1.5×D_insert; minimum insert centre spacing: 3×D_insert.' },
-    5: { name: '3× Magnetotorquers',    desc: 'Three rods along x, y, z axes, externally mounted far from battery packs to minimise magnetic interference. Used for attitude control and momentum dumping. Dry film lubricant (MoS₂) on mating surfaces mitigates cold welding in vacuum. All Al parts treated with SurTec 650 for corrosion resistance and ESD conductivity.' },
+    1: { name: 'Star Tracker',                     desc: 'Two ST-16RT2 star trackers mounted externally on a milled Al 6061-T6 hub (SurTec 650 coated). External mounting required because internal cut-outs would create stress concentrations violating minimum insert spacing in the thin CFRP panelling.' },
+    2: { name: 'Dawn 4U Cubedrive (Propulsion)',    desc: 'Al 6061-T6 propulsion module (300×300×94 mm) with stiffened ribs, mounted externally aligned with the S/C CoG. Central cutout accommodates the nozzle. Bolted to CFRP sandwich panel using specialised inserts. External mounting avoids widening the bus.' },
+    3: { name: '2× S-band Antennas',               desc: 'Mounted in Z- and X+ directions for Earth-facing TT&C and science downlink. Max data rate: 76.4 kbps. RS485 internal data bus; SpaceWire interface also supported.' },
+    4: { name: '4× Coarse Sun Sensors',             desc: '4 units on orthogonal faces providing near 360° sun vector coverage. Critical during Sun Acquisition and Safe modes. Structural inserts spaced per ECSS-E-HB-32-22 guidelines.' },
+    5: { name: '3× Magnetotorquers',                desc: 'Three external rods along x, y, z axes — placed far from battery packs to prevent magnetic dipole interference. Used for attitude control and reaction wheel momentum dumping. Dry film MoS₂ lubricant on mating surfaces.' },
   },
   str: {
-    1: { name: 'Structural Frame M6 Junction Brackets', desc: 'Machined gusseted brackets in Al 6061-T6 (SurTec 650 coated). MJ bolts per ISO 5855 used throughout — smaller root radius and shallower thread depths enhance fatigue resistance and load distribution. Helicoil® wire thread inserts in all primary structural joints provide wear-resistant threads and self-locking under vibration. EC2216 epoxy stake-bond applied at bolt heads as full-torque indicator.' },
-    2: { name: 'X-direction X-braced Panel',           desc: 'Full-height Al 6061-T6 X-braced panel. Structural panels: CFRP face sheets with 13 mm Al 5056 honeycomb core (1/8" cell). 16-ply quasi-isotropic layup [0°/+45°/−45°/90°/0°/+30°/−30°/90°]s using M46J prepreg (0.06 mm/ply), face sheet 0.96 mm, total panel 14.9 mm. Perforated core for pressure equalisation. ±30° layers improve shear load distribution and torsional resistance at launch.' },
-    3: { name: 'LV Adapter Panel',                     desc: 'Separation adapter: Rocket Lab MkII MLB (Motorised Lightband) 15-inch interface. 15" chosen over 8" — ~6.6× stiffer for similar mass penalty. SoftRide isolation system reduces flight loads (random vibration and shock), with 3–25% additional damping ratio depending on spacecraft sizing. Fits within Falcon 9 rideshare: 908.6×528.7×1168.4 mm, 32% total volume margin.' },
+    1: { name: 'X-direction X-braced Panel',          desc: 'Full-height cross-braced CFRP composite sandwich panel carrying primary structural loads. Connected at junctions with M6 bolts through fully potted protruding Helicoil® inserts. Truss topology (X-brace, diagonal ribs) chosen for maximum stiffness-to-mass ratio. CFRP skins: 4-ply quasi-isotropic [0°/+45°/−45°/90°] M46J fibre on 20 mm Al 5056 honeycomb core.' },
+    2: { name: 'X-direction X-braced Panel (bus side)', desc: 'Right-face X-braced panel visible in isometric view. Carries loads from bus subsystem mounting brackets. Connected to L-brackets at top and bottom. Composite sandwich construction matches instrument-side panel for symmetric stiffness distribution.' },
+    3: { name: 'Launch Vehicle Adapter Ring',         desc: 'Rocket Lab MkII MLB 15-inch motorised lightband (28 threaded holes, ring thickness 25 mm). DB-9 electrical interface. SoftRide isolation system provides 3–25% additional damping. 15" diameter: ~6.6× stiffer than 8" MLB. Heritage: Sentinel 2. SurTec 650 coated.' },
     4: { name: 'Central Mounting Sandwich Panel',      desc: 'Reinforced sandwich panel mid-plane separating instrument bay from bus module. Mechanically joined via L-brackets with stiffening ribs ensuring joint rigidity. Serves as interface platform for bus subsystems. FPA accessible through side-panel cut-outs after assembly. Floating interfaces and proud (protruding) Helicoil® inserts mitigate CTE mismatch between Al (23.6 µm/m·K) and CFRP (~0 in-plane expansion).' },
     5: { name: 'Stiffened T-joint L-brackets',         desc: '5-rib L-brackets at all panel junctions. MJ bolt fasteners with preloads calculated per ECSS-E-HB-32-23. Honeycomb panel inserts: Al 6061-T6 with SurTec 650, stainless steel Helicoil® coils. Through-thickness fully potted inserts for high-load M6 connections use protruding flanges to improve pull-out and shear capacity. Flange diameters: M4=12 mm, M5=14 mm, M6=16 mm.' },
     6: { name: 'SADM Connection Plate',                desc: 'Horizontal bracket between bus X-braced bays, reserved with sufficient interface volume and mass margins for final SADM selection. Tied into the triangulated network distributing SADM loads across multiple paths. Total S/C mass: 59.5 kg (including ESA margin philosophy). Stowed MMOI: Ixx=16.00, Iyy=21.65, Izz=12.51 kg·m².' },
@@ -100,7 +67,145 @@ const diagComponents = {
   },
 };
 
-// Generic multi-panel handler
+
+// ══════════════════════════════════════
+//  POPUP SYSTEM
+// ══════════════════════════════════════
+
+// Create single reusable popup element
+const popup = document.createElement('div');
+popup.className = 'hs-popup';
+popup.innerHTML = `
+  <button class="hs-popup-close" aria-label="Close">&times;</button>
+  <div class="hs-popup-header">
+    <span class="hs-popup-num"></span>
+    <span class="hs-popup-name"></span>
+  </div>
+  <p class="hs-popup-desc"></p>
+`;
+document.body.appendChild(popup);
+
+const popupNum   = popup.querySelector('.hs-popup-num');
+const popupName  = popup.querySelector('.hs-popup-name');
+const popupDesc  = popup.querySelector('.hs-popup-desc');
+const popupCloseBtn = popup.querySelector('.hs-popup-close');
+
+let activeHs = null;
+
+function clearActive() {
+  if (activeHs) {
+    activeHs.classList.remove('active');
+    activeHs = null;
+  }
+  popup.classList.remove('visible');
+}
+
+// Get hotspot position in page coordinates (for position:absolute)
+function getHotspotPagePos(hsEl) {
+  const svg  = hsEl.closest('svg');
+  const ring = hsEl.querySelector('.hs-ring');
+  const cx   = parseFloat(ring.getAttribute('cx'));
+  const cy   = parseFloat(ring.getAttribute('cy'));
+
+  const pt = svg.createSVGPoint();
+  pt.x = cx;
+  pt.y = cy;
+  const screenPt = pt.matrixTransform(svg.getScreenCTM());
+
+  return {
+    x: screenPt.x + window.scrollX,
+    y: screenPt.y + window.scrollY
+  };
+}
+
+// Check if hotspot is visible in the viewport
+function isHotspotVisible(hsEl) {
+  const svg  = hsEl.closest('svg');
+  const ring = hsEl.querySelector('.hs-ring');
+  const cx   = parseFloat(ring.getAttribute('cx'));
+  const cy   = parseFloat(ring.getAttribute('cy'));
+
+  const pt = svg.createSVGPoint();
+  pt.x = cx;
+  pt.y = cy;
+  const screenPt = pt.matrixTransform(svg.getScreenCTM());
+
+  // screenPt gives viewport-relative coords
+  return (
+    screenPt.x > -40 && screenPt.x < window.innerWidth + 40 &&
+    screenPt.y > -40 && screenPt.y < window.innerHeight + 40
+  );
+}
+
+function positionPopup() {
+  if (!activeHs) return;
+
+  const pos  = getHotspotPagePos(activeHs);
+  const popW = popup.offsetWidth;
+  const popH = popup.offsetHeight;
+  const vpW  = window.innerWidth;
+  const vpH  = window.innerHeight;
+  const gap  = 18;
+
+  // Default: place to the right of hotspot
+  let left = pos.x + gap;
+  let top  = pos.y - popH / 2;
+
+  // Overflow right → place left
+  if (left + popW > vpW + window.scrollX - 20) {
+    left = pos.x - popW - gap;
+  }
+
+  // Overflow left → centre below
+  if (left < window.scrollX + 20) {
+    left = pos.x - popW / 2;
+    top  = pos.y + gap + 14;
+  }
+
+  // Clamp to visible area
+  if (top < window.scrollY + 10) top = window.scrollY + 10;
+  if (top + popH > window.scrollY + vpH - 10) top = window.scrollY + vpH - popH - 10;
+  if (left < window.scrollX + 10) left = window.scrollX + 10;
+  if (left + popW > vpW + window.scrollX - 10) left = vpW + window.scrollX - popW - 10;
+
+  popup.style.left = left + 'px';
+  popup.style.top  = top + 'px';
+}
+
+function showPopup(hsEl, id, comp) {
+  // Fill content
+  popupNum.textContent  = `Component ${id < 10 ? '0' + id : id}`;
+  popupName.textContent = comp.name;
+  popupDesc.textContent = comp.desc;
+
+  // Mark active
+  if (activeHs) activeHs.classList.remove('active');
+  hsEl.classList.add('active');
+  activeHs = hsEl;
+
+  // Off-screen first to measure
+  popup.style.left = '-9999px';
+  popup.style.top  = '-9999px';
+  popup.classList.add('visible');
+
+  // Position after a frame
+  requestAnimationFrame(positionPopup);
+}
+
+
+// ── Main satellite diagram hotspots (no data-panel) ──
+document.querySelectorAll('.hs:not([data-panel])').forEach(hs => {
+  hs.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const id = parseInt(hs.dataset.id);
+    const c  = components[id];
+    if (!c) return;
+    showPopup(hs, id, c);
+  });
+});
+
+
+// ── Additional diagram hotspots (with data-panel) ──
 document.querySelectorAll('.hs[data-panel]').forEach(hs => {
   hs.addEventListener('click', (e) => {
     e.stopPropagation();
@@ -108,28 +213,51 @@ document.querySelectorAll('.hs[data-panel]').forEach(hs => {
     const compId  = parseInt(hs.dataset.id);
     const data    = diagComponents[panelId];
     if (!data || !data[compId]) return;
-    const c = data[compId];
 
-    // Clear active on same panel
+    // Clear active in same panel group
     document.querySelectorAll(`.hs[data-panel="${panelId}"]`).forEach(h => h.classList.remove('active'));
-    hs.classList.add('active');
 
-    const defEl  = document.getElementById(`panel-${panelId}-default`);
-    const infoEl = document.getElementById(`panel-${panelId}-info`);
-    const numEl  = document.getElementById(`panel-${panelId}-num`);
-    const nameEl = document.getElementById(`panel-${panelId}-name`);
-    const descEl = document.getElementById(`panel-${panelId}-desc`);
-    const panel  = document.getElementById(`panel-${panelId}`);
-
-    if (!infoEl) return;
-    numEl.textContent  = `Component ${compId < 10 ? '0'+compId : compId}`;
-    nameEl.textContent = c.name;
-    descEl.textContent = c.desc;
-    defEl.style.display  = 'none';
-    infoEl.style.display = 'block';
-    panel.classList.add('active');
+    showPopup(hs, compId, data[compId]);
   });
 });
+
+
+// ── Close popup ──
+popupCloseBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  clearActive();
+});
+
+document.addEventListener('click', (e) => {
+  if (!popup.contains(e.target) && !e.target.closest('.hs')) {
+    clearActive();
+  }
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') clearActive();
+});
+
+// Track hotspot on scroll/resize — auto-close when hotspot leaves viewport
+let reposTick = false;
+function handleReposition() {
+  if (reposTick) return;
+  reposTick = true;
+  requestAnimationFrame(() => {
+    reposTick = false;
+    if (!activeHs || !popup.classList.contains('visible')) return;
+
+    // If hotspot scrolled off screen, close the popup
+    if (!isHotspotVisible(activeHs)) {
+      clearActive();
+      return;
+    }
+
+    positionPopup();
+  });
+}
+window.addEventListener('scroll',  handleReposition, { passive: true });
+window.addEventListener('resize',  handleReposition, { passive: true });
 
 
 // ── Scroll reveal ──
