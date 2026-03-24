@@ -748,3 +748,130 @@ html { scroll-behavior: smooth; }
   transform-origin: center;
   animation: wheel-spin 1s cubic-bezier(0.4,0,0.2,1) forwards;
 }
+
+/* ── OPTICAL BENCH ASSEMBLY ── */
+/* reuses .diag-section layout */
+
+/* ── MISSION BUDGET ── */
+.budget-section {
+  position: relative;
+  z-index: 1;
+  padding: 100px 80px;
+  background: linear-gradient(to bottom, #070710, #0a0a14);
+}
+.budget-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  margin-top: 48px;
+  border: 1px solid rgba(235,93,52,0.1);
+}
+.budget-card {
+  padding: 28px 30px;
+  background: rgba(0,0,0,0.3);
+  border: 1px solid rgba(235,93,52,0.07);
+  transition: background 0.25s;
+}
+.budget-card:hover { background: rgba(235,93,52,0.04); }
+.budget-card-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.4em;
+  color: var(--orange);
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(235,93,52,0.12);
+}
+.budget-stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  gap: 16px;
+}
+.budget-stat-row:last-child { border-bottom: none; }
+.budget-key {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+.budget-val {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.78rem;
+  color: #fff;
+  text-align: right;
+}
+.budget-val.budget-good { color: #64c864; }
+.budget-unit {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.35);
+  margin-left: 3px;
+}
+
+/* ── SCIENCE TARGETS ── */
+.science-section {
+  position: relative;
+  z-index: 1;
+  padding: 100px 80px;
+  background: linear-gradient(135deg, #070710, #0d0d18);
+}
+.science-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  border: 1px solid rgba(235,93,52,0.1);
+}
+.science-target {
+  padding: 32px 28px;
+  background: rgba(0,0,0,0.3);
+  border: 1px solid rgba(235,93,52,0.07);
+  transition: background 0.25s, border-color 0.25s;
+  cursor: default;
+  position: relative;
+}
+.science-target::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px;
+  height: 0;
+  background: var(--orange);
+  transition: height 0.3s ease;
+}
+.science-target:hover { background: rgba(235,93,52,0.04); border-color: rgba(235,93,52,0.2); }
+.science-target:hover::before { height: 100%; }
+.science-target-name {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.science-target-type {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.3em;
+  color: var(--orange);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.science-target-desc {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.5);
+}
+
+@media (max-width: 900px) {
+  .budget-grid, .science-grid { grid-template-columns: 1fr; }
+  .budget-section, .science-section { padding: 70px 40px; }
+}
+@media (max-width: 768px) {
+  .budget-section, .science-section { padding: 60px 28px; }
+}
