@@ -1,18 +1,31 @@
 // ── Satellite hotspot interaction ──
 const components = {
-  1:  { name: 'X-ray Instrument',             desc: '10 Wolter type 1 concentrators with gold-coated mirrors focus X-rays onto Silicon Drift Detectors for spectral timing science.' },
-  2:  { name: '2× Battery Packs',             desc: 'Li-ion battery packs store energy for operations during eclipse when the solar panels are not illuminated.' },
-  3:  { name: 'Star Tracker Module',          desc: 'Provides precise 3-axis attitude knowledge by imaging star fields — essential for accurate telescope pointing.' },
-  4:  { name: 'Bus Subsystem Rack',           desc: 'Houses the PDU, ACU, PMU, and 2× S-band transceivers managing satellite power distribution and communications.' },
-  5:  { name: 'Dawn 4U Cubedrive',            desc: 'Propulsion module for orbit maintenance and active deorbit at end of mission to prevent space debris.' },
-  6:  { name: 'S-band Antenna',              desc: 'Primary RF link for telemetry downlink and command uplink, communicating with ground stations globally.' },
-  7:  { name: 'GNSS Receiver',               desc: 'GPS/Galileo receiver for precise real-time orbit determination and time synchronisation of science events.' },
-  8:  { name: 'Sun Sensor',                  desc: 'Coarse attitude sensor used during safe-mode recovery and initial acquisition to orient solar panels toward the Sun.' },
-  9:  { name: 'Instrument Electronics',       desc: 'Hot-redundant Instrument Readout Units (IRU) that process and time-stamp photon events from all 12 SDDs simultaneously.' },
-  10: { name: '2× Magnetometers',            desc: 'Measure the local magnetic field vector for attitude determination and to command the magnetic torquer rods.' },
-  11: { name: 'SADM',                        desc: 'Solar Array Drive Mechanism — continuously rotates the solar panels to track the Sun regardless of spacecraft attitude.' },
-  12: { name: 'Reaction Wheel Module',        desc: '3-axis momentum wheel assembly for precise, propellant-free attitude control and slewing between science targets.' },
-  13: { name: 'OBC, TCM & IMU',             desc: 'On-Board Computer, Thermal Control Module, and Inertial Measurement Unit — the central brain, thermal regulation, and motion sensing.' },
+  1:  { name: 'X-ray Instrument',
+        desc: '10 Wolter type 1 concentrators (10 cm dia., 30 nested gold-coated mirrors on Al substrate). Effective area: 200 cm² at 1 keV, 180 cm² at 6 keV. Focal length 800 mm, L=200 mm, radius 50 mm. The OBA houses concentrators in a 3-2-3-2 hexagonal layout (30 mm thick Al 6061-T6). The FPA houses 10 Amptek FastSDD detectors + 2 calibration modules. Instrument mass: ≤41.9 kg. Mounted to the Payload Module via three titanium bipod isostatic mounts onto a 22 mm composite honeycomb panel, minimising thermal conduction and isolating mechanical loads. Extends along the spacecraft Z-axis to use the full vertical height envelope of the Falcon 9 half-plate rideshare fairing.' },
+  2:  { name: '2× Battery Packs',
+        desc: 'Li-ion battery packs positioned at the top of the bus module, mounted to the aluminium frame to allow efficient thermal conduction toward the external radiator panels. Active during Sun Acquisition Mode (post-separation) and Safe Mode. The bus module CoG is kept near the CoP through mass-optimised subsystem placement to balance the spacecraft MMOI for efficient AOCS performance. Stowed CoG: x=453.9 mm, y=−1.0 mm, z=43.1 mm.' },
+  3:  { name: 'Star Tracker Module',
+        desc: 'Two ST-16RT2 star trackers on a milled Al 6061-T6 hub coated with SurTec 650. One bay is boresight-aligned with the instrument; the other is tilted 30° for continuous attitude confirmation. Hub closed by a formed coversheet; ST baffles installed after coversheet. Mounted via four M5 connections to the CFRP endplate with harness cutouts connecting to the AOCS system. External mounting required — internal cut-outs would create stress concentrations violating minimum insert spacing in the thin panelling.' },
+  4:  { name: 'Bus Subsystem Rack',
+        desc: 'Houses the PDU, ACU, PMU, and 2× S-band transceivers. The Bus Module hosts all operational and support subsystems (power, avionics, propulsion). Subsystem placement is mass-optimised to keep CoG near CoP for efficient AOCS. A reinforced sandwich panel mid-plane separates the instrument bay from the bus and serves as interface platform for subsystems, mechanically joined to the main structure via L-brackets with stiffening ribs for proper load transfer and joint rigidity.' },
+  5:  { name: 'Dawn 4U Cubedrive',
+        desc: 'Al 6061-T6 propulsion module with SurTec 650 coating and stiffened ribs (300×300×94 mm). Mounted externally aligned with the spacecraft CoG to prevent induced tumbling. Bolted to the side of the bus directly onto the CFRP sandwich panel using specialised inserts. A central cutout accommodates the nozzle. Internal accommodation would have required significantly widening the bus, causing mass and volume penalties.' },
+  6:  { name: '2× S-band Antennas',
+        desc: 'Mounted in Z- and X+ directions, Earth-facing during nominal pointing to maximise TT&C and science downlink. Max data rate: 76.4 kbps. RS485 used for internal data transmission; SpaceWire interface also supported. Spacing between components reserved to accommodate harness routing and thermal interfaces per ECSS-E-HB-32-22 guidelines.' },
+  7:  { name: 'GNSS Receiver',
+        desc: 'GPS/Galileo receiver for real-time orbit determination and absolute timestamp reference for the IRUs. Ensures photon timing accuracy (1 µs resolution) does not drift over time. Provides position data used to verify orbit maintenance manoeuvres performed by the Cubedrive propulsion module.' },
+  8:  { name: '4× Coarse Sun Sensors',
+        desc: '4 units on orthogonal faces for near 360° sun vector coverage. Critical during Sun Acquisition Mode (post-separation, no solar power yet) and Safe Mode (only essential systems active for failure recovery). Structural inserts spaced per ECSS-E-HB-32-22 guidelines to avoid concentrated stress zones in the composite panels.' },
+  9:  { name: 'Instrument Electronics',
+        desc: '2 hot-redundant Instrument Readout Units (IRUs). Each contains: Amptek PA-210 preamplifier, TI ADC3683-SP (18-bit, 65 MSPS), Microchip RT PolarFire FPGA (RTPF5000, radiation-hardened), SAM3X8ERT MCU, and Cockroft-Walton 130V bias generator. IRU enclosure: 13.91×13.91×5.9 cm, 0.952 kg, 35.72 W peak, ~$249,708 for both units. Clearance beneath instrument structure ensures readout electronics and cable routing remain accessible without impacting structural integrity.' },
+  10: { name: '3× Magnetotorquers',
+        desc: 'Three rods placed externally along x, y, z axes to maximise distance from battery packs, which would interfere with the magnetic dipole. Used for attitude control and reaction wheel momentum dumping. Dry film lubricant (MoS₂) applied to mating surfaces to mitigate cold welding in vacuum. All aluminium components treated with SurTec 650 chromate conversion coating for corrosion resistance and electrical conductivity.' },
+  11: { name: 'SADM',
+        desc: 'Solar Array Drive Mechanism located on the bus side, mounted via a dedicated interface panel. Final SADM selection pending; sufficient interface volume, mass margins, and mounting brackets reserved. Reaction wheels are placed as close as possible to the CoG to improve manoeuvrability. SADM connection plate ties into the triangulated network so loads flow through multiple paths.' },
+  12: { name: 'Reaction Wheel Module',
+        desc: 'Al 6061-T6 hub (5 mm thick baseplate) with SurTec 650 coating. Tetrahedral (pyramid) configuration with each wheel spin axis at ~54.7° elevation from the S/C principal axis — derived from regular tetrahedron geometry for symmetrically distributed torque vectors across all three axes. 4× M4 connections to S/C structure. Configuration modified to fit within bus dimensional constraints. Reaction wheels placed as close as possible to CoG.' },
+  13: { name: 'OBC, TCM & IMU',
+        desc: 'On-Board Computer, Thermal Control Module, and Inertial Measurement Unit. MLI (multi-layer insulation) across the S/C external structure reduces temperature gradients during orbital operations, dampening thermal cycling expansion/contraction loads. Highly conductive aluminium frame members combined with insulating CFRP panels allow targeted thermal management. Active in all modes except Launch Mode.' },
 };
 
 const panel      = document.getElementById('sat-panel');
@@ -47,6 +60,77 @@ if (panel) {
     });
   });
 }
+
+// ── Additional diagram component data ──
+const diagComponents = {
+  ext: {
+    1: { name: 'Star Tracker Module',    desc: 'Two ST-16RT2 trackers on a milled Al 6061-T6 hub (SurTec 650 coated). One aligned with instrument boresight; second tilted 30° for continuous sky visibility. Closed by a formed coversheet; baffles installed after coversheet. Mounted via four M5 connections to the CRFP endplate. External mounting required — internal cut-outs would violate minimum insert spacing and create stress concentrations.' },
+    2: { name: 'Propulsion Module',      desc: 'Al 6061-T6 Dawn 4U Cubedrive (300×300×94 mm) with SurTec 650 coating and stiffened ribs. Mounted externally aligned with spacecraft CoG (stowed x=453.9 mm, y=−1.0 mm, z=43.1 mm) to prevent induced tumbling. Bolted to the bus CFRP sandwich panel via specialised inserts. Central cutout for nozzle clearance.' },
+    3: { name: '2× S-band Antennas',    desc: 'Mounted Z- and X+ directions, Earth-facing during nominal pointing. Max data rate: 76.4 kbps via RS485. Spacing reserved for harness routing and thermal interfaces per ECSS-E-HB-32-22. Insulating washers or sleeves electrically isolate dissimilar metals to prevent galvanic corrosion in the LEO environment.' },
+    4: { name: '4× Coarse Sun Sensors', desc: '4 units on orthogonal faces for near 360° sun vector coverage. Critical during Sun Acquisition Mode (post-separation, battery-only power) and Safe Mode. Structural inserts spaced per ECSS-E-HB-32-22 — minimum edge-to-insert centre: 1.5×D_insert; minimum insert centre spacing: 3×D_insert.' },
+    5: { name: '3× Magnetotorquers',    desc: 'Three rods along x, y, z axes, externally mounted far from battery packs to minimise magnetic interference. Used for attitude control and momentum dumping. Dry film lubricant (MoS₂) on mating surfaces mitigates cold welding in vacuum. All Al parts treated with SurTec 650 for corrosion resistance and ESD conductivity.' },
+  },
+  str: {
+    1: { name: 'Structural Frame M6 Junction Brackets', desc: 'Machined gusseted brackets in Al 6061-T6 (SurTec 650 coated). MJ bolts per ISO 5855 used throughout — smaller root radius and shallower thread depths enhance fatigue resistance and load distribution. Helicoil® wire thread inserts in all primary structural joints provide wear-resistant threads and self-locking under vibration. EC2216 epoxy stake-bond applied at bolt heads as full-torque indicator.' },
+    2: { name: 'X-direction X-braced Panel',           desc: 'Full-height Al 6061-T6 X-braced panel. Structural panels: CFRP face sheets with 13 mm Al 5056 honeycomb core (1/8" cell). 16-ply quasi-isotropic layup [0°/+45°/−45°/90°/0°/+30°/−30°/90°]s using M46J prepreg (0.06 mm/ply), face sheet 0.96 mm, total panel 14.9 mm. Perforated core for pressure equalisation. ±30° layers improve shear load distribution and torsional resistance at launch.' },
+    3: { name: 'LV Adapter Panel',                     desc: 'Separation adapter: Rocket Lab MkII MLB (Motorised Lightband) 15-inch interface. 15" chosen over 8" — ~6.6× stiffer for similar mass penalty. SoftRide isolation system reduces flight loads (random vibration and shock), with 3–25% additional damping ratio depending on spacecraft sizing. Fits within Falcon 9 rideshare: 908.6×528.7×1168.4 mm, 32% total volume margin.' },
+    4: { name: 'Central Mounting Sandwich Panel',      desc: 'Reinforced sandwich panel mid-plane separating instrument bay from bus module. Mechanically joined via L-brackets with stiffening ribs ensuring joint rigidity. Serves as interface platform for bus subsystems. FPA accessible through side-panel cut-outs after assembly. Floating interfaces and proud (protruding) Helicoil® inserts mitigate CTE mismatch between Al (23.6 µm/m·K) and CFRP (~0 in-plane expansion).' },
+    5: { name: 'Stiffened T-joint L-brackets',         desc: '5-rib L-brackets at all panel junctions. MJ bolt fasteners with preloads calculated per ECSS-E-HB-32-23. Honeycomb panel inserts: Al 6061-T6 with SurTec 650, stainless steel Helicoil® coils. Through-thickness fully potted inserts for high-load M6 connections use protruding flanges to improve pull-out and shear capacity. Flange diameters: M4=12 mm, M5=14 mm, M6=16 mm.' },
+    6: { name: 'SADM Connection Plate',                desc: 'Horizontal bracket between bus X-braced bays, reserved with sufficient interface volume and mass margins for final SADM selection. Tied into the triangulated network distributing SADM loads across multiple paths. Total S/C mass: 59.5 kg (including ESA margin philosophy). Stowed MMOI: Ixx=16.00, Iyy=21.65, Izz=12.51 kg·m².' },
+    7: { name: 'Y-direction X-braced Panel',           desc: 'Two shorter bus-side X-braced panels completing the six-sided enclosure. Six-sided design enables flexible concentrator layout while minimising volume. Composite sandwich skins bolt to truss perimeter and to dedicated brackets on top and bottom side-frames, completing the lightweight enclosure and carrying lower-level subsystem loads.' },
+  },
+  lv: {
+    1: { name: 'M6 Interface Holes',              desc: 'Connect top and bottom CRFP skins to the solid Al 6061-T6 core. CFRP panels clamped with 0.5 mm thermal expansion gap. Al 6061-T6 inserts with SurTec 650 coating eliminate galvanic corrosion at the CFRP/Al interface. Flange thickness increased at M6 connections for enhanced bearing area under dynamic launch loads per ECSS, 2011, §10.3.5.' },
+    2: { name: 'M6 Countersunk Clearance Holes',  desc: 'Transfer LV interface loads to the skeletal frame in the x-direction. Web/edge thickness: 20 mm; milled web: 4 mm. Solid Al 6061-T6 used (not CFRP) because CRFP is prone to delamination and stress concentrations at closely spaced bolted interfaces subjected to severe vibrational loads from the launch vehicle.' },
+    3: { name: 'LV Separation Adapter Ring',      desc: 'Rocket Lab MkII MLB 15-inch motorised lightband with 28 threaded holes. Ring thickness: 25 mm. DB-9 electrical interface connects spacecraft to LV electrical channel. SoftRide isolation system provides 3–25% additional damping. 15" diameter chosen: ~6.6× stiffer than 8" MLB for ~2× mass. Heritage: Sentinel 2. SurTec 650 coating for corrosion resistance.' },
+  },
+  sun: {
+    1: { name: 'CRFP Sunshade',                           desc: '0.5 mm-thick CFRP 8-ply quasi-isotropic [0°/+45°/−45°/90°]s at 0.07 mm/ply (M46J fibres), ~0.56 mm total. Black-anodized interiors minimise stray light reflectance. NASA NICER heritage. >50% weight saving vs monolithic titanium. Out-bake process conducted on all CFRP parts to prevent outgassing in the S/C operational environment.' },
+    2: { name: 'Ti Co-cured Mounting Bracket (M3 bolts)', desc: 'Titanium brackets co-cured between plies 4 and 5. High CFRP specific stiffness combined with titanium damping attenuates low-frequency vibrations. M3 Ti-6Al-4V bolts connect each sunshade to the baseplate. Ti selected for structural/thermally critical interfaces — high specific strength, excellent dimensional stability, low thermal conductivity.' },
+    3: { name: 'Titanium Baseplate',                      desc: '5 mm Ti-6Al-4V baseplate. Low CTE and moderate thermal conductivity stabilise alignment under thermal cycling. Titanium used over CRFP because bolted connections into CRFP create stress concentrations; aluminium is isotropic and allows efficient load distribution via the spiderweb ribs.' },
+    4: { name: 'M5 Mounting Points',                      desc: 'M5 interface points on angled OBA surfaces allow the instrument to expand in the bipod-compliant direction without stressing sunshade fasteners. A2-70 stainless steel fasteners at high-tensile joints. Helicoil® inserts used in aluminium tapped holes per ECSS-E-HB-32-22 insert spacing rules.' },
+  },
+  rw: {
+    1: { name: 'Rocket Lab 60mNms Reaction Wheels', desc: 'Three wheels in tetrahedral (pyramid) configuration. Each spin axis at ~54.7° elevation from S/C principal axis — from regular tetrahedron geometry — ensuring symmetrically distributed torque vectors for balanced control across all three axes. Configuration modified to fit within bus dimensional constraints. Placed as close as possible to CoG for improved manoeuvrability.' },
+    2: { name: 'Micro-D Connector',                  desc: 'Miniature-D sub connector for power and signal to each wheel. Vibration-resistant locking mechanism. Dry film lubricant (MoS₂) applied to all threaded mating surfaces to prevent cold welding in vacuum. Thermally and electrically conductive bolted connections allow passive thermal conduction and prevent ESD.' },
+    3: { name: 'Tilted Reaction Wheel Mounting Hub',  desc: 'Al 6061-T6 hub, 5 mm thick baseplate, SurTec 650 coated. Four M4 connections to S/C structure. Tilted mounting at ~54.7° elevation derived from tetrahedral geometry. Al chosen for high specific stiffness; SurTec 650 for corrosion resistance and bonding compatibility in the orbital environment.' },
+    4: { name: 'M3 Bolts (wheel to hub)',             desc: 'M3 Ti-6Al-4V or A2-70 fasteners connecting wheels to mounting hubs. MJ bolt profile (ISO 5855) enhances fatigue resistance with smaller root radius and shallower thread depths. Helicoil® inserts in aluminium tapped holes. Preloads calculated per ECSS-E-HB-32-23; EC2216 epoxy stake-bond on bolt head confirms full torque.' },
+    5: { name: 'M4 Clearance Mounting Interface',    desc: 'M4 clearance holes interface the hub to the spacecraft CFRP sandwich panel. Through-thickness fully potted inserts with Al 6061-T6 + SurTec 650. Flange Ø 12 mm for M4 per ECSS-compliant Airborne Composites tooling. Insulating washers isolate dissimilar metals (Al/SS) to mitigate galvanic corrosion in the LEO conductive environment.' },
+    6: { name: 'Reaction Wheel Hub Baseplate',       desc: 'Al 6061-T6 baseplate (5 mm), SurTec 650 coated. Mounted to interior CFRP sandwich panel via M6 bolts with fully potted protruding inserts (flange Ø 16 mm). High-load M6 joints employ protruding flanges with adhesive bond to CFRP face sheet per ECSS 2011 §10.3.5 to improve pull-out, torque, and bending performance. Total S/C mass including margins: 59.5 kg.' },
+  },
+};
+
+// Generic multi-panel handler
+document.querySelectorAll('.hs[data-panel]').forEach(hs => {
+  hs.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const panelId = hs.dataset.panel;
+    const compId  = parseInt(hs.dataset.id);
+    const data    = diagComponents[panelId];
+    if (!data || !data[compId]) return;
+    const c = data[compId];
+
+    // Clear active on same panel
+    document.querySelectorAll(`.hs[data-panel="${panelId}"]`).forEach(h => h.classList.remove('active'));
+    hs.classList.add('active');
+
+    const defEl  = document.getElementById(`panel-${panelId}-default`);
+    const infoEl = document.getElementById(`panel-${panelId}-info`);
+    const numEl  = document.getElementById(`panel-${panelId}-num`);
+    const nameEl = document.getElementById(`panel-${panelId}-name`);
+    const descEl = document.getElementById(`panel-${panelId}-desc`);
+    const panel  = document.getElementById(`panel-${panelId}`);
+
+    if (!infoEl) return;
+    numEl.textContent  = `Component ${compId < 10 ? '0'+compId : compId}`;
+    nameEl.textContent = c.name;
+    descEl.textContent = c.desc;
+    defEl.style.display  = 'none';
+    infoEl.style.display = 'block';
+    panel.classList.add('active');
+  });
+});
+
 
 // ── Scroll reveal ──
 const revealEls = document.querySelectorAll('.reveal');

@@ -90,6 +90,11 @@ html { scroll-behavior: smooth; }
 .sat-wrap {
   position: relative;
   width: 100%;
+  border: 1px solid rgba(235,93,52,0.2);
+  border-radius: 4px;
+  background: rgba(0,0,0,0.35);
+  padding: 24px;
+  max-width: 500px;
 }
 .sat-wrap svg {
   width: 100%;
@@ -377,83 +382,6 @@ html { scroll-behavior: smooth; }
 }
 .phase-desc { font-size: 0.88rem; line-height: 1.8; color: var(--white-50); }
 
-/* ── SPACECRAFT SECTION ── */
-.spacecraft-section {
-  position: relative;
-  z-index: 1;
-  padding: 100px 80px;
-  background: linear-gradient(to bottom, #050509, #0a0a10);
-}
-.spacecraft-grid {
-  display: grid;
-  grid-template-columns: 3fr 2fr;
-  gap: 80px;
-  align-items: start;
-  margin-top: 60px;
-}
-.component-list { display: flex; flex-direction: column; gap: 1px; }
-.component-item {
-  display: grid;
-  grid-template-columns: 48px 1fr;
-  gap: 20px;
-  align-items: start;
-  padding: 20px 24px;
-  border: 1px solid rgba(235,93,52,0.08);
-  background: rgba(0,0,0,0.2);
-  transition: background 0.25s, border-color 0.25s;
-  cursor: default;
-}
-.component-item:hover {
-  background: rgba(235,93,52,0.04);
-  border-color: rgba(235,93,52,0.2);
-}
-.component-icon {
-  width: 48px; height: 48px;
-  border: 1px solid rgba(235,93,52,0.25);
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: var(--orange);
-  flex-shrink: 0;
-}
-.component-name {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  margin-bottom: 5px;
-}
-.component-desc { font-size: 0.83rem; line-height: 1.65; color: var(--white-50); }
-.fact-box {
-  border: 1px solid rgba(235,93,52,0.15);
-  background: rgba(0,0,0,0.3);
-  padding: 36px;
-  position: sticky;
-  top: 90px;
-}
-.fact-title {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 0.65rem;
-  letter-spacing: 0.45em;
-  color: var(--orange);
-  text-transform: uppercase;
-  margin-bottom: 28px;
-}
-.fact-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  padding: 14px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  gap: 12px;
-}
-.fact-row:last-child { border-bottom: none; }
-.fact-key { font-size: 0.75rem; letter-spacing: 0.1em; color: rgba(255,255,255,0.35); text-transform: uppercase; }
-.fact-val { font-family: 'Orbitron', sans-serif; font-size: 0.8rem; color: var(--white); text-align: right; }
 
 /* ── SCROLL REVEAL ── */
 .reveal {
@@ -471,7 +399,6 @@ html { scroll-behavior: smooth; }
   .instr-intro,
   .optics-section,
   .detector-grid,
-  .spacecraft-grid { grid-template-columns: 1fr; gap: 50px; }
   .instr-intro { padding: 70px 40px; }
   .callout-box { grid-template-columns: 1fr; gap: 28px; }
   .phases-header { flex-direction: column; align-items: flex-start; gap: 16px; }
@@ -482,10 +409,36 @@ html { scroll-behavior: smooth; }
   .instr-intro,
   .optics-section,
   .detector-section,
-  .phases-section,
-  .spacecraft-section { padding: 70px 28px; }
+  .phases-section { padding: 70px 28px; }
   .callout-section { padding: 0 28px 70px; }
   .timeline { grid-template-columns: 1fr; gap: 40px; }
   .timeline::before { display: none; }
   .specs-strip { grid-template-columns: 1fr 1fr; }
+}
+/* ── ADDITIONAL DIAGRAM SECTIONS ── */
+.diag-section {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  padding: 100px 80px;
+  background: linear-gradient(135deg, #070710, #0d0d18);
+}
+.diag-section:nth-child(even) {
+  background: linear-gradient(135deg, #0a0a10, #070714);
+}
+.diag-text em { font-style: normal; color: var(--orange); }
+.diag-svg { position: relative; }
+.diag-svg-el {
+  width: 100%;
+  filter: drop-shadow(0 0 20px rgba(235,93,52,0.15));
+}
+
+@media (max-width: 1024px) {
+  .diag-section { grid-template-columns: 1fr; gap: 50px; padding: 70px 40px; }
+}
+@media (max-width: 768px) {
+  .diag-section { padding: 60px 28px; }
 }
