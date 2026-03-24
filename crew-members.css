@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   padding-bottom: 10em;
+  padding-top: 10em;
 }
 
 .crew-container {
@@ -87,20 +88,53 @@
   font-size: 12px;
   white-space: nowrap;
   filter: none;
+
 }
 
 .crew-card-tooltip {
   display: none;
+  /* display: flex; */
   position: absolute;
-  top: -90px;
-  left: 60px;
+  top: -140px;
+  left: 40px;
   background: #0d0d1a;
   border: 0.5px solid rgba(221, 229, 249, 0.2);
   border-radius: 12px;
-  padding: 12px 16px;
+  padding: 1.2em 1.2em;
   min-width: 9em;
+  flex-direction: row;
+  gap: 1em;
+  /* align-items: center; */
+  
+}
+
+.crew-card-tooltip div {
+  display: flex;
   flex-direction: column;
-  gap: 0.5em;
+  width: 8em;
+  gap: 0.2em;
+  justify-content: space-between;
+  
+  & p, a{
+    color: #EB5D34;
+    font-style: italic;
+  }
+
+  & a{
+    text-decoration: none;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+    font-size: 0.8rem;
+  }
+
+  & a:hover{
+    cursor:pointer;
+    opacity: 1;
+  }
+
+  & a:after {
+    content: " →";
+  }
 }
 
 .star-wrapper:hover .crew-card-tooltip {
@@ -116,6 +150,22 @@
   transform: scale(1.8);
 }
 
+.crew-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.crew img{
+    width: 100px;
+    height: 100px;
+    /* border-radius: 50%; */
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+
 /* .crew-member-stars:hover::after {
   content: "Student: Alex - Data Analyst";
   position: absolute;
@@ -127,10 +177,3 @@
   border-radius: 5px;
   font-size: 12px;
 } */
-
-.crew-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1em;
-}
