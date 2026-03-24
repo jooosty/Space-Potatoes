@@ -3,8 +3,8 @@
   min-height: 50vh;
   display: flex;
   align-items: center;
-  padding-bottom: 10em;
   padding-top: 10em;
+  padding-bottom: 15em;
 }
 
 .crew-container {
@@ -12,7 +12,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  gap: 5em;
+  gap: 8em;
 }
 
 .crew-members {
@@ -26,19 +26,34 @@
 }  */
 
 .star-container {
-  width: 100px;
-  height: 100px;
+    width: 100px;
+    height: 100px;
 }
 
 .star-wrapper {
-  position: relative;
-  width: fit-content;
-  filter: drop-shadow(0 0 6px pink);
+    position: relative;
+    width: fit-content;
+    filter: drop-shadow(0 0 6px pink);
+
+    &:nth-child(1) .crew-card-tooltip {
+        top: -140px;
+        left: 40px;
+    }
+
+    &:nth-child(2) .crew-card-tooltip {
+        top: 50px;
+        right: 45px;
+    }
+
+    &:nth-child(3) .crew-card-tooltip {
+        top: -125px;
+        right: 50px;
+    }
 }
 
 .star-wrapper:nth-child(1) { 
   top: 20%;  
-  left: 10%; 
+  left: 20%; 
 }
 .star-wrapper:nth-child(2) { 
   top: 60%;  
@@ -76,7 +91,7 @@
   100% { transform: scale(1); opacity: 1; }
 }
 
-.tooltip {
+/* .tooltip {
   display: none;
   position: absolute;
   top: -45px;
@@ -88,15 +103,12 @@
   font-size: 12px;
   white-space: nowrap;
   filter: none;
-
-}
+} */
 
 .crew-card-tooltip {
-  display: none;
-  /* display: flex; */
+  display: flex;
+  
   position: absolute;
-  top: -140px;
-  left: 40px;
   background: #0d0d1a;
   border: 0.5px solid rgba(221, 229, 249, 0.2);
   border-radius: 12px;
@@ -104,17 +116,26 @@
   min-width: 9em;
   flex-direction: row;
   gap: 1em;
-  /* align-items: center; */
-  
+
+  opacity: 0;
+  transform: translateY(6px) scale(0.97);
+  transform-origin: bottom center;
+  transition: 
+    opacity 0.25s ease,
+    transform 0.25s ease;
 }
 
 .crew-card-tooltip div {
   display: flex;
   flex-direction: column;
-  width: 8em;
+  width: 10em;
   gap: 0.2em;
   justify-content: space-between;
   
+  & p{
+    font-size: 0.8em;
+  }
+
   & p, a{
     color: #EB5D34;
     font-style: italic;
@@ -125,6 +146,11 @@
     opacity: 0.6;
     transition: opacity 0.3s ease;
     font-size: 0.8rem;
+
+    font-family: 'Rajdhani', sans-serif;
+    line-height: 1.85;
+    letter-spacing: 0.06em;
+    color: rgba(255,255,255,0.5);
   }
 
   & a:hover{
@@ -138,7 +164,8 @@
 }
 
 .star-wrapper:hover .crew-card-tooltip {
-  display: flex;
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 .star-wrapper:hover .tooltip {
@@ -151,10 +178,47 @@
 }
 
 .crew-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8em;
+
+    & p{
+        font-family: 'Rajdhani', sans-serif;
+        font-size: 0.95rem;
+        line-height: 1.85;
+        letter-spacing: 0.06em;
+        color: rgba(255,255,255,0.5);
+
+        animation-name: text-appear;
+        animation-duration: auto;
+        animation-fill-mode: forwards;
+        animation-timeline: view();
+        animation-range: entry 50% 80%;
+    }
+
+    & div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.2em;
+    }
+
+
+}
+
+@keyframes text-appear {
+  0% { 
+    opacity: 0;
+    scale: 0.6;
+    transform: translateY(40px);
+  }
+  
+  100% { 
+    opacity: 1;
+    scale: 1;
+    transform: translateY(0);
+  }
 }
 
 .crew img{
