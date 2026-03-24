@@ -6,6 +6,10 @@
   <title>Nebula Xplorer</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="easter-egg.css">
+  <link rel="stylesheet" href="instrument.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -14,6 +18,7 @@
     <span class="nav-logo">Nebula Xplorer</span>
     <ul class="nav-links">
       <li><a href="#">Mission</a></li>
+      <li><a href="#instrument">Instrument</a></li>
       <li><a href="#">Science</a></li>
       <li><a href="#">Crew</a></li>
       <li><a href="#">Contact</a></li>
@@ -51,16 +56,366 @@
       </div>
     </div>
     <div class="black-hole-container">
-      <div class="orange-shadow"></div>
+      <div class="purple-shadow"></div>
       <div class="black-hole"></div>
+    </div>
+
+    <!-- Scroll hint -->
+    <div class="scroll-hint">
+      <span>Explore Mission</span>
+      <div class="arrow"></div>
     </div>
   </div>
 
-  <!-- Scroll hint -->
-  <div class="scroll-hint">
-    <span>Explore Mission</span>
-    <div class="arrow"></div>
-  </div>
+  <!-- ══════════════════════════════════════
+       INSTRUMENT PAGE SECTIONS
+  ══════════════════════════════════════ -->
+  <div id="instrument">
+
+    <!-- Specs strip -->
+    <div class="specs-strip reveal">
+      <div class="spec-item">
+        <div class="spec-val">110<span class="spec-unit">cm</span></div>
+        <div class="spec-lbl">Length</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-val">85<span class="spec-unit">cm</span></div>
+        <div class="spec-lbl">Focal Length</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-val">−35<span class="spec-unit">°C</span></div>
+        <div class="spec-lbl">Detector Temp</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-val">10<span class="spec-unit">×</span></div>
+        <div class="spec-lbl">Concentrators</div>
+      </div>
+    </div>
+
+    <!-- Instrument intro -->
+    <section class="instr-intro reveal">
+      <div class="instr-intro-text">
+        <div class="section-tag">X-ray Observatory</div>
+        <h2 class="section-title">The<br><em>Instrument</em><br>Aboard</h2>
+        <p class="section-body">
+          A compact X-ray space telescope measuring just 110 × 85 × 50 cm —
+          engineered to observe binary black holes with precision timing over long mission lifetimes.
+        </p>
+        <p class="section-body" style="margin-top:16px;">
+          NEBULA-Xplorer uses Wolter type 1 mirror optics to focus X-rays onto Silicon Drift Detectors,
+          with all science hardware housed inside a small satellite built for a SpaceX Falcon 9 launch around 2030.
+        </p>
+      </div>
+      <div class="instr-intro-svg">
+        <svg class="telescope-svg" viewBox="0 0 480 420" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="bhglow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#EB5D34" stop-opacity="0.25"/>
+              <stop offset="100%" stop-color="#EB5D34" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#c8862a"/>
+              <stop offset="50%" stop-color="#e8aa44"/>
+              <stop offset="100%" stop-color="#b07020"/>
+            </linearGradient>
+            <linearGradient id="darkGold" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#8a5a18"/>
+              <stop offset="100%" stop-color="#6a4010"/>
+            </linearGradient>
+            <linearGradient id="panelGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#1a2a4a"/>
+              <stop offset="100%" stop-color="#0d1828"/>
+            </linearGradient>
+            <filter id="iglow">
+              <feGaussianBlur stdDeviation="3" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <ellipse cx="240" cy="210" rx="180" ry="160" fill="url(#bhglow)" opacity="0.5"/>
+          <rect x="20" y="155" width="90" height="110" rx="2" fill="url(#panelGrad)" stroke="#EB5D34" stroke-width="0.8" opacity="0.9"/>
+          <line x1="20" y1="155" x2="110" y2="155" stroke="#EB5D34" stroke-width="0.5" opacity="0.4"/>
+          <line x1="20" y1="183" x2="110" y2="183" stroke="#EB5D34" stroke-width="0.4" opacity="0.3"/>
+          <line x1="20" y1="210" x2="110" y2="210" stroke="#EB5D34" stroke-width="0.4" opacity="0.3"/>
+          <line x1="20" y1="237" x2="110" y2="237" stroke="#EB5D34" stroke-width="0.4" opacity="0.3"/>
+          <line x1="65" y1="155" x2="65" y2="265" stroke="#EB5D34" stroke-width="0.4" opacity="0.3"/>
+          <rect x="108" y="198" width="28" height="12" rx="1" fill="#1a1a28" stroke="#EB5D34" stroke-width="0.6" opacity="0.8"/>
+          <rect x="370" y="155" width="90" height="110" rx="2" fill="url(#panelGrad)" stroke="#EB5D34" stroke-width="0.8" opacity="0.9"/>
+          <line x1="370" y1="183" x2="460" y2="183" stroke="#EB5D34" stroke-width="0.4" opacity="0.3"/>
+          <line x1="370" y1="210" x2="460" y2="210" stroke="#EB5D34" stroke-width="0.4" opacity="0.3"/>
+          <line x1="370" y1="237" x2="460" y2="237" stroke="#EB5D34" stroke-width="0.4" opacity="0.3"/>
+          <line x1="415" y1="155" x2="415" y2="265" stroke="#EB5D34" stroke-width="0.4" opacity="0.3"/>
+          <rect x="344" y="198" width="28" height="12" rx="1" fill="#1a1a28" stroke="#EB5D34" stroke-width="0.6" opacity="0.8"/>
+          <rect x="136" y="120" width="208" height="180" rx="3" fill="url(#darkGold)" stroke="#c8862a" stroke-width="1.2"/>
+          <line x1="136" y1="168" x2="344" y2="168" stroke="#c8862a" stroke-width="0.5" opacity="0.5"/>
+          <line x1="136" y1="216" x2="344" y2="216" stroke="#c8862a" stroke-width="0.5" opacity="0.5"/>
+          <line x1="136" y1="264" x2="344" y2="264" stroke="#c8862a" stroke-width="0.5" opacity="0.5"/>
+          <line x1="160" y1="120" x2="190" y2="168" stroke="rgba(0,0,0,0.4)" stroke-width="1.5"/>
+          <line x1="190" y1="120" x2="160" y2="168" stroke="rgba(0,0,0,0.4)" stroke-width="1.5"/>
+          <line x1="300" y1="120" x2="330" y2="168" stroke="rgba(0,0,0,0.4)" stroke-width="1.5"/>
+          <line x1="330" y1="120" x2="300" y2="168" stroke="rgba(0,0,0,0.4)" stroke-width="1.5"/>
+          <g transform="translate(148, 136)">
+            <ellipse cx="20" cy="12" rx="18" ry="11" fill="#2a2010" stroke="url(#goldGrad)" stroke-width="1.4"/>
+            <ellipse cx="20" cy="12" rx="10" ry="6" fill="#1a1408" stroke="#c8862a" stroke-width="0.7"/>
+            <ellipse cx="20" cy="12" rx="4" ry="3" fill="#0a0804" stroke="#e8aa44" stroke-width="0.5"/>
+            <ellipse cx="56" cy="12" rx="18" ry="11" fill="#2a2010" stroke="url(#goldGrad)" stroke-width="1.4"/>
+            <ellipse cx="56" cy="12" rx="10" ry="6" fill="#1a1408" stroke="#c8862a" stroke-width="0.7"/>
+            <ellipse cx="56" cy="12" rx="4" ry="3" fill="#0a0804" stroke="#e8aa44" stroke-width="0.5"/>
+            <ellipse cx="92" cy="12" rx="18" ry="11" fill="#2a2010" stroke="url(#goldGrad)" stroke-width="1.4"/>
+            <ellipse cx="92" cy="12" rx="10" ry="6" fill="#1a1408" stroke="#c8862a" stroke-width="0.7"/>
+            <ellipse cx="92" cy="12" rx="4" ry="3" fill="#0a0804" stroke="#e8aa44" stroke-width="0.5"/>
+            <ellipse cx="20" cy="42" rx="18" ry="11" fill="#2a2010" stroke="url(#goldGrad)" stroke-width="1.4"/>
+            <ellipse cx="20" cy="42" rx="10" ry="6" fill="#1a1408" stroke="#c8862a" stroke-width="0.7"/>
+            <ellipse cx="20" cy="42" rx="4" ry="3" fill="#0a0804" stroke="#e8aa44" stroke-width="0.5"/>
+            <ellipse cx="56" cy="42" rx="18" ry="11" fill="#2a2010" stroke="url(#goldGrad)" stroke-width="1.4"/>
+            <ellipse cx="56" cy="42" rx="10" ry="6" fill="#1a1408" stroke="#c8862a" stroke-width="0.7"/>
+            <ellipse cx="56" cy="42" rx="4" ry="3" fill="#0a0804" stroke="#e8aa44" stroke-width="0.5"/>
+            <ellipse cx="92" cy="42" rx="18" ry="11" fill="#2a2010" stroke="url(#goldGrad)" stroke-width="1.4"/>
+            <ellipse cx="92" cy="42" rx="10" ry="6" fill="#1a1408" stroke="#c8862a" stroke-width="0.7"/>
+            <ellipse cx="92" cy="42" rx="4" ry="3" fill="#0a0804" stroke="#e8aa44" stroke-width="0.5"/>
+          </g>
+          <rect x="280" y="136" width="55" height="148" rx="2" fill="#5a3a10" stroke="#c8862a" stroke-width="0.8"/>
+          <rect x="285" y="145" width="42" height="28" rx="2" fill="#1a3a5a" stroke="#3a6a9a" stroke-width="0.6" opacity="0.9"/>
+          <rect x="285" y="182" width="42" height="35" rx="2" fill="#3a1a4a" stroke="#7a4a8a" stroke-width="0.6" opacity="0.9"/>
+          <rect x="285" y="226" width="42" height="22" rx="2" fill="#1a2a1a" stroke="#3a5a3a" stroke-width="0.6" opacity="0.8"/>
+          <rect x="285" y="255" width="42" height="22" rx="2" fill="#2a1a10" stroke="#5a3a20" stroke-width="0.6" opacity="0.8"/>
+          <line x1="50" y1="200" x2="150" y2="165" stroke="#EB5D34" stroke-width="0.5" stroke-dasharray="4,3" opacity="0.3"/>
+          <line x1="50" y1="210" x2="150" y2="180" stroke="#EB5D34" stroke-width="0.5" stroke-dasharray="4,3" opacity="0.2"/>
+          <ellipse cx="240" cy="380" rx="180" ry="18" fill="none" stroke="#EB5D34" stroke-width="0.6" stroke-dasharray="6,5" opacity="0.2"/>
+          <text x="65"  y="290" font-family="Orbitron, sans-serif" font-size="8" fill="#EB5D34" opacity="0.7" letter-spacing="1" text-anchor="middle">SOLAR ARRAY</text>
+          <text x="240" y="316" font-family="Orbitron, sans-serif" font-size="8" fill="#EB5D34" opacity="0.7" letter-spacing="1" text-anchor="middle">X-RAY CONCENTRATORS</text>
+          <text x="410" y="290" font-family="Orbitron, sans-serif" font-size="8" fill="#EB5D34" opacity="0.7" letter-spacing="1" text-anchor="middle">SOLAR ARRAY</text>
+          <circle cx="168" cy="148" r="2" fill="#EB5D34" opacity="0.8" filter="url(#iglow)"/>
+          <circle cx="204" cy="148" r="2" fill="#EB5D34" opacity="0.6" filter="url(#iglow)"/>
+          <circle cx="240" cy="148" r="2" fill="#EB5D34" opacity="0.7" filter="url(#iglow)"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Optics section -->
+    <section class="optics-section reveal">
+      <div>
+        <div class="section-tag">Optics System</div>
+        <h2 class="section-title">Wolter Type 1<br>Mirror Modules</h2>
+        <p class="section-body">
+          NEBULA-Xplorer focuses X-rays using double-reflecting Wolter type 1 mirror modules —
+          30 thin-foil gold-coated concentric conical mirrors per concentrator, each just 20 cm long
+          and 10 cm in diameter. Gold coatings maximise X-ray reflectivity at the shallow
+          grazing-incidence angles required.
+        </p>
+        <p class="section-body" style="margin-top: 16px;">
+          The compact design results in an 85 cm focal length, directing photons onto individual
+          Silicon Drift Detectors housed in the Focal Plane Assembly. Dedicated alignment modules
+          ensure precise concentration of photons onto each SDD.
+        </p>
+      </div>
+      <div class="optics-diagram">
+        <div class="mirror-diagram">
+          <svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg">
+            <line x1="10" y1="60"  x2="175" y2="60"  stroke="#EB5D34" stroke-width="1"   opacity="0.6"/>
+            <line x1="10" y1="90"  x2="175" y2="90"  stroke="#EB5D34" stroke-width="0.8" opacity="0.5"/>
+            <line x1="10" y1="120" x2="175" y2="120" stroke="#EB5D34" stroke-width="0.8" opacity="0.5"/>
+            <line x1="10" y1="150" x2="175" y2="150" stroke="#EB5D34" stroke-width="0.8" opacity="0.5"/>
+            <line x1="10" y1="180" x2="175" y2="180" stroke="#EB5D34" stroke-width="0.8" opacity="0.5"/>
+            <line x1="10" y1="200" x2="175" y2="200" stroke="#EB5D34" stroke-width="0.6" opacity="0.35"/>
+            <text x="8" y="133" font-family="Orbitron,sans-serif" font-size="7.5" fill="#EB5D34" opacity="0.7" letter-spacing="1">X-RAYS</text>
+            <path d="M180 45 Q200 130 180 215" fill="none" stroke="#e8aa44" stroke-width="2.2"/>
+            <path d="M175 48 Q195 130 175 212" fill="none" stroke="rgba(200,134,42,0.35)" stroke-width="6"/>
+            <path d="M225 70 Q235 130 225 190" fill="none" stroke="#e8aa44" stroke-width="2.2"/>
+            <path d="M220 72 Q230 130 220 188" fill="none" stroke="rgba(200,134,42,0.35)" stroke-width="6"/>
+            <line x1="175" y1="60"  x2="225" y2="82"  stroke="#EB5D34" stroke-width="1"   opacity="0.7"/>
+            <line x1="175" y1="90"  x2="225" y2="97"  stroke="#EB5D34" stroke-width="0.8" opacity="0.6"/>
+            <line x1="175" y1="120" x2="225" y2="115" stroke="#EB5D34" stroke-width="0.8" opacity="0.6"/>
+            <line x1="175" y1="150" x2="225" y2="148" stroke="#EB5D34" stroke-width="0.8" opacity="0.6"/>
+            <line x1="175" y1="180" x2="225" y2="170" stroke="#EB5D34" stroke-width="0.8" opacity="0.6"/>
+            <line x1="225" y1="82"  x2="420" y2="130" stroke="#EB5D34" stroke-width="1"   opacity="0.6"/>
+            <line x1="225" y1="97"  x2="420" y2="130" stroke="#EB5D34" stroke-width="0.8" opacity="0.55"/>
+            <line x1="225" y1="115" x2="420" y2="130" stroke="#EB5D34" stroke-width="0.8" opacity="0.55"/>
+            <line x1="225" y1="148" x2="420" y2="130" stroke="#EB5D34" stroke-width="0.8" opacity="0.55"/>
+            <line x1="225" y1="170" x2="420" y2="130" stroke="#EB5D34" stroke-width="0.8" opacity="0.5"/>
+            <rect x="418" y="112" width="28" height="36" rx="2" fill="none" stroke="#EB5D34" stroke-width="1.4"/>
+            <rect x="424" y="120" width="16" height="20" rx="1" fill="rgba(235,93,52,0.15)" stroke="#EB5D34" stroke-width="0.7"/>
+            <circle cx="432" cy="130" r="3" fill="#EB5D34" opacity="0.9"/>
+            <circle cx="432" cy="130" r="10" fill="rgba(235,93,52,0.1)"/>
+            <text x="171" y="238" font-family="Orbitron,sans-serif" font-size="7" fill="#e8aa44" opacity="0.8" text-anchor="middle" letter-spacing="0.5">PRIMARY</text>
+            <text x="222" y="238" font-family="Orbitron,sans-serif" font-size="7" fill="#e8aa44" opacity="0.8" text-anchor="middle" letter-spacing="0.5">SECONDARY</text>
+            <text x="432" y="163" font-family="Orbitron,sans-serif" font-size="7" fill="#EB5D34" opacity="0.8" text-anchor="middle" letter-spacing="0.5">SDD</text>
+            <line x1="230" y1="220" x2="418" y2="220" stroke="rgba(235,93,52,0.25)" stroke-width="0.7"/>
+            <line x1="230" y1="215" x2="230" y2="225" stroke="rgba(235,93,52,0.4)" stroke-width="0.7"/>
+            <line x1="418" y1="215" x2="418" y2="225" stroke="rgba(235,93,52,0.4)" stroke-width="0.7"/>
+            <text x="324" y="233" font-family="Orbitron,sans-serif" font-size="7" fill="rgba(235,93,52,0.6)" text-anchor="middle" letter-spacing="0.5">FOCAL LENGTH 85cm</text>
+            <text x="155" y="30" font-family="Orbitron,sans-serif" font-size="7" fill="#e8aa44" opacity="0.7" letter-spacing="0.5">AU COATED</text>
+            <line x1="168" y1="34" x2="178" y2="46" stroke="#e8aa44" stroke-width="0.5" opacity="0.5"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detector section -->
+    <section class="detector-section reveal">
+      <div class="section-tag">Detection System</div>
+      <h2 class="section-title">Silicon Drift Detectors</h2>
+      <div class="detector-grid">
+        <div>
+          <p class="section-body">
+            Each concentrator focuses X-ray photons onto a dedicated Silicon Drift Detector (SDD) —
+            commercial off-the-shelf devices selected for reliability and performance. The flight model
+            carries 12 SDDs in total, with 2 reserved for in-flight calibration using a small radioactive source.
+          </p>
+          <p class="section-body" style="margin-top: 16px;">
+            To reach optimal sensitivity, all detectors are cooled to −35°C via thermal strapping
+            to a dedicated radiator on the satellite exterior. Straight-light baffles (black cones)
+            protect each SDD from stray photons. The signal from every SDD is processed by
+            hot-redundant Instrument Readout Units with space-grade digital signal processing.
+          </p>
+          <p class="section-body" style="margin-top: 16px;">
+            The IRUs record X-ray energies with precise timing information — enabling the
+            spectral-timing science that defines the NEBULA mission.
+          </p>
+        </div>
+        <div class="sdd-visual">
+          <div class="sdd-card">
+            <div class="sdd-header">Flight Model</div>
+            <div class="sdd-title">12 × SDD Array</div>
+            <div class="sdd-desc">10 science detectors + 2 calibration pixels with radioactive source. Each captures photons from one concentrator.</div>
+          </div>
+          <div class="sdd-card">
+            <div class="sdd-header">Thermal Control</div>
+            <div class="sdd-title">Cooled to −35°C</div>
+            <div class="sdd-desc">Radiator strapping removes heat from the Focal Plane Assembly, keeping detectors at operating temperature.</div>
+          </div>
+          <div class="sdd-card">
+            <div class="sdd-header">Readout Electronics</div>
+            <div class="sdd-title">Hot-Redundant IRUs</div>
+            <div class="sdd-desc">Two Instrument Readout Units with space-grade chips record photon energy and precise timing simultaneously.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Callout -->
+    <div class="callout-section reveal">
+      <div class="callout-box">
+        <div class="callout-stat">
+          <div class="callout-num">30<span class="callout-unit">×</span></div>
+          <div class="callout-lbl">Gold-coated mirror shells per concentrator</div>
+        </div>
+        <p class="callout-text">
+          Thin-foil aluminium cones with different diameters are stacked concentrically and held
+          together by <strong>spider-web support structures</strong>. Gold coatings maximise X-ray
+          reflectivity at grazing-incidence angles. Dedicated alignment modules ensure photons
+          are properly focused onto the Silicon Drift Detector — achieving all this within a
+          <strong>10 cm diameter, 20 cm long</strong> concentrator volume.
+        </p>
+      </div>
+    </div>
+
+    <!-- Development Phases -->
+    <section class="phases-section reveal">
+      <div class="phases-header">
+        <div>
+          <div class="section-tag">Development Roadmap</div>
+          <h2 class="section-title">From Prototype<br>to Flight</h2>
+        </div>
+        <p class="section-body" style="max-width: 320px;">
+          NEBULA-Xplorer follows a two-model philosophy aligned with ECSS standards —
+          minimising risk while building the future space workforce.
+        </p>
+      </div>
+      <div class="timeline">
+        <div class="phase">
+          <div class="phase-dot"><div class="phase-dot-inner"></div></div>
+          <div class="phase-num">Phase 01</div>
+          <div class="phase-title">Engineering<br>Model</div>
+          <div class="phase-year">2025 – 2027</div>
+          <div class="phase-desc">
+            Full engineering model of both instrument and satellite. Verifies design, interfaces,
+            power budgets, launch loads, and instrument performance. Built on existing prototypes
+            and mature off-the-shelf space systems.
+          </div>
+        </div>
+        <div class="phase">
+          <div class="phase-dot"><div class="phase-dot-inner"></div></div>
+          <div class="phase-num">Phase 02</div>
+          <div class="phase-title">Flight<br>Model</div>
+          <div class="phase-year">2027 – 2029</div>
+          <div class="phase-desc">
+            Flight-grade hardware built with space-qualified components, incorporating all
+            lessons from the EM phase. Fully tested to ECSS standards. Targeted for SpaceX
+            Falcon 9 launch, adaptable for ESA VEGA-C.
+          </div>
+        </div>
+        <div class="phase future">
+          <div class="phase-dot"><div class="phase-dot-inner"></div></div>
+          <div class="phase-num">Phase 03</div>
+          <div class="phase-title">Launch<br>&amp; Operations</div>
+          <div class="phase-year">~2030</div>
+          <div class="phase-desc">
+            Satellite launched into orbit for a minimum 5-year (goal 7-year) mission.
+            Continuous X-ray observations of binary black holes and neutron stars.
+            Science data publicly accessible via SRON servers.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Spacecraft components -->
+    <section class="spacecraft-section reveal">
+      <div class="section-tag">Spacecraft Bus</div>
+      <h2 class="section-title">What's Inside</h2>
+      <div class="spacecraft-grid">
+        <div class="component-list">
+          <div class="component-item">
+            <div class="component-icon">OB</div>
+            <div>
+              <div class="component-name">Optical Bench</div>
+              <div class="component-desc">Houses all 10 concentrators with alignment modules. Aluminium structure with gold-coated thin-foil Wolter mirrors, spider-web support structures.</div>
+            </div>
+          </div>
+          <div class="component-item">
+            <div class="component-icon">FPA</div>
+            <div>
+              <div class="component-name">Focal Plane Assembly</div>
+              <div class="component-desc">12 SDDs with light baffles, 2 calibration pixels, and thermal strapping to the external radiator. Cooled to −35°C for optimal performance.</div>
+            </div>
+          </div>
+          <div class="component-item">
+            <div class="component-icon">IRU</div>
+            <div>
+              <div class="component-name">Instrument Readout Units</div>
+              <div class="component-desc">Two hot-redundant IRUs with space-grade electronics. Records photon energy and precise timing for all 10 science SDDs simultaneously.</div>
+            </div>
+          </div>
+          <div class="component-item">
+            <div class="component-icon">SC</div>
+            <div>
+              <div class="component-name">Spacecraft Structure</div>
+              <div class="component-desc">Aluminium skeleton reinforced with carbon fibre sandwich panels. 100 × 50 × 90 cm for Falcon 9 (expandable for VEGA-C). Includes deorbit propulsion.</div>
+            </div>
+          </div>
+          <div class="component-item">
+            <div class="component-icon">ACS</div>
+            <div>
+              <div class="component-name">AOCS &amp; Comms</div>
+              <div class="component-desc">Attitude, orbit and control system for precise pointing. Solar panels, communication, thermal control, and data storage subsystems.</div>
+            </div>
+          </div>
+        </div>
+        <div class="fact-box">
+          <div class="fact-title">Quick Specs</div>
+          <div class="fact-row"><span class="fact-key">Dimensions</span><span class="fact-val">110×85×50 cm</span></div>
+          <div class="fact-row"><span class="fact-key">Concentrators</span><span class="fact-val">10 (FM)</span></div>
+          <div class="fact-row"><span class="fact-key">Mirror shells</span><span class="fact-val">30 per unit</span></div>
+          <div class="fact-row"><span class="fact-key">Focal length</span><span class="fact-val">85 cm</span></div>
+          <div class="fact-row"><span class="fact-key">Detector temp</span><span class="fact-val">−35°C</span></div>
+          <div class="fact-row"><span class="fact-key">Science SDDs</span><span class="fact-val">10 + 2 calib</span></div>
+          <div class="fact-row"><span class="fact-key">Mission life</span><span class="fact-val">5–7 years</span></div>
+          <div class="fact-row"><span class="fact-key">Launch target</span><span class="fact-val">~2030</span></div>
+          <div class="fact-row"><span class="fact-key">Primary launcher</span><span class="fact-val">Falcon 9</span></div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /#instrument -->
 
   <!-- Easter egg overlay -->
   <div id="egg-overlay">
@@ -69,5 +424,6 @@
 
   <script src="script.js"></script>
   <script src="easter-egg.js"></script>
+  <script src="instrument.js"></script>
 </body>
 </html>

@@ -1,0 +1,399 @@
+/* ═══════════════════════════════════════════════
+   INSTRUMENT.CSS  —  scoped styles only
+   No overrides to body / nav / html / .stars
+   ═══════════════════════════════════════════════ */
+
+:root {
+  --orange: #EB5D34;
+  --white: #ffffff;
+  --white-50: rgba(255,255,255,0.5);
+}
+
+html { scroll-behavior: smooth; }
+
+/* ── SPECS STRIP ── */
+.specs-strip {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid rgba(235,93,52,0.15);
+  border-bottom: 1px solid rgba(235,93,52,0.15);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  overflow: hidden;
+}
+.spec-item {
+  padding: 36px 40px;
+  border-right: 1px solid rgba(235,93,52,0.1);
+  transition: background 0.3s;
+}
+.spec-item:last-child { border-right: none; }
+.spec-item:hover { background: rgba(235,93,52,0.04); }
+.spec-val {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+  line-height: 1;
+  color: var(--white);
+}
+.spec-unit {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.75rem;
+  color: var(--orange);
+  margin-left: 4px;
+}
+.spec-lbl {
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-top: 6px;
+}
+
+/* ── SHARED TEXT HELPERS ── */
+.section-tag {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 16px;
+}
+.section-title {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.6rem, 3vw, 2.8rem);
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+.section-body {
+  font-size: 0.95rem;
+  line-height: 1.9;
+  letter-spacing: 0.05em;
+  color: var(--white-50);
+  max-width: 560px;
+}
+
+/* ── INSTRUMENT INTRO (satellite + text) ── */
+.instr-intro {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  padding: 100px 80px;
+  background: linear-gradient(to bottom, #0a0a10, #070710);
+}
+.instr-intro-text em { font-style: normal; color: var(--orange); }
+.instr-intro-svg { position: relative; }
+.telescope-svg {
+  width: 100%;
+  filter: drop-shadow(0 0 30px rgba(235,93,52,0.25));
+}
+
+/* ── OPTICS SECTION ── */
+.optics-section {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  padding: 100px 80px;
+  background: linear-gradient(135deg, #070710, #0d0d18);
+}
+.mirror-diagram {
+  width: 100%;
+  border: 1px solid rgba(235,93,52,0.12);
+  border-radius: 4px;
+  background: rgba(0,0,0,0.4);
+  padding: 32px;
+}
+
+/* ── DETECTOR SECTION ── */
+.detector-section {
+  position: relative;
+  z-index: 1;
+  padding: 100px 80px;
+  background: linear-gradient(to bottom, #0a0a10, #050509);
+}
+.detector-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  margin-top: 60px;
+}
+.sdd-visual {
+  position: relative;
+  height: 380px;
+}
+.sdd-card {
+  position: absolute;
+  left: 0; right: 0;
+  border: 1px solid rgba(235,93,52,0.2);
+  border-radius: 3px;
+  background: linear-gradient(135deg, rgba(235,93,52,0.06), rgba(0,0,0,0.6));
+  padding: 22px 28px;
+  transition: transform 0.35s ease, border-color 0.35s;
+  cursor: default;
+}
+.sdd-card:hover { border-color: rgba(235,93,52,0.5); }
+.sdd-card:nth-child(1) { top: 0;     transform: rotate(-1.5deg); z-index: 3; }
+.sdd-card:nth-child(2) { top: 110px; transform: rotate(0.5deg);  z-index: 2; }
+.sdd-card:nth-child(3) { top: 220px; transform: rotate(-0.8deg); z-index: 1; }
+.sdd-card:hover { transform: translateY(-4px) rotate(0deg) !important; z-index: 10 !important; }
+.sdd-header {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.35em;
+  color: var(--orange);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.sdd-title {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+.sdd-desc {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--white-50);
+}
+
+/* ── CALLOUT ── */
+.callout-section {
+  position: relative;
+  z-index: 1;
+  padding: 0 80px 100px;
+}
+.callout-box {
+  border: 1px solid rgba(235,93,52,0.2);
+  border-left: 3px solid var(--orange);
+  background: linear-gradient(135deg, rgba(235,93,52,0.05), rgba(0,0,0,0.3));
+  padding: 52px 64px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.callout-box::after {
+  content: '';
+  position: absolute;
+  right: -80px; top: -80px;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(235,93,52,0.08), transparent 65%);
+  pointer-events: none;
+}
+.callout-stat { text-align: center; }
+.callout-num {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  color: var(--white);
+  line-height: 1;
+}
+.callout-unit { color: var(--orange); font-size: 1.5rem; }
+.callout-lbl {
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  color: rgba(255,255,255,0.3);
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+.callout-text { font-size: 0.95rem; line-height: 1.9; color: var(--white-50); }
+.callout-text strong { color: var(--white); font-weight: 600; }
+
+/* ── PHASES TIMELINE ── */
+.phases-section {
+  position: relative;
+  z-index: 1;
+  padding: 100px 80px;
+  background: linear-gradient(135deg, #070710, #0a0a14);
+  overflow: hidden;
+}
+.phases-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 60px;
+}
+.timeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 28px;
+  left: calc(16.66% + 8px);
+  right: calc(16.66% + 8px);
+  height: 1px;
+  background: linear-gradient(90deg, rgba(235,93,52,0.6), rgba(235,93,52,0.2) 50%, rgba(235,93,52,0.08));
+}
+.phase { padding: 0 32px 0 0; position: relative; }
+.phase:last-child { padding-right: 0; }
+.phase-dot {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  border: 1px solid rgba(235,93,52,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  transition: border-color 0.3s;
+}
+.phase:hover .phase-dot { border-color: var(--orange); }
+.phase-dot-inner {
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--orange);
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+.phase:hover .phase-dot-inner { opacity: 1; }
+.phase.future .phase-dot-inner { background: rgba(235,93,52,0.25); }
+.phase.future .phase-num { color: rgba(255,255,255,0.2); }
+.phase-num {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 0.65rem;
+  letter-spacing: 0.4em;
+  color: var(--orange);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.phase-title {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.phase-year {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.75rem;
+  color: var(--orange);
+  margin-bottom: 14px;
+  letter-spacing: 0.1em;
+}
+.phase-desc { font-size: 0.88rem; line-height: 1.8; color: var(--white-50); }
+
+/* ── SPACECRAFT SECTION ── */
+.spacecraft-section {
+  position: relative;
+  z-index: 1;
+  padding: 100px 80px;
+  background: linear-gradient(to bottom, #050509, #0a0a10);
+}
+.spacecraft-grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 80px;
+  align-items: start;
+  margin-top: 60px;
+}
+.component-list { display: flex; flex-direction: column; gap: 1px; }
+.component-item {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 20px;
+  align-items: start;
+  padding: 20px 24px;
+  border: 1px solid rgba(235,93,52,0.08);
+  background: rgba(0,0,0,0.2);
+  transition: background 0.25s, border-color 0.25s;
+  cursor: default;
+}
+.component-item:hover {
+  background: rgba(235,93,52,0.04);
+  border-color: rgba(235,93,52,0.2);
+}
+.component-icon {
+  width: 48px; height: 48px;
+  border: 1px solid rgba(235,93,52,0.25);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--orange);
+  flex-shrink: 0;
+}
+.component-name {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 5px;
+}
+.component-desc { font-size: 0.83rem; line-height: 1.65; color: var(--white-50); }
+.fact-box {
+  border: 1px solid rgba(235,93,52,0.15);
+  background: rgba(0,0,0,0.3);
+  padding: 36px;
+  position: sticky;
+  top: 90px;
+}
+.fact-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.45em;
+  color: var(--orange);
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.fact-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  gap: 12px;
+}
+.fact-row:last-child { border-bottom: none; }
+.fact-key { font-size: 0.75rem; letter-spacing: 0.1em; color: rgba(255,255,255,0.35); text-transform: uppercase; }
+.fact-val { font-family: 'Orbitron', sans-serif; font-size: 0.8rem; color: var(--white); text-align: right; }
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .instr-intro,
+  .optics-section,
+  .detector-grid,
+  .spacecraft-grid { grid-template-columns: 1fr; gap: 50px; }
+  .instr-intro { padding: 70px 40px; }
+  .callout-box { grid-template-columns: 1fr; gap: 28px; }
+  .phases-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .specs-strip { grid-template-columns: repeat(2, 1fr); }
+  .spec-item:nth-child(2) { border-right: none; }
+}
+@media (max-width: 768px) {
+  .instr-intro,
+  .optics-section,
+  .detector-section,
+  .phases-section,
+  .spacecraft-section { padding: 70px 28px; }
+  .callout-section { padding: 0 28px 70px; }
+  .timeline { grid-template-columns: 1fr; gap: 40px; }
+  .timeline::before { display: none; }
+  .specs-strip { grid-template-columns: 1fr 1fr; }
+}
