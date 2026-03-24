@@ -268,3 +268,106 @@ const io = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 revealEls.forEach(el => io.observe(el));
+// ══════════════════════════════════════════════
+// INSTRUMENT EASTER EGGS
+// ══════════════════════════════════════════════
+
+const toast      = document.getElementById('egg-toast');
+const toastIcon  = document.getElementById('egg-toast-icon');
+const toastTitle = document.getElementById('egg-toast-title');
+const toastText  = document.getElementById('egg-toast-text');
+const xrayFlash  = document.getElementById('xray-flash');
+const scanline   = document.getElementById('egg-scanline');
+let toastTimer   = null;
+
+function showToast(icon, title, text, duration = 4000) {
+  if (!toast) return;
+  toastIcon.textContent  = icon;
+  toastTitle.textContent = title;
+  toastText.textContent  = text;
+  toast.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove('show'), duration);
+}
+
+// ── EGG 1: Type "NEBULA" anywhere on the instrument page ──
+// Triggers an X-ray flash and a message
+let nebulaBuffer = '';
+document.addEventListener('keydown', (e) => {
+  const inInstrument = !!document.getElementById('instrument');
+  if (!inInstrument) return;
+  nebulaBuffer = (nebulaBuffer + e.key.toUpperCase()).slice(-6);
+  if (nebulaBuffer === 'NEBULA') {
+    nebulaBuffer = '';
+    // X-ray flash
+    if (xrayFlash) {
+      xrayFlash.classList.add('active');
+      setTimeout(() => xrayFlash.classList.remove('active'), 300);
+      setTimeout(() => { xrayFlash.classList.add('active'); setTimeout(() => xrayFlash.classList.remove('active'), 200); }, 500);
+    }
+    showToast('☢️', 'X-ray Burst Detected',
+      'Incoming photon flux from Cygnus X-1. NEBULA-Xplorer is already on it — concentrators aligned, SDDs cooling to −35°C.', 5000);
+  }
+});
+
+// ── EGG 2: Click all 13 hotspots on the main satellite diagram ──
+// Full mission readiness check
+const visitedComponents = new Set();
+document.querySelectorAll('.hs:not([data-panel])').forEach(hs => {
+  hs.addEventListener('click', () => {
+    const id = parseInt(hs.dataset.id);
+    visitedComponents.add(id);
+    if (visitedComponents.size === 13) {
+      // Scan line sweep
+      if (scanline) {
+        scanline.classList.add('scanning');
+        setTimeout(() => scanline.classList.remove('scanning'), 1400);
+      }
+      setTimeout(() => {
+        showToast('✅', 'Mission Readiness Check: PASSED',
+          'All 13 subsystems inspected. OBC nominal. IRUs hot-standby. Concentrators aligned. NEBULA-Xplorer is go for launch. 🚀', 6000);
+      }, 1200);
+    }
+  });
+});
+
+// ── EGG 3: Triple-click the reaction wheel hotspot (component 12) ──
+// Spins the wheel SVG visually
+let rwClicks = 0;
+let rwTimer  = null;
+document.querySelectorAll('.hs:not([data-panel])').forEach(hs => {
+  if (parseInt(hs.dataset.id) !== 12) return;
+  hs.addEventListener('click', () => {
+    rwClicks++;
+    clearTimeout(rwTimer);
+    rwTimer = setTimeout(() => { rwClicks = 0; }, 600);
+    if (rwClicks >= 3) {
+      rwClicks = 0;
+      // Find wheel circles in the main sat SVG and spin them
+      const satSvg = document.getElementById('sat-svg');
+      if (satSvg) {
+        // The reaction wheel is represented by circles at cx=122, cy=400
+        // Wrap them in an animated group briefly
+        const circles = [...satSvg.querySelectorAll('circle')].filter(c =>
+          Math.abs(parseFloat(c.getAttribute('cx')) - 122) < 5 &&
+          Math.abs(parseFloat(c.getAttribute('cy')) - 400) < 5
+        );
+        circles.forEach(c => c.classList.add('rw-spin'));
+        setTimeout(() => circles.forEach(c => c.classList.remove('rw-spin')), 1100);
+      }
+      showToast('⚙️', 'Reaction Wheel Spinning Up',
+        'Momentum wheels at 3,000 RPM. Angular momentum nominal. Attitude control engaged — pointing to Cygnus X-1.', 4000);
+    }
+  });
+});
+
+// ── EGG 4: Type "SRON" ── secret message from the team
+let sronBuffer = '';
+document.addEventListener('keydown', (e) => {
+  sronBuffer = (sronBuffer + e.key.toUpperCase()).slice(-4);
+  if (sronBuffer === 'SRON') {
+    sronBuffer = '';
+    showToast('🔭', 'SRON Netherlands Institute for Space Research',
+      '"Building the next generation of X-ray astronomers, one concentrator at a time." — The NEBULA team, TU Delft & Leiden', 5500);
+  }
+});

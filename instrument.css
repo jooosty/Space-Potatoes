@@ -659,3 +659,92 @@ html { scroll-behavior: smooth; }
   .modes-grid    { grid-template-columns: 1fr; }
   .readout-section, .modes-section { padding: 60px 28px; }
 }
+/* ── INSTRUMENT EASTER EGGS ── */
+
+/* Toast notification */
+.egg-toast {
+  position: fixed;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  z-index: 200;
+  background: rgba(5,4,10,0.96);
+  border: 1px solid rgba(235,93,52,0.5);
+  border-left: 3px solid #EB5D34;
+  padding: 14px 24px 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  max-width: 440px;
+  width: calc(100vw - 48px);
+}
+.egg-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+.egg-toast-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+.egg-toast-text {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.8);
+}
+.egg-toast-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.35em;
+  color: #EB5D34;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+
+/* X-ray flash overlay */
+.xray-flash {
+  position: fixed;
+  inset: 0;
+  z-index: 190;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(ellipse at center,
+    rgba(180,220,255,0.18) 0%,
+    rgba(100,160,255,0.08) 40%,
+    transparent 70%
+  );
+  transition: opacity 0.15s ease;
+}
+.xray-flash.active { opacity: 1; }
+
+/* Mission readiness scanlines */
+@keyframes scan-line {
+  0%   { top: -4px; }
+  100% { top: 100%; }
+}
+.egg-scanline {
+  position: fixed;
+  left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, rgba(235,93,52,0.6), transparent);
+  pointer-events: none;
+  z-index: 195;
+  opacity: 0;
+}
+.egg-scanline.scanning {
+  opacity: 1;
+  animation: scan-line 1.2s linear forwards;
+}
+
+/* Spinning reaction wheel */
+@keyframes wheel-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(720deg); }
+}
+.rw-spin {
+  transform-origin: center;
+  animation: wheel-spin 1s cubic-bezier(0.4,0,0.2,1) forwards;
+}
