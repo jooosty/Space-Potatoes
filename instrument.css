@@ -86,9 +86,101 @@ html { scroll-behavior: smooth; }
 }
 .instr-intro-text em { font-style: normal; color: var(--orange); }
 .instr-intro-svg { position: relative; }
-.telescope-svg {
+
+.sat-wrap {
+  position: relative;
   width: 100%;
-  filter: drop-shadow(0 0 30px rgba(235,93,52,0.25));
+}
+.sat-wrap svg {
+  width: 100%;
+}
+
+/* hotspot pulse ring animation */
+@keyframes hs-pulse {
+  0%   { r: 14; opacity: 0.5; }
+  70%  { r: 20; opacity: 0; }
+  100% { r: 14; opacity: 0; }
+}
+.hs-pulse {
+  animation: hs-pulse 2s ease-out infinite;
+  transform-origin: center;
+}
+.hs-ring {
+  transition: stroke-width 0.15s, stroke 0.15s;
+}
+.hs:hover .hs-ring {
+  stroke-width: 2.5;
+  stroke: #ff7a50;
+}
+.hs.active .hs-ring {
+  fill: rgba(235,93,52,0.2);
+  stroke: #EB5D34;
+  stroke-width: 2.5;
+}
+.hs.active .hs-pulse {
+  animation: none;
+  opacity: 0;
+}
+
+/* info panel */
+.sat-panel {
+  margin-top: 28px;
+  border: 1px solid rgba(235,93,52,0.2);
+  border-left: 3px solid rgba(235,93,52,0.4);
+  min-height: 110px;
+  transition: border-color 0.3s;
+}
+.sat-panel.active {
+  border-color: rgba(235,93,52,0.5);
+  border-left-color: #EB5D34;
+}
+.sat-panel-default {
+  padding: 24px 20px;
+}
+.sat-panel-hint {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  color: rgba(255,255,255,0.3);
+}
+.sat-panel-info {
+  padding: 20px 20px 22px;
+  animation: panel-in 0.25s ease;
+}
+@keyframes panel-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.sat-panel-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.sat-panel-num {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.4em;
+  color: #EB5D34;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.sat-panel-name {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: #fff;
+  line-height: 1.3;
+}
+.sat-panel-desc {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.55);
+  margin: 0;
 }
 
 /* ── OPTICS SECTION ── */
