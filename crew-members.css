@@ -1,0 +1,136 @@
+/* ── CREW ── */
+.crew {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  padding-bottom: 10em;
+}
+
+.crew-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 5em;
+}
+
+.crew-members {
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
+/* .crew-container div:nth-child(1){
+  display: flex;  
+}  */
+
+.star-container {
+  width: 100px;
+  height: 100px;
+}
+
+.star-wrapper {
+  position: relative;
+  width: fit-content;
+  filter: drop-shadow(0 0 6px pink);
+}
+
+.star-wrapper:nth-child(1) { 
+  top: 20%;  
+  left: 10%; 
+}
+.star-wrapper:nth-child(2) { 
+  top: 60%;  
+  left: 55%; 
+}
+.star-wrapper:nth-child(3) { 
+  top: 10%;  
+  left: 75%; 
+}
+
+.crew-member-stars {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(221, 229, 249);
+  clip-path: path('M 25 0 C 25 12.5, 37.5 25, 50 25 C 37.5 25, 25 37.5, 25 50 C 25 37.5, 12.5 25, 0 25 C 12.5 25, 25 12.5, 25 0 Z');
+
+  animation: pulse-stars 4s infinite;
+}
+
+/* .crew-member-stars {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+  background: cyan;
+  border-radius: 50%;
+  box-shadow: 0 0 10px cyan;
+  animation: pulse-stars 4s infinite;
+} */
+
+@keyframes pulse-stars {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.8); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  top: -45px;
+  left: 30px;
+  background: black;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap;
+  filter: none;
+}
+
+.crew-card-tooltip {
+  display: none;
+  position: absolute;
+  top: -90px;
+  left: 60px;
+  background: #0d0d1a;
+  border: 0.5px solid rgba(221, 229, 249, 0.2);
+  border-radius: 12px;
+  padding: 12px 16px;
+  min-width: 9em;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.star-wrapper:hover .crew-card-tooltip {
+  display: flex;
+}
+
+.star-wrapper:hover .tooltip {
+  display: block;
+}
+
+.star-wrapper:hover .crew-member-stars {
+  animation-play-state: paused;
+  transform: scale(1.8);
+}
+
+/* .crew-member-stars:hover::after {
+  content: "Student: Alex - Data Analyst";
+  position: absolute;
+  top: -30px;
+  left: 10px;
+  background: black;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+} */
+
+.crew-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
