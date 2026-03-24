@@ -217,8 +217,8 @@
 .internship-wrapper{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 2em;
+    grid-template-rows: 19em 19em 10em;
+    gap: 6em 4em;
 
     & h4{
         font-family: 'Rajdhani', sans-serif;
@@ -241,4 +241,93 @@
 .internship-wrapper div:nth-of-type(3){
     grid-column: 1 / 2;
     grid-row: 3 / 4;
+}
+
+/* bron: https://codepen.io/Sidstumple/pen/LEZdEWP */
+
+@keyframes translate-properties {
+  from {
+    translate: var(--translate-from);
+  }
+  to {
+    translate: var(--translate-to);
+  }
+}
+
+.parallax-with-text {
+  .images {
+    view-timeline-name: --image;
+    position: relative;
+    display: flex;
+    aspect-ratio: 1;
+    justify-content: center;
+    overflow: clip;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 200%;
+      object-fit: cover;
+      display: block;
+      @media (prefers-reduced-motion: no-preference) {
+        --translate-from: 0 -50%;
+        --translate-to: 0 20%;
+        animation-name: translate-properties;
+        animation-timeline: --image;
+        animation-range: cover;
+        animation-timing-function: linear;
+        animation-fill-mode: both;
+      }
+    }
+  }
+}
+
+.internship-wrapper .images:nth-child(5){
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+    aspect-ratio: unset;
+}
+
+.internship-wrapper .images:nth-child(4){
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+    aspect-ratio: unset;
+}
+
+.internship-wrapper div:nth-of-type(1),
+.internship-wrapper div:nth-of-type(2),
+.internship-wrapper div:nth-of-type(3){
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.internship-form{
+    background-color: #EB5D34;
+    border: #0d0d1a 0.5px solid;
+    border: none;
+    border-radius: 12px;
+    padding: 1.2em 3em;
+    width: fit-content;
+    font-family: 'Rajdhani', sans-serif;
+    letter-spacing: 0.06em;
+
+    margin-top: 1em;
+
+    transition: background-color 0.4s ease;
+
+    position: relative;
+    z-index: 1;
+
+    &:hover{
+        cursor:pointer;
+        background-color: #0d0d1a;
+        border: #EB5D34 0.5px solid;
+    }
+
+    & a{
+        text-decoration: none;
+        color: white;
+    }
 }
