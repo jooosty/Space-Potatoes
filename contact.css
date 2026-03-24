@@ -1,0 +1,251 @@
+/********/
+/*CONTACT*/
+/********/
+/* form styling */
+form {
+  max-width: 900px;
+
+  margin-top: 7em;
+  margin: 0 auto;
+  padding-inline: 3em;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+fieldset {
+  border: none;
+  width: 100%;
+
+  legend {
+    font-size: xx-large;
+    padding-left: 0.1em;
+    box-shadow: 0 9px 10px -7px #eb5d34;
+
+    
+    legend::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 55%;
+      width: 100%;
+      height: 3px;
+      background: #eb5d34;
+      transform: rotate(-5deg);
+      box-shadow: 0 0 8px #eb5d34;
+    }
+  }
+
+  label {
+    display: block;
+    margin-top: 1.5em;
+    margin-bottom: 0.9em;
+    padding-left: 0.2em;
+    font-size: medium;
+    padding-top: 1em;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    background: transparent;
+    /* border: none; */
+    border-bottom: 0.2em solid #eb5d34;
+    color: white;
+    padding-bottom: 1.5em;
+    padding: 1em 0.5em;
+  }
+}
+
+
+/*Contact*/
+.masked-text {
+  font-size: 2.5rem; 
+  font-weight: bold;
+  color: transparent;
+
+  background-image: url('https://images.unsplash.com/photo-1732535725600-f805d8b33c9c?q=80&w=1470&auto=format&fit=crop');
+  background-size: 200%;
+  background-position: 0 50%;
+  -webkit-text-stroke: #eb5d34;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+
+  animation: animate-background 6s linear infinite alternate;
+}
+
+@keyframes animate-background {
+  0% {
+    background-position: 0 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+
+  /*https://prismic.io/blog/css-text-animations*/
+}
+
+
+input:focus,
+textarea:focus {
+  outline: none;
+      border-bottom: 2px solid cyan;
+
+}
+
+/* focus */
+input {
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.25);
+  }
+  &:valid {
+    border-color: seagreen;
+  }
+  &:valid:focus {
+    box-shadow: 0 0 0 3px hsla(90, 70%, 50%, 1);
+  }
+}
+
+/*Privacy checkbox*/
+.privacy {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6em;
+  margin-top: 1.5em;
+  font-size: 0.95rem;
+  color: white;
+  cursor: pointer;
+  line-height: 1.4;
+} 
+
+.privacy input {
+  display: none;
+}
+
+.privacy a {
+  color:#eb5d34;
+  text-decoration: underline;
+  transition: 0.3s ease;
+}
+
+.privacy a:hover {
+  color: #6ee7ff;
+  text-shadow: 0 0 8px #6ee7ff;
+}
+.planet {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #eeebeb;
+  position: relative;
+  transition: 0.2s;
+  border: 2px solid #eb5d34;
+
+}
+.maan {
+  width: 5px;
+  height: 5px;
+  background: #ccc;
+  border-radius: 50%;
+  position: absolute;
+  top: -3px;
+  left: 8px;
+  transform-origin: 50% 10px;
+  display: none;
+}
+/*planet actief*/
+.privacy input:checked + .planet {
+  background:#eb5d34;
+  box-shadow: 0 0 13px #6ee7ff;
+}
+
+/* maan draaien */
+.privacy input:checked + .planet .maan {
+  animation: draai 1s linear infinite;
+  display: block;
+}
+
+/* animatie */
+@keyframes draai {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+
+/*Button*/
+.button {
+  margin-top: 3em;
+  padding: 0.7em;
+  background-color:#eb5d34;
+  color: white;
+  border-bottom: 0.2em solid #e8e3e2;
+  border-radius: 0.3em;
+  align-self: flex-end;
+  width: 120px;
+  color: #ece6e5;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+/* overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.4s ease;
+  z-index: 9999;
+}
+
+/* popup activeren */
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* popup box */
+.popup {
+  position: relative;
+  /* z-index: 10000; */
+  margin: 10% auto;
+  padding: 2em;
+  background: #111;
+  border: 1px solid #6ee7ff;
+  border-radius: 12px;
+  width: 320px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 0 20px #6ee7ff, 0 0 40px #8b5cf6;
+  transform: scale(0.8);
+  animation: pop 0.4s ease forwards;
+}
+
+/* animatie */
+@keyframes pop {
+  to {
+    transform: scale(1);
+  }
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  color: #6ee7ff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #8b5cf6;
+}
+/*https://codepen.io/imprakash/pen/GgNMXO*/
+

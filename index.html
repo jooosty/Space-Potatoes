@@ -6,6 +6,8 @@
     <title>Nebula Xplorer</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="easter-egg.css" />
+    <link rel="stylesheet" href="contact.css" />
+    <link rel="stylesheet" href="footer.css" />
   </head>
   <body>
     <!-- Navbar -->
@@ -66,31 +68,95 @@
       <canvas id="egg-canvas"></canvas>
     </div>
 
-    <script src="script.js"></script>
-    <script src="easter-egg.js"></script>
+    <form>
+      <fieldset>
+        <legend>
+          <span class="masked-text">Contact</span>
+        </legend>
+
+        <label for="naam">Naam</label>
+        <input type="text" id="naam" name="naam" required />
+
+        <label for="telefoon">Telefoonnummer</label>
+        <input
+          type="tel"
+          id="telefoon"
+          name="telefoon"
+          pattern="[0-9]+"
+          required
+        />
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="bericht">Bericht</label>
+        <textarea id="bericht" name="bericht" rows="9"></textarea>
+
+        <label class="privacy">
+          <input type="checkbox" required />
+
+          <div class="planet">
+            <div class="maan"></div>
+          </div>
+
+          <span>
+            Ik heb het
+            <a
+              href="https://www.nwo-i.nl/en/privacy-policy/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >privacybeleid</a
+            >
+            gelezen en accepteer het.
+          </span>
+        </label>
+      </fieldset>
+      <a class="button" href="#popup1">Verstuur</a>
+
+    </form>
+
+<div id="popup1" class="overlay">
+  <div class="popup">
+
+    <h2>Verzonden 🚀</h2>
+
+    <a class="close" href="#">&times;</a>
+
+    <div class="content">
+      Je bericht is succesvol verstuurd naar Nebula Explorer
+    </div>
+    <!--https://codepen.io/imprakash/pen/GgNMXO-->
+
+  </div>
+</div>
 
     <footer>
-      <ul>
-        <li><a> Niels Bohrweg 4</a></li>
-        <li><a>2333 CA Leiden</a></li>
-        <li><a>The Netherlands</a></li>
-        <li><a>+31 (0)88 777 56 00</a></li>
-      </ul>
+      <div class="kaart">
+        <img src="images/SRON-Leiden-e1742232793581.webp" alt="Leiden" />
 
-      <ul>
-        <li><a> Landleven 12</a></li>
-        <li><a>9747 AD Groningen</a></li>
-        <li><a>The Netherlands</a></li>
-        <li><a>+31 (0)50 363 40 74</a></li>
-      </ul>
+        <div class="blok">
+          <h3>Leiden</h3>
+          <p>Niels Bohrweg 4</p>
+          <p>2333 CA Leiden</p>
+          <p>The Netherlands</p>
+          <p>+31 (0)88 777 56 00</p>
+        </div>
+      </div>
 
-      <ul>
-       <li>  <a href="" target="_self">Nieuwsbrief</a></li>
-      </ul>
- 
-	<img src="images/logobenefit.svg" alt="logo benefit">
-   
+      <div class="kaart">
+        <img src="images/SRON-Groningen.webp" alt="Groningen" />
 
+        <div class="blok">
+          <h3>Groningen</h3>
+          <p>Landleven 12</p>
+          <p>9747 AD Groningen</p>
+          <p>The Netherlands</p>
+          <p>+31 (0)50 363 40 74</p>
+        </div>
+      </div>
     </footer>
+
+    <script src="script.js"></script>
+    <script src="easter-egg.js"></script>
   </body>
 </html>
