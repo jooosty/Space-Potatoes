@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html lang="nl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nebula Xplorer</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="easter-egg.css" />
-    <link rel="stylesheet" href="contact.css" />
-    <link rel="stylesheet" href="footer.css" />
-  </head>
-  <body>
-    <!-- Navbar -->
-    <nav>
-      <span class="nav-logo">Nebula Xplorer</span>
-      <ul class="nav-links">
-        <li><a href="#">Mission</a></li>
-        <li><a href="#">Science</a></li>
-        <li><a href="#">Crew</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-      <button class="burger" aria-label="Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </nav>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nebula Xplorer</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mission.css">
+  <link rel="stylesheet" href="easter-egg.css">
+  <link rel="stylesheet" href="crew-members.css">
+  <link rel="stylesheet" href="contact.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png?v=2">
+  <link rel="stylesheet" href="instrument.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
 
-    <!-- Sterren achtergrond -->
-    <div class="stars"></div>
+  <!-- Navbar -->
+  <nav>
+    <span class="nav-logo">Nebula Xplorer</span>
+    <ul class="nav-links">
+      <li><a href="#">Mission</a></li>
+      <li><a href="#instrument">Instrument</a></li>
+      <li><a href="#">Science</a></li>
+      <li><a href="#">Crew</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <button class="burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 
     <!-- Hero -->
     <div class="hero">
@@ -67,6 +73,1516 @@
     <div id="egg-overlay">
       <canvas id="egg-canvas"></canvas>
     </div>
+
+    <!-- Scroll hint -->
+    <div class="scroll-hint">
+      <span>Explore Mission</span>
+      <div class="arrow"></div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       INSTRUMENT PAGE SECTIONS
+  ══════════════════════════════════════ -->
+
+    <section id="mission">
+ 
+    <div class="mission-header">
+      <span class="section-label">01 — Mission</span>
+      <h2>What is NEBULA Xplorer?</h2>
+    </div>
+ 
+    <div class="mission-overview">
+      <p>
+        NEBULA – Xplorer stands for <em>Netherlands Educational Satellite for Exploration
+        of Binary-Linked Astrophysics – X-ray Observer</em>. Approximately four hundred
+        students help SRON, fourteen Dutch educational institutions, and many industrial
+        partners to develop this space mission from start to finish — guided by scientists
+        and engineers. SRON leads the mission, shaping a new generation of scientists,
+        designers, and engineers for Dutch space research.
+      </p>
+    </div>
+ 
+    <div class="mission-goals">
+      <div class="mission-goal">
+        <span class="goal-tag">Scientific Goal</span>
+        <p>Better understand how a black hole strips material from an orbiting companion
+        star and how the resulting jets of energy are formed.</p>
+      </div>
+      <div class="mission-goal">
+        <span class="goal-tag">Educational Goal</span>
+        <p>Give students from Dutch educational institutions a first-hand experience of
+        building a space mission from the ground up.</p>
+      </div>
+    </div>
+ 
+    <div class="mission-blocks">
+ 
+      <div class="mission-block">
+        <div class="block-number">01</div>
+        <div class="block-content">
+          <h3>X-ray Binary Mysteries</h3>
+          <p>
+            Many of the brightest objects in the universe are X-ray binaries — combinations
+            of an extremely compact object, such as a black hole or neutron star, and a
+            companion star. Over time, the compact object strips matter from its companion,
+            releasing enormous energy in a focused beam called a jet. Scientists do not yet
+            fully understand this process, and the behaviour of matter right at the edge of
+            the black hole remains one of the great mysteries of modern astrophysics.
+          </p>
+          <p>
+            These behaviours vary across a huge range of timescales — from milliseconds to
+            months. A platform fully under SRON's control allows continuous, uninterrupted
+            observations that existing major observatories simply cannot provide.
+          </p>
+          <div class="block-callout">
+            <p>Known targets include <strong>Cygnus X-1</strong> and
+            <strong>IGR J17091−3624</strong> — objects exhibiting unique X-ray variability
+            that are key to advancing our understanding of accretion processes.</p>
+          </div>
+        </div>
+      </div>
+ 
+      <div class="mission-block">
+        <div class="block-number">02</div>
+        <div class="block-content">
+          <h3>Long-Duration Observations</h3>
+          <p>
+            NEBULA – Xplorer will study how jets form and how X-ray binaries evolve by
+            observing these objects over extended periods — tracking how their emissions
+            vary across timescales ranging from milliseconds to weeks. These long observation
+            windows make it possible to combine X-ray data with measurements from other
+            telescopes across different wavelengths.
+          </p>
+          <p>
+            Crucially, black hole behaviour in stellar-mass X-ray binaries has a proven
+            scaling relation with supermassive black holes in active galactic nuclei (AGN).
+            By studying nearby stellar-mass black holes — observable on human timescales —
+            we gain direct insight into galactic-scale processes that would otherwise take
+            millions of years to unfold.
+          </p>
+        </div>
+      </div>
+ 
+      <div class="mission-block">
+        <div class="block-number">03</div>
+        <div class="block-content">
+          <h3>Training the Next Generation</h3>
+          <p>
+            Every six months, a new cohort of students from different disciplines — including
+            astrophysics, spacecraft engineering, optics, electronics, software, and
+            communications — joins the project. Each group builds on the work of the last,
+            with continuity ensured by SRON scientists and industry partners.
+          </p>
+          <div class="institution-tags">
+            <span>Leiden University</span>
+            <span>TU Delft</span>
+            <span>Erasmus University</span>
+            <span>Haagse Hogeschool</span>
+            <span>Hogeschool Utrecht</span>
+            <span>Leidse Instrumentmakersschool</span>
+            <span>ROC Mondriaan</span>
+            <span>+ more</span>
+          </div>
+        </div>
+      </div>
+ 
+    </div>
+ 
+  </section>
+
+  <div id="instrument">
+
+    <!-- Specs strip -->
+    <div class="specs-strip reveal">
+      <div class="spec-item">
+        <div class="spec-val">110<span class="spec-unit">cm</span></div>
+        <div class="spec-lbl">Length</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-val">800<span class="spec-unit">mm</span></div>
+        <div class="spec-lbl">Focal Length</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-val">−35<span class="spec-unit">°C</span></div>
+        <div class="spec-lbl">Detector Temp</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-val">10<span class="spec-unit">×</span></div>
+        <div class="spec-lbl">Concentrators</div>
+      </div>
+    </div>
+
+    <!-- Instrument intro -->
+    <section class="instr-intro reveal">
+      <div class="instr-intro-text">
+        <div class="section-tag">X-ray Observatory</div>
+        <h2 class="section-title">The<br><em>Instrument</em><br>Aboard</h2>
+        <p class="section-body">
+          A compact X-ray space telescope measuring just 110 × 85 × 50 cm —
+          engineered to observe binary black holes with precision timing over long mission lifetimes.
+        </p>
+        <p class="section-body" style="margin-top:16px;">
+          Click any numbered hotspot on the diagram to explore each component.
+        </p>
+        <div class="sat-panel" id="sat-panel">
+          <div class="sat-panel-default" id="sat-panel-default">
+            <div class="sat-panel-hint">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;margin-top:2px"><circle cx="9" cy="9" r="8" stroke="#EB5D34" stroke-width="1.2"/><text x="9" y="13" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="8" font-weight="700" fill="#EB5D34">i</text></svg>
+              <span>Select a numbered component on the diagram</span>
+            </div>
+          </div>
+          <div class="sat-panel-info" id="sat-panel-info" style="display:none;">
+            <div class="sat-panel-header">
+              <span class="sat-panel-num" id="sat-panel-num"></span>
+              <span class="sat-panel-name" id="sat-panel-name"></span>
+            </div>
+            <p class="sat-panel-desc" id="sat-panel-desc"></p>
+          </div>
+        </div>
+      </div>
+      <div class="instr-intro-svg">
+        <div class="sat-wrap">
+          <svg id="sat-svg" viewBox="0 0 490 555" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="spGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#1c2e4a"/><stop offset="100%" stop-color="#091422"/>
+              </linearGradient>
+              <radialGradient id="cOuter" cx="38%" cy="35%" r="58%">
+                <stop offset="0%" stop-color="#f0c050"/><stop offset="50%" stop-color="#c8862a"/><stop offset="100%" stop-color="#6a4010"/>
+              </radialGradient>
+              <radialGradient id="cInner" cx="38%" cy="35%" r="58%">
+                <stop offset="0%" stop-color="#1c1408"/><stop offset="100%" stop-color="#080604"/>
+              </radialGradient>
+              <filter id="hs-glow">
+                <feGaussianBlur stdDeviation="2" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+              <clipPath id="conc-clip">
+                <rect x="62" y="98" width="240" height="163"/>
+              </clipPath>
+            </defs>
+
+            <!-- LEFT SOLAR PANEL -->
+            <rect x="2" y="182" width="58" height="145" rx="2" fill="url(#spGrad)" stroke="#1e3a5a" stroke-width="1.2"/>
+            <line x1="2"  y1="218" x2="60" y2="218" stroke="#1e4a7a" stroke-width="0.6"/>
+            <line x1="2"  y1="254" x2="60" y2="254" stroke="#1e4a7a" stroke-width="0.6"/>
+            <line x1="2"  y1="290" x2="60" y2="290" stroke="#1e4a7a" stroke-width="0.6"/>
+            <line x1="21" y1="182" x2="21" y2="327" stroke="#1e4a7a" stroke-width="0.6"/>
+            <line x1="40" y1="182" x2="40" y2="327" stroke="#1e4a7a" stroke-width="0.6"/>
+            <rect x="58" y="232" width="8" height="22" rx="1" fill="#2a2a3a" stroke="#c8862a" stroke-width="0.8"/>
+
+            <!-- RIGHT SOLAR PANEL -->
+            <polygon points="352,98 432,76 432,432 352,454" fill="url(#spGrad)" stroke="#1e3a5a" stroke-width="1.2"/>
+            <line x1="352" y1="154" x2="432" y2="132" stroke="#1e4a7a" stroke-width="0.6"/>
+            <line x1="352" y1="210" x2="432" y2="188" stroke="#1e4a7a" stroke-width="0.6"/>
+            <line x1="352" y1="266" x2="432" y2="244" stroke="#1e4a7a" stroke-width="0.6"/>
+            <line x1="352" y1="322" x2="432" y2="300" stroke="#1e4a7a" stroke-width="0.6"/>
+            <line x1="352" y1="378" x2="432" y2="356" stroke="#1e4a7a" stroke-width="0.6"/>
+            <line x1="372" y1="97"  x2="372" y2="450" stroke="#1e4a7a" stroke-width="0.5" opacity="0.5"/>
+            <line x1="392" y1="91"  x2="392" y2="444" stroke="#1e4a7a" stroke-width="0.5" opacity="0.5"/>
+            <line x1="412" y1="85"  x2="412" y2="438" stroke="#1e4a7a" stroke-width="0.5" opacity="0.5"/>
+            <rect x="343" y="232" width="10" height="22" rx="1" fill="#2a2a3a" stroke="#c8862a" stroke-width="0.8"/>
+
+            <!-- RIGHT FACE -->
+            <polygon points="302,98 352,76 352,454 302,476" fill="#0c0c1c" stroke="#c8862a" stroke-width="1.5"/>
+            <line x1="302" y1="180" x2="352" y2="158" stroke="#c8862a" stroke-width="0.4" opacity="0.35"/>
+            <line x1="302" y1="262" x2="352" y2="240" stroke="#c8862a" stroke-width="0.4" opacity="0.35"/>
+            <line x1="302" y1="344" x2="352" y2="322" stroke="#c8862a" stroke-width="0.4" opacity="0.35"/>
+            <line x1="302" y1="414" x2="352" y2="392" stroke="#c8862a" stroke-width="0.4" opacity="0.35"/>
+
+            <!-- TOP FACE -->
+            <polygon points="62,98 302,98 352,76 112,76" fill="#221508" stroke="#c8862a" stroke-width="1.5"/>
+
+            <!-- FRONT FACE BACKGROUND -->
+            <rect x="62" y="98" width="240" height="378" fill="#0d0a04" stroke="#c8862a" stroke-width="2"/>
+
+            <!-- CONCENTRATOR ZONE (top 43%) -->
+            <rect x="62" y="98" width="240" height="163" fill="#0f0b03"/>
+            <line x1="62" y1="261" x2="302" y2="261" stroke="#c8862a" stroke-width="2.5"/>
+
+            <!-- Concentrators — 3×3 grid (clipped to zone) -->
+            <g clip-path="url(#conc-clip)">
+            <!-- Row 1 -->
+            <circle cx="102" cy="129" r="20" fill="url(#cOuter)" stroke="#c8862a" stroke-width="1.3"/>
+            <circle cx="102" cy="129" r="11" fill="url(#cInner)" stroke="#b07020" stroke-width="0.9"/>
+            <circle cx="102" cy="129" r="4" fill="#060503" stroke="#e8aa44" stroke-width="0.7"/>
+            <circle cx="102" cy="129" r="2" fill="#e8aa44" opacity="0.8"/>
+
+            <circle cx="182" cy="129" r="20" fill="url(#cOuter)" stroke="#c8862a" stroke-width="1.3"/>
+            <circle cx="182" cy="129" r="11" fill="url(#cInner)" stroke="#b07020" stroke-width="0.9"/>
+            <circle cx="182" cy="129" r="4" fill="#060503" stroke="#e8aa44" stroke-width="0.7"/>
+            <circle cx="182" cy="129" r="2" fill="#e8aa44" opacity="0.8"/>
+
+            <circle cx="262" cy="129" r="20" fill="url(#cOuter)" stroke="#c8862a" stroke-width="1.3"/>
+            <circle cx="262" cy="129" r="11" fill="url(#cInner)" stroke="#b07020" stroke-width="0.9"/>
+            <circle cx="262" cy="129" r="4" fill="#060503" stroke="#e8aa44" stroke-width="0.7"/>
+            <circle cx="262" cy="129" r="2" fill="#e8aa44" opacity="0.8"/>
+
+            <!-- Row 2 -->
+            <circle cx="102" cy="180" r="20" fill="url(#cOuter)" stroke="#c8862a" stroke-width="1.3"/>
+            <circle cx="102" cy="180" r="11" fill="url(#cInner)" stroke="#b07020" stroke-width="0.9"/>
+            <circle cx="102" cy="180" r="4" fill="#060503" stroke="#e8aa44" stroke-width="0.7"/>
+            <circle cx="102" cy="180" r="2" fill="#e8aa44" opacity="0.8"/>
+
+            <circle cx="182" cy="180" r="20" fill="url(#cOuter)" stroke="#c8862a" stroke-width="1.3"/>
+            <circle cx="182" cy="180" r="11" fill="url(#cInner)" stroke="#b07020" stroke-width="0.9"/>
+            <circle cx="182" cy="180" r="4" fill="#060503" stroke="#e8aa44" stroke-width="0.7"/>
+            <circle cx="182" cy="180" r="2" fill="#e8aa44" opacity="0.8"/>
+
+            <circle cx="262" cy="180" r="20" fill="url(#cOuter)" stroke="#c8862a" stroke-width="1.3"/>
+            <circle cx="262" cy="180" r="11" fill="url(#cInner)" stroke="#b07020" stroke-width="0.9"/>
+            <circle cx="262" cy="180" r="4" fill="#060503" stroke="#e8aa44" stroke-width="0.7"/>
+            <circle cx="262" cy="180" r="2" fill="#e8aa44" opacity="0.8"/>
+
+            <!-- Row 3 -->
+            <circle cx="102" cy="231" r="20" fill="url(#cOuter)" stroke="#c8862a" stroke-width="1.3"/>
+            <circle cx="102" cy="231" r="11" fill="url(#cInner)" stroke="#b07020" stroke-width="0.9"/>
+            <circle cx="102" cy="231" r="4" fill="#060503" stroke="#e8aa44" stroke-width="0.7"/>
+            <circle cx="102" cy="231" r="2" fill="#e8aa44" opacity="0.8"/>
+
+            <circle cx="182" cy="231" r="20" fill="url(#cOuter)" stroke="#c8862a" stroke-width="1.3"/>
+            <circle cx="182" cy="231" r="11" fill="url(#cInner)" stroke="#b07020" stroke-width="0.9"/>
+            <circle cx="182" cy="231" r="4" fill="#060503" stroke="#e8aa44" stroke-width="0.7"/>
+            <circle cx="182" cy="231" r="2" fill="#e8aa44" opacity="0.8"/>
+
+            <circle cx="262" cy="231" r="20" fill="url(#cOuter)" stroke="#c8862a" stroke-width="1.3"/>
+            <circle cx="262" cy="231" r="11" fill="url(#cInner)" stroke="#b07020" stroke-width="0.9"/>
+            <circle cx="262" cy="231" r="4" fill="#060503" stroke="#e8aa44" stroke-width="0.7"/>
+            <circle cx="262" cy="231" r="2" fill="#e8aa44" opacity="0.8"/>
+
+            </g><!-- /conc-clip -->
+
+            <!-- ELECTRONICS ZONE (bottom 57%) -->
+            <!-- Vertical divider -->
+            <line x1="182" y1="261" x2="182" y2="476" stroke="#c8862a" stroke-width="1.5" opacity="0.6"/>
+            <!-- Cross brace left -->
+            <line x1="62"  y1="261" x2="182" y2="380" stroke="#c8862a" stroke-width="0.7" opacity="0.25"/>
+            <line x1="182" y1="261" x2="62"  y2="380" stroke="#c8862a" stroke-width="0.7" opacity="0.25"/>
+
+            <!-- OBC / TCM / IMU (13) — upper left -->
+            <rect x="67" y="267" width="109" height="42" rx="2" fill="#181828" stroke="#303050" stroke-width="1"/>
+            <rect x="71" y="272" width="15" height="10" rx="1" fill="#252540"/>
+            <rect x="90" y="272" width="15" height="10" rx="1" fill="#252540"/>
+            <rect x="109" y="272" width="15" height="10" rx="1" fill="#252540"/>
+            <line x1="67" y1="286" x2="176" y2="286" stroke="#303050" stroke-width="0.5"/>
+            <rect x="71" y="290" width="99" height="11" rx="1" fill="#202030"/>
+
+            <!-- Instrument electronics (9) — left mid -->
+            <rect x="67" y="316" width="109" height="48" rx="2" fill="#161618" stroke="#2a2a30" stroke-width="1"/>
+            <rect x="71" y="321" width="46" height="13" rx="1" fill="#222228"/>
+            <rect x="123" y="321" width="46" height="13" rx="1" fill="#222228"/>
+            <rect x="71" y="338" width="98" height="8"  rx="1" fill="#1c1c20"/>
+            <rect x="71" y="350" width="40" height="7"  rx="1" fill="#1e1e22"/>
+
+            <!-- Reaction wheel (12) — left lower -->
+            <rect x="67" y="372" width="109" height="55" rx="2" fill="#121212" stroke="#282828" stroke-width="1"/>
+            <circle cx="122" cy="400" r="21" fill="#181818" stroke="#383838" stroke-width="1.5"/>
+            <circle cx="122" cy="400" r="13" fill="#202020" stroke="#484848" stroke-width="1"/>
+            <circle cx="122" cy="400" r="5"  fill="#282828" stroke="#c8862a" stroke-width="0.8"/>
+
+            <!-- Magnetometers (10) — bottom left -->
+            <rect x="67"  y="435" width="50" height="30" rx="2" fill="#0c180c" stroke="#1a301a" stroke-width="1"/>
+            <rect x="121" y="435" width="50" height="30" rx="2" fill="#0c180c" stroke="#1a301a" stroke-width="1"/>
+            <rect x="71"  y="439" width="42" height="9" rx="1" fill="#122012"/>
+            <rect x="125" y="439" width="42" height="9" rx="1" fill="#122012"/>
+
+            <!-- Battery packs (2) — upper right -->
+            <rect x="187" y="267" width="109" height="55" rx="2" fill="#0c1c38" stroke="#1a3460" stroke-width="1.5"/>
+            <line x1="241" y1="267" x2="241" y2="322" stroke="#1a3460" stroke-width="1"/>
+            <rect x="191" y="272" width="46" height="17" rx="1" fill="#102040"/>
+            <rect x="243" y="272" width="46" height="17" rx="1" fill="#102040"/>
+            <rect x="191" y="294" width="46" height="16" rx="1" fill="#0e1c38"/>
+            <rect x="243" y="294" width="46" height="16" rx="1" fill="#0e1c38"/>
+
+            <!-- Bus subsystem (4) — right mid -->
+            <rect x="187" y="329" width="109" height="52" rx="2" fill="#181208" stroke="#302010" stroke-width="1"/>
+            <rect x="191" y="334" width="23" height="15" rx="1" fill="#221a0a"/>
+            <rect x="219" y="334" width="23" height="15" rx="1" fill="#221a0a"/>
+            <rect x="247" y="334" width="23" height="15" rx="1" fill="#221a0a"/>
+            <rect x="275" y="334" width="16" height="15" rx="1" fill="#221a0a"/>
+            <line x1="187" y1="353" x2="296" y2="353" stroke="#302010" stroke-width="0.5"/>
+            <rect x="191" y="357" width="98" height="16" rx="1" fill="#1a1206"/>
+
+            <!-- Dawn Cubedrive (5) — right lower -->
+            <rect x="187" y="388" width="109" height="52" rx="2" fill="#0c1c0c" stroke="#1a301a" stroke-width="1.5"/>
+            <line x1="241" y1="388" x2="241" y2="440" stroke="#1a301a" stroke-width="0.8"/>
+            <rect x="191" y="393" width="46" height="13" rx="1" fill="#162016"/>
+            <rect x="243" y="393" width="46" height="13" rx="1" fill="#162016"/>
+            <rect x="191" y="411" width="46" height="13" rx="1" fill="#122012"/>
+            <rect x="243" y="411" width="46" height="13" rx="1" fill="#122012"/>
+            <rect x="191" y="429" width="98" height="6"  rx="1" fill="#0e180e"/>
+
+            <!-- SADM (11) — bottom right -->
+            <rect x="187" y="447" width="109" height="22" rx="2" fill="#180e06" stroke="#301a0c" stroke-width="1"/>
+            <circle cx="209" cy="458" r="8" fill="#1c1008" stroke="#c8862a" stroke-width="1"/>
+            <circle cx="209" cy="458" r="4" fill="#241408" stroke="#c8862a" stroke-width="0.6"/>
+            <rect x="224" y="452" width="66" height="12" rx="1" fill="#1c1208"/>
+
+            <!-- RIGHT FACE COMPONENTS -->
+            <!-- Star tracker (3) -->
+            <rect x="308" y="106" width="34" height="28" rx="2" fill="#141424" stroke="#242444" stroke-width="1"/>
+            <circle cx="325" cy="120" r="8"  fill="#0a0a1a" stroke="#303050" stroke-width="0.8"/>
+            <circle cx="325" cy="120" r="4"  fill="#141424" stroke="#c8862a" stroke-width="0.5"/>
+            <circle cx="325" cy="120" r="1.5" fill="#c8862a" opacity="0.8"/>
+
+            <!-- S-band antenna (6) -->
+            <rect x="308" y="182" width="32" height="22" rx="2" fill="#141414" stroke="#282828" stroke-width="1"/>
+            <path d="M313,186 Q325,174 337,186" fill="none" stroke="#c8862a" stroke-width="1.2"/>
+            <line x1="325" y1="186" x2="325" y2="196" stroke="#c8862a" stroke-width="1"/>
+
+            <!-- GNSS receiver (7) -->
+            <rect x="308" y="248" width="32" height="20" rx="2" fill="#101018" stroke="#20202a" stroke-width="1"/>
+            <rect x="312" y="252" width="24" height="5" rx="1" fill="#1a1a22"/>
+            <rect x="312" y="260" width="24" height="5" rx="1" fill="#1a1a22"/>
+
+            <!-- Sun sensor (8) -->
+            <rect x="308" y="318" width="26" height="18" rx="2" fill="#181408" stroke="#302810" stroke-width="1"/>
+            <circle cx="321" cy="327" r="5"  fill="#201a06" stroke="#e8aa44" stroke-width="0.8"/>
+            <circle cx="321" cy="327" r="2"  fill="#e8aa44" opacity="0.5"/>
+
+            <!-- ══════════════════════════
+                 HOTSPOT CIRCLES
+            ══════════════════════════ -->
+            <g class="hotspots">
+              <g class="hs" data-id="1" style="cursor:pointer">
+                <circle class="hs-pulse" cx="285" cy="112" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+                <circle class="hs-ring" cx="285" cy="112" r="13" fill="rgba(8,4,2,0.85)" stroke="#EB5D34" stroke-width="1.8"/>
+                <text x="285" y="116" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#EB5D34">1</text>
+              </g>
+              <g class="hs" data-id="2" style="cursor:pointer">
+                <circle class="hs-pulse" cx="287" cy="277" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+                <circle class="hs-ring" cx="287" cy="277" r="13" fill="rgba(8,4,2,0.85)" stroke="#EB5D34" stroke-width="1.8"/>
+                <text x="287" y="281" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#EB5D34">2</text>
+              </g>
+              <g class="hs" data-id="3" style="cursor:pointer">
+                <circle class="hs-pulse" cx="340" cy="116" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+                <circle class="hs-ring" cx="340" cy="116" r="13" fill="rgba(8,4,2,0.85)" stroke="#EB5D34" stroke-width="1.8"/>
+                <text x="340" y="120" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#EB5D34">3</text>
+              </g>
+              <g class="hs" data-id="4" style="cursor:pointer">
+                <circle class="hs-pulse" cx="287" cy="339" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+                <circle class="hs-ring" cx="287" cy="339" r="13" fill="rgba(8,4,2,0.85)" stroke="#EB5D34" stroke-width="1.8"/>
+                <text x="287" y="343" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#EB5D34">4</text>
+              </g>
+              <g class="hs" data-id="5" style="cursor:pointer">
+                <circle class="hs-pulse" cx="287" cy="398" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+                <circle class="hs-ring" cx="287" cy="398" r="13" fill="rgba(8,4,2,0.85)" stroke="#EB5D34" stroke-width="1.8"/>
+                <text x="287" y="402" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#EB5D34">5</text>
+              </g>
+              <g class="hs" data-id="6" style="cursor:pointer">
+                <circle class="hs-pulse" cx="337" cy="192" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+                <circle class="hs-ring" cx="337" cy="192" r="13" fill="rgba(8,4,2,0.85)" stroke="#EB5D34" stroke-width="1.8"/>
+                <text x="337" y="196" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#EB5D34">6</text>
+              </g>
+              <g class="hs" data-id="7" style="cursor:pointer">
+                <circle class="hs-pulse" cx="337" cy="258" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+                <circle class="hs-ring" cx="337" cy="258" r="13" fill="rgba(8,4,2,0.85)" stroke="#EB5D34" stroke-width="1.8"/>
+                <text x="337" y="262" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#EB5D34">7</text>
+              </g>
+              <g class="hs" data-id="8" style="cursor:pointer">
+                <circle class="hs-pulse" cx="331" cy="326" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+                <circle class="hs-ring" cx="331" cy="326" r="13" fill="rgba(8,4,2,0.85)" stroke="#EB5D34" stroke-width="1.8"/>
+                <text x="331" y="330" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#EB5D34">8</text>
+              </g>
+              <g class="hs" data-id="9" style="cursor:pointer">
+                <circle class="hs-pulse" cx="167" cy="326" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+                <circle class="hs-ring" cx="167" cy="326" r="13" fill="rgba(8,4,2,0.85)" stroke="#EB5D34" stroke-width="1.8"/>
+                <text x="167" y="330" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#EB5D34">9</text>
+              </g>
+              <g class="hs" data-id="10" style="cursor:pointer">
+                <circle class="hs-pulse" cx="162" cy="445" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+                <circle class="hs-ring" cx="162" cy="445" r="13" fill="rgba(8,4,2,0.85)" stroke="#EB5D34" stroke-width="1.8"/>
+                <text x="162" y="449" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="8" font-weight="700" fill="#EB5D34">10</text>
+              </g>
+              <g class="hs" data-id="11" style="cursor:pointer">
+                <circle class="hs-pulse" cx="287" cy="457" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+                <circle class="hs-ring" cx="287" cy="457" r="13" fill="rgba(8,4,2,0.85)" stroke="#EB5D34" stroke-width="1.8"/>
+                <text x="287" y="461" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="8" font-weight="700" fill="#EB5D34">11</text>
+              </g>
+              <g class="hs" data-id="12" style="cursor:pointer">
+                <circle class="hs-pulse" cx="167" cy="382" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+                <circle class="hs-ring" cx="167" cy="382" r="13" fill="rgba(8,4,2,0.85)" stroke="#EB5D34" stroke-width="1.8"/>
+                <text x="167" y="386" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="8" font-weight="700" fill="#EB5D34">12</text>
+              </g>
+              <g class="hs" data-id="13" style="cursor:pointer">
+                <circle class="hs-pulse" cx="167" cy="277" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+                <circle class="hs-ring" cx="167" cy="277" r="13" fill="rgba(8,4,2,0.85)" stroke="#EB5D34" stroke-width="1.8"/>
+                <text x="167" y="281" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="8" font-weight="700" fill="#EB5D34">13</text>
+              </g>
+            </g>
+          </svg>
+
+        </div>
+      </div>
+    </section>
+
+    
+
+
+        <!-- Optics section -->
+    <section class="optics-section reveal">
+      <div>
+        <div class="section-tag">Optics System</div>
+        <h2 class="section-title">Wolter Type 1<br>Mirror Modules</h2>
+        <p class="section-body">
+          NEBULA-Xplorer focuses X-rays using double-reflecting Wolter type 1 mirror modules —
+          30 thin-foil gold-coated concentric conical mirrors per concentrator, each just 20 cm long
+          and 10 cm in diameter. Gold coatings maximise X-ray reflectivity at the shallow
+          grazing-incidence angles required.
+        </p>
+        <p class="section-body" style="margin-top: 16px;">
+          The compact design results in an 85 cm focal length, directing photons onto individual
+          Silicon Drift Detectors housed in the Focal Plane Assembly. Dedicated alignment modules
+          ensure precise concentration of photons onto each SDD.
+        </p>
+      </div>
+      <div class="optics-diagram">
+        <div class="mirror-diagram">
+          <svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg">
+            <line x1="10" y1="60"  x2="175" y2="60"  stroke="#EB5D34" stroke-width="1"   opacity="0.6"/>
+            <line x1="10" y1="90"  x2="175" y2="90"  stroke="#EB5D34" stroke-width="0.8" opacity="0.5"/>
+            <line x1="10" y1="120" x2="175" y2="120" stroke="#EB5D34" stroke-width="0.8" opacity="0.5"/>
+            <line x1="10" y1="150" x2="175" y2="150" stroke="#EB5D34" stroke-width="0.8" opacity="0.5"/>
+            <line x1="10" y1="180" x2="175" y2="180" stroke="#EB5D34" stroke-width="0.8" opacity="0.5"/>
+            <line x1="10" y1="200" x2="175" y2="200" stroke="#EB5D34" stroke-width="0.6" opacity="0.35"/>
+            <text x="8" y="133" font-family="Orbitron,sans-serif" font-size="7.5" fill="#EB5D34" opacity="0.7" letter-spacing="1">X-RAYS</text>
+            <path d="M180 45 Q200 130 180 215" fill="none" stroke="#e8aa44" stroke-width="2.2"/>
+            <path d="M175 48 Q195 130 175 212" fill="none" stroke="rgba(200,134,42,0.35)" stroke-width="6"/>
+            <path d="M225 70 Q235 130 225 190" fill="none" stroke="#e8aa44" stroke-width="2.2"/>
+            <path d="M220 72 Q230 130 220 188" fill="none" stroke="rgba(200,134,42,0.35)" stroke-width="6"/>
+            <line x1="175" y1="60"  x2="225" y2="82"  stroke="#EB5D34" stroke-width="1"   opacity="0.7"/>
+            <line x1="175" y1="90"  x2="225" y2="97"  stroke="#EB5D34" stroke-width="0.8" opacity="0.6"/>
+            <line x1="175" y1="120" x2="225" y2="115" stroke="#EB5D34" stroke-width="0.8" opacity="0.6"/>
+            <line x1="175" y1="150" x2="225" y2="148" stroke="#EB5D34" stroke-width="0.8" opacity="0.6"/>
+            <line x1="175" y1="180" x2="225" y2="170" stroke="#EB5D34" stroke-width="0.8" opacity="0.6"/>
+            <line x1="225" y1="82"  x2="420" y2="130" stroke="#EB5D34" stroke-width="1"   opacity="0.6"/>
+            <line x1="225" y1="97"  x2="420" y2="130" stroke="#EB5D34" stroke-width="0.8" opacity="0.55"/>
+            <line x1="225" y1="115" x2="420" y2="130" stroke="#EB5D34" stroke-width="0.8" opacity="0.55"/>
+            <line x1="225" y1="148" x2="420" y2="130" stroke="#EB5D34" stroke-width="0.8" opacity="0.55"/>
+            <line x1="225" y1="170" x2="420" y2="130" stroke="#EB5D34" stroke-width="0.8" opacity="0.5"/>
+            <rect x="418" y="112" width="28" height="36" rx="2" fill="none" stroke="#EB5D34" stroke-width="1.4"/>
+            <rect x="424" y="120" width="16" height="20" rx="1" fill="rgba(235,93,52,0.15)" stroke="#EB5D34" stroke-width="0.7"/>
+            <circle cx="432" cy="130" r="3" fill="#EB5D34" opacity="0.9"/>
+            <circle cx="432" cy="130" r="10" fill="rgba(235,93,52,0.1)"/>
+            <text x="171" y="238" font-family="Orbitron,sans-serif" font-size="7" fill="#e8aa44" opacity="0.8" text-anchor="middle" letter-spacing="0.5">PRIMARY</text>
+            <text x="222" y="238" font-family="Orbitron,sans-serif" font-size="7" fill="#e8aa44" opacity="0.8" text-anchor="middle" letter-spacing="0.5">SECONDARY</text>
+            <text x="432" y="163" font-family="Orbitron,sans-serif" font-size="7" fill="#EB5D34" opacity="0.8" text-anchor="middle" letter-spacing="0.5">SDD</text>
+            <line x1="230" y1="220" x2="418" y2="220" stroke="rgba(235,93,52,0.25)" stroke-width="0.7"/>
+            <line x1="230" y1="215" x2="230" y2="225" stroke="rgba(235,93,52,0.4)" stroke-width="0.7"/>
+            <line x1="418" y1="215" x2="418" y2="225" stroke="rgba(235,93,52,0.4)" stroke-width="0.7"/>
+            <text x="324" y="233" font-family="Orbitron,sans-serif" font-size="7" fill="rgba(235,93,52,0.6)" text-anchor="middle" letter-spacing="0.5">FOCAL LENGTH 800mm</text>
+            <text x="155" y="30" font-family="Orbitron,sans-serif" font-size="7" fill="#e8aa44" opacity="0.7" letter-spacing="0.5">AU COATED</text>
+            <line x1="168" y1="34" x2="178" y2="46" stroke="#e8aa44" stroke-width="0.5" opacity="0.5"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detector section -->
+    <section class="detector-section reveal">
+      <div class="section-tag">Detection System</div>
+      <h2 class="section-title">Silicon Drift Detectors</h2>
+      <div class="detector-grid">
+        <div>
+          <p class="section-body">
+            Each concentrator focuses X-ray photons onto a dedicated Silicon Drift Detector (SDD) —
+            commercial off-the-shelf devices selected for reliability and performance. The flight model
+            carries 12 SDDs in total, with 2 reserved for in-flight calibration using a small radioactive source.
+          </p>
+          <p class="section-body" style="margin-top: 16px;">
+            To reach optimal sensitivity, all detectors are cooled to −35°C via thermal strapping
+            to a dedicated radiator on the satellite exterior. Straight-light baffles (black cones)
+            protect each SDD from stray photons. The signal from every SDD is processed by
+            hot-redundant Instrument Readout Units with space-grade digital signal processing.
+          </p>
+          <p class="section-body" style="margin-top: 16px;">
+            The IRUs record X-ray energies with precise timing information — enabling the
+            spectral-timing science that defines the NEBULA mission.
+          </p>
+        </div>
+        <div class="sdd-visual">
+          <div class="sdd-card">
+            <div class="sdd-header">Flight Model</div>
+            <div class="sdd-title">12 × SDD Array</div>
+            <div class="sdd-desc">10 science detectors + 2 calibration pixels with radioactive source. Each captures photons from one concentrator.</div>
+          </div>
+          <div class="sdd-card">
+            <div class="sdd-header">Thermal Control</div>
+            <div class="sdd-title">Cooled to −35°C</div>
+            <div class="sdd-desc">Radiator strapping removes heat from the Focal Plane Assembly, keeping detectors at operating temperature.</div>
+          </div>
+          <div class="sdd-card">
+            <div class="sdd-header">Readout Electronics</div>
+            <div class="sdd-title">Hot-Redundant IRUs</div>
+            <div class="sdd-desc">Two Instrument Readout Units with space-grade chips record photon energy and precise timing simultaneously.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Callout -->
+    <div class="callout-section reveal">
+      <div class="callout-box">
+        <div class="callout-stat">
+          <div class="callout-num">30<span class="callout-unit">×</span></div>
+          <div class="callout-lbl">Gold-coated mirror shells per concentrator</div>
+        </div>
+        <p class="callout-text">
+          Thin-foil aluminium cones with different diameters are stacked concentrically and held
+          together by <strong>spider-web support structures</strong>. Gold coatings maximise X-ray
+          reflectivity at grazing-incidence angles. Dedicated alignment modules ensure photons
+          are properly focused onto the Silicon Drift Detector — achieving all this within a
+          <strong>10 cm diameter, 20 cm long</strong> concentrator volume.
+        </p>
+      </div>
+    </div>
+
+    <!-- Development Phases -->
+    <section class="phases-section reveal">
+      <div class="phases-header">
+        <div>
+          <div class="section-tag">Development Roadmap</div>
+          <h2 class="section-title">From Prototype<br>to Flight</h2>
+        </div>
+        <p class="section-body" style="max-width: 320px;">
+          NEBULA-Xplorer follows a two-model philosophy aligned with ECSS standards —
+          minimising risk while building the future space workforce.
+        </p>
+      </div>
+      <div class="timeline">
+        <div class="phase">
+          <div class="phase-dot"><div class="phase-dot-inner"></div></div>
+          <div class="phase-num">Phase 01</div>
+          <div class="phase-title">Engineering<br>Model</div>
+          <div class="phase-year">2025 – 2027</div>
+          <div class="phase-desc">
+            Full engineering model of both instrument and satellite. Verifies design, interfaces,
+            power budgets, launch loads, and instrument performance. Built on existing prototypes
+            and mature off-the-shelf space systems.
+          </div>
+        </div>
+        <div class="phase">
+          <div class="phase-dot"><div class="phase-dot-inner"></div></div>
+          <div class="phase-num">Phase 02</div>
+          <div class="phase-title">Flight<br>Model</div>
+          <div class="phase-year">2027 – 2029</div>
+          <div class="phase-desc">
+            Flight-grade hardware built with space-qualified components, incorporating all
+            lessons from the EM phase. Fully tested to ECSS standards. Targeted for SpaceX
+            Falcon 9 launch, adaptable for ESA VEGA-C.
+          </div>
+        </div>
+        <div class="phase future">
+          <div class="phase-dot"><div class="phase-dot-inner"></div></div>
+          <div class="phase-num">Phase 03</div>
+          <div class="phase-title">Launch<br>&amp; Operations</div>
+          <div class="phase-year">~2030</div>
+          <div class="phase-desc">
+            Satellite launched into orbit for a minimum 5-year (goal 7-year) mission.
+            Continuous X-ray observations of binary black holes and neutron stars.
+            Science data publicly accessible via SRON servers.
+          </div>
+        </div>
+      </div>
+    </section>
+<!-- ── READOUT ELECTRONICS ── -->
+    <section class="readout-section reveal">
+      <div class="section-tag">Electronics</div>
+      <h2 class="section-title">Readout<br><em>Electronics</em></h2>
+      <p class="section-body">
+        Two hot-redundant Instrument Readout Units (IRUs) convert photon detection pulses from the
+        12 Silicon Drift Detectors into calibrated energy and precise UTC timestamps,
+        then relay science data to the spacecraft C&amp;DH system.
+      </p>
+      <div class="readout-grid">
+
+        <!-- Signal chain -->
+        <div>
+          <div class="section-tag" style="margin-bottom:20px;">Signal Chain</div>
+          <div class="signal-chain">
+
+            <div class="chain-row">
+              <div class="chain-block">
+                <div class="chain-label">Detector (×12 SDD)</div>
+                <div class="chain-val">Amptek FastSDD — X-ray photon absorbed → voltage pulse, height ∝ photon energy (3.6 mV/keV). Rise time ~65 ns.</div>
+              </div>
+            </div>
+            <div class="chain-connector"></div>
+
+            <div class="chain-row">
+              <div class="chain-block">
+                <div class="chain-label">Pre-amplifier</div>
+                <div class="chain-val">Amptek PA-210 charge-sensitive amplifier. Integrates detector current pulse into voltage step. 130V bias via Cockroft-Walton generator.</div>
+              </div>
+            </div>
+            <div class="chain-connector"></div>
+
+            <div class="chain-row">
+              <div class="chain-block">
+                <div class="chain-label">ADC</div>
+                <div class="chain-val">TI ADC3683-SP — 18-bit, up to 65 MSPS, space-qualified. LVDS output interface. COTS variant (ADC3683) used for EM/prototyping.</div>
+              </div>
+            </div>
+            <div class="chain-connector"></div>
+
+            <div class="chain-row">
+              <div class="chain-block">
+                <div class="chain-label">FPGA — Digital Pulse Processor</div>
+                <div class="chain-val">Microchip RT PolarFire RTPF5000 — radiation-hardened. Replaces legacy analogue shaping filters. Extracts photon energy &amp; timing at full flexibility.</div>
+              </div>
+            </div>
+            <div class="chain-connector"></div>
+
+            <div class="chain-row">
+              <div class="chain-block">
+                <div class="chain-label">MCU</div>
+                <div class="chain-val">Microchip SAM3X8ERT — in-flight FPGA reprogramming capability. Novel feature enabling firmware updates after launch.</div>
+              </div>
+            </div>
+            <div class="chain-connector"></div>
+
+            <div class="chain-row">
+              <div class="chain-block">
+                <div class="chain-label">Local Oscillator + GPS Timestamp</div>
+                <div class="chain-val">Microchip 2105 series oscillator (1 ppm stability). GPS absolute timestamp anchors the local clock — 1 µs timing resolution maintained without drift.</div>
+              </div>
+            </div>
+            <div class="chain-connector"></div>
+
+            <div class="chain-row">
+              <div class="chain-block">
+                <div class="chain-label">Output → C&amp;DH</div>
+                <div class="chain-val">RS485 redundant bus. Each photon packet: absolute time (s) + photon energy (eV) + timestamp (µs). Max data rate: 76.4 kbps. CCSDS-based packet format.</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- IRU specs -->
+        <div>
+          <div class="section-tag" style="margin-bottom:20px;">IRU Technical Budget</div>
+          <div class="iru-specs">
+            <div class="iru-spec-section">Configuration</div>
+            <div class="iru-spec-row"><span class="iru-spec-key">Number of IRUs</span><span class="iru-spec-val">2 (hot-redundant)</span></div>
+            <div class="iru-spec-row"><span class="iru-spec-key">Architecture</span><span class="iru-spec-val">Concept 4 (dual 6×FPM)</span></div>
+            <div class="iru-spec-row"><span class="iru-spec-key">Detectors per IRU</span><span class="iru-spec-val">6 Focal Plane Modules</span></div>
+            <div class="iru-spec-row"><span class="iru-spec-key">Timing resolution</span><span class="iru-spec-val">1 µs</span></div>
+
+            <div class="iru-spec-section">Physical</div>
+            <div class="iru-spec-row"><span class="iru-spec-key">Enclosure size (2 IRUs)</span><span class="iru-spec-val">13.91 × 13.91 × 5.9 cm</span></div>
+            <div class="iru-spec-row"><span class="iru-spec-key">Mass</span><span class="iru-spec-val">0.952 kg (mainly shielding)</span></div>
+            <div class="iru-spec-row"><span class="iru-spec-key">Wall thickness</span><span class="iru-spec-val">3 mm aluminium</span></div>
+
+            <div class="iru-spec-section">Power &amp; Cost</div>
+            <div class="iru-spec-row"><span class="iru-spec-key">Peak power</span><span class="iru-spec-val">35.72 W</span></div>
+            <div class="iru-spec-row"><span class="iru-spec-key">Component cost (2 IRUs)</span><span class="iru-spec-val">~$249,708</span></div>
+            <div class="iru-spec-row"><span class="iru-spec-key">Max data rate</span><span class="iru-spec-val">76.4 kbps</span></div>
+
+            <div class="iru-spec-section">Key Components</div>
+            <div class="iru-spec-row"><span class="iru-spec-key">Pre-amp</span><span class="iru-spec-val">Amptek PA-210</span></div>
+            <div class="iru-spec-row"><span class="iru-spec-key">ADC</span><span class="iru-spec-val">TI ADC3683-SP (18-bit, 65 MSPS)</span></div>
+            <div class="iru-spec-row"><span class="iru-spec-key">FPGA</span><span class="iru-spec-val">Microchip RT PolarFire RTPF5000</span></div>
+            <div class="iru-spec-row"><span class="iru-spec-key">MCU</span><span class="iru-spec-val">Microchip SAM3X8ERT</span></div>
+            <div class="iru-spec-row"><span class="iru-spec-key">Oscillator</span><span class="iru-spec-val">Microchip 2105 (1 ppm)</span></div>
+            <div class="iru-spec-row"><span class="iru-spec-key">Bias voltage</span><span class="iru-spec-val">130V (Cockroft-Walton)</span></div>
+            <div class="iru-spec-row"><span class="iru-spec-key">Interface</span><span class="iru-spec-val">RS485 / SpaceWire optional</span></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── SYSTEM MODES ── -->
+    <section class="modes-section reveal">
+      <div class="section-tag">Operations</div>
+      <h2 class="section-title">System<br><em>Modes</em></h2>
+      <p class="section-body">
+        Six operational modes govern the spacecraft's behaviour throughout the mission.
+        The spacecraft transitions between modes autonomously or by ground command.
+      </p>
+      <div class="modes-grid">
+
+        <div class="mode-card">
+          <div class="mode-num">Mode 01</div>
+          <div class="mode-badge nominal">Launch</div>
+          <div class="mode-name">Launch Mode</div>
+          <div class="mode-desc">From launch to spacecraft separation. All on-board equipment is off except essential systems. Battery fully charged before launch. No solar power generated.</div>
+        </div>
+
+        <div class="mode-card">
+          <div class="mode-num">Mode 02</div>
+          <div class="mode-badge nominal">Acquisition</div>
+          <div class="mode-name">Sun Acquisition Mode</div>
+          <div class="mode-desc">From separation until nominal Sun-pointing attitude is achieved. No energy from solar arrays yet — batteries supply power. Only essential functions active: thermal management, AOCS, and communications.</div>
+        </div>
+
+        <div class="mode-card active-mode">
+          <div class="mode-num">Mode 03</div>
+          <div class="mode-badge safe">Safe Mode</div>
+          <div class="mode-name">Safe Mode</div>
+          <div class="mode-desc">Used for failure recovery. Only units essential to the spacecraft's survival conditions are active: Sun pointing, thermal control, power management. Communications enabled to facilitate return to nominal mode.</div>
+        </div>
+
+        <div class="mode-card">
+          <div class="mode-num">Mode 04</div>
+          <div class="mode-badge nominal">Nominal</div>
+          <div class="mode-name">Stand-by Mode</div>
+          <div class="mode-desc">Applicable when not thrusting nor acquiring science data. All on-board equipment is on except the instrument, which is in stand-by. Also used for communications and housekeeping operations.</div>
+        </div>
+
+        <div class="mode-card active-mode">
+          <div class="mode-num">Mode 05</div>
+          <div class="mode-badge science">Science</div>
+          <div class="mode-name">Science Mode</div>
+          <div class="mode-desc">S/C configuration where scientific observations are being made by the X-ray instrument. All other units are on. IRUs recording photon energy and timestamps at full data rate. Primary operational mode.</div>
+        </div>
+
+        <div class="mode-card">
+          <div class="mode-num">Mode 06</div>
+          <div class="mode-badge nominal">Manoeuvre</div>
+          <div class="mode-name">Orbit Control Mode</div>
+          <div class="mode-desc">Applicable when performing orbital manoeuvres using the Dawn 4U Cubedrive propulsion module. All on-board equipment is on except the instrument, which is in stand-by.</div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ── OPTICAL BENCH ASSEMBLY ── -->
+    <section class="diag-section reveal" id="diag-oba">
+      <div class="diag-text">
+        <div class="section-tag">Instrument Structure</div>
+        <h2 class="section-title">Optical Bench<br><em>Assembly</em></h2>
+        <p class="section-body">
+          The OBA houses all 10 concentrators in a 3-2-3-2 hexagonal layout machined from 30 mm thick Al 6061-T6.
+          Three titanium bipod mounts form a quasi-kinematic isostatic interface to the spacecraft,
+          allowing free thermal expansion without transferring stress.
+        </p>
+        <p class="section-body" style="margin-top:14px;">
+          Alignment is achieved by shimming each concentrator's tilt angle using a UV collimated beam
+          to sub-20 µm precision. The FPA connects via six aluminium side panels with triangular
+          cutouts for efficient load transfer and X-ray pass-through holes.
+        </p>
+        <div class="sat-panel-hint-wrap" style="margin-top:20px;">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" stroke="#EB5D34" stroke-width="1.2"/><text x="9" y="13" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="8" font-weight="700" fill="#EB5D34">i</text></svg>
+          <span>Click a hotspot to inspect</span>
+        </div>
+      </div>
+      <div class="diag-svg">
+        <div class="sat-wrap">
+          <svg class="diag-svg-el" data-panel="oba" viewBox="0 0 420 380" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="obConc" cx="40%" cy="35%" r="60%">
+                <stop offset="0%" stop-color="#f0c050"/><stop offset="60%" stop-color="#c8862a"/><stop offset="100%" stop-color="#6a4010"/>
+              </radialGradient>
+              <radialGradient id="obConcIn" cx="40%" cy="35%" r="60%">
+                <stop offset="0%" stop-color="#1c1408"/><stop offset="100%" stop-color="#080604"/>
+              </radialGradient>
+            </defs>
+            <!-- OBA plate (hexagonal-ish octagon top view) -->
+            <polygon points="60,40 360,40 400,120 400,260 360,340 60,340 20,260 20,120"
+              fill="#1a1a1a" stroke="#c8862a" stroke-width="2"/>
+            <!-- Internal machined pockets around concentrators -->
+            <polygon points="68,48 352,48 388,122 388,258 352,332 68,332 32,258 32,122"
+              fill="#111" stroke="#484838" stroke-width="0.8"/>
+
+            <!-- 3-2-3-2 hexagonal concentrator layout -->
+            <!-- Row 1: 3 concentrators -->
+            <g>
+              <circle cx="130" cy="100" r="38" fill="url(#obConc)" stroke="#c8862a" stroke-width="1.5"/>
+              <circle cx="130" cy="100" r="24" fill="url(#obConcIn)" stroke="#906020" stroke-width="1"/>
+              <circle cx="130" cy="100" r="9"  fill="#060503" stroke="#e8aa44" stroke-width="0.8"/>
+              <circle cx="130" cy="100" r="3"  fill="#e8aa44" opacity="0.9"/>
+
+              <circle cx="210" cy="100" r="38" fill="url(#obConc)" stroke="#c8862a" stroke-width="1.5"/>
+              <circle cx="210" cy="100" r="24" fill="url(#obConcIn)" stroke="#906020" stroke-width="1"/>
+              <circle cx="210" cy="100" r="9"  fill="#060503" stroke="#e8aa44" stroke-width="0.8"/>
+              <circle cx="210" cy="100" r="3"  fill="#e8aa44" opacity="0.9"/>
+
+              <circle cx="290" cy="100" r="38" fill="url(#obConc)" stroke="#c8862a" stroke-width="1.5"/>
+              <circle cx="290" cy="100" r="24" fill="url(#obConcIn)" stroke="#906020" stroke-width="1"/>
+              <circle cx="290" cy="100" r="9"  fill="#060503" stroke="#e8aa44" stroke-width="0.8"/>
+              <circle cx="290" cy="100" r="3"  fill="#e8aa44" opacity="0.9"/>
+            </g>
+            <!-- Row 2: 2 concentrators (offset) -->
+            <g>
+              <circle cx="170" cy="178" r="38" fill="url(#obConc)" stroke="#c8862a" stroke-width="1.5"/>
+              <circle cx="170" cy="178" r="24" fill="url(#obConcIn)" stroke="#906020" stroke-width="1"/>
+              <circle cx="170" cy="178" r="9"  fill="#060503" stroke="#e8aa44" stroke-width="0.8"/>
+              <circle cx="170" cy="178" r="3"  fill="#e8aa44" opacity="0.9"/>
+
+              <circle cx="250" cy="178" r="38" fill="url(#obConc)" stroke="#c8862a" stroke-width="1.5"/>
+              <circle cx="250" cy="178" r="24" fill="url(#obConcIn)" stroke="#906020" stroke-width="1"/>
+              <circle cx="250" cy="178" r="9"  fill="#060503" stroke="#e8aa44" stroke-width="0.8"/>
+              <circle cx="250" cy="178" r="3"  fill="#e8aa44" opacity="0.9"/>
+            </g>
+            <!-- Row 3: 3 concentrators -->
+            <g>
+              <circle cx="130" cy="256" r="38" fill="url(#obConc)" stroke="#c8862a" stroke-width="1.5"/>
+              <circle cx="130" cy="256" r="24" fill="url(#obConcIn)" stroke="#906020" stroke-width="1"/>
+              <circle cx="130" cy="256" r="9"  fill="#060503" stroke="#e8aa44" stroke-width="0.8"/>
+              <circle cx="130" cy="256" r="3"  fill="#e8aa44" opacity="0.9"/>
+
+              <circle cx="210" cy="256" r="38" fill="url(#obConc)" stroke="#c8862a" stroke-width="1.5"/>
+              <circle cx="210" cy="256" r="24" fill="url(#obConcIn)" stroke="#906020" stroke-width="1"/>
+              <circle cx="210" cy="256" r="9"  fill="#060503" stroke="#e8aa44" stroke-width="0.8"/>
+              <circle cx="210" cy="256" r="3"  fill="#e8aa44" opacity="0.9"/>
+
+              <circle cx="290" cy="256" r="38" fill="url(#obConc)" stroke="#c8862a" stroke-width="1.5"/>
+              <circle cx="290" cy="256" r="24" fill="url(#obConcIn)" stroke="#906020" stroke-width="1"/>
+              <circle cx="290" cy="256" r="9"  fill="#060503" stroke="#e8aa44" stroke-width="0.8"/>
+              <circle cx="290" cy="256" r="3"  fill="#e8aa44" opacity="0.9"/>
+            </g>
+            <!-- Row 4: 2 concentrators (offset — calibration row, shown lighter) -->
+            <g opacity="0.55">
+              <circle cx="170" cy="330" r="28" fill="url(#obConc)" stroke="#c8862a" stroke-width="1"/>
+              <circle cx="170" cy="330" r="16" fill="url(#obConcIn)" stroke="#906020" stroke-width="0.8"/>
+              <circle cx="170" cy="330" r="6"  fill="#060503" stroke="#e8aa44" stroke-width="0.6"/>
+
+              <circle cx="250" cy="330" r="28" fill="url(#obConc)" stroke="#c8862a" stroke-width="1"/>
+              <circle cx="250" cy="330" r="16" fill="url(#obConcIn)" stroke="#906020" stroke-width="0.8"/>
+              <circle cx="250" cy="330" r="6"  fill="#060503" stroke="#e8aa44" stroke-width="0.6"/>
+            </g>
+            <!-- Bipod mount points (3 titanium bipods) -->
+            <ellipse cx="210" cy="40" rx="18" ry="8" fill="#3a3010" stroke="#c8862a" stroke-width="1.5"/>
+            <line x1="210" y1="32" x2="210" y2="10" stroke="#c8862a" stroke-width="1.2"/>
+            <ellipse cx="210" cy="10" rx="10" ry="5" fill="#484828" stroke="#c8862a" stroke-width="1"/>
+
+            <ellipse cx="48" cy="220" rx="8" ry="18" fill="#3a3010" stroke="#c8862a" stroke-width="1.5"/>
+            <line x1="40" y1="220" x2="14" y2="220" stroke="#c8862a" stroke-width="1.2"/>
+            <ellipse cx="14" cy="220" rx="5" ry="10" fill="#484828" stroke="#c8862a" stroke-width="1"/>
+
+            <ellipse cx="372" cy="220" rx="8" ry="18" fill="#3a3010" stroke="#c8862a" stroke-width="1.5"/>
+            <line x1="380" y1="220" x2="406" y2="220" stroke="#c8862a" stroke-width="1.2"/>
+            <ellipse cx="406" cy="220" rx="5" ry="10" fill="#484828" stroke="#c8862a" stroke-width="1"/>
+
+            <!-- Labels -->
+            <text x="210" y="356" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="7" fill="rgba(235,93,52,0.5)" letter-spacing="1">CALIBRATION (×2)</text>
+            <text x="210" y="22"  text-anchor="middle" font-family="Orbitron,sans-serif" font-size="7" fill="#c8862a" opacity="0.7" letter-spacing="1">BIPOD MOUNT</text>
+
+            <!-- Hotspots -->
+            <g class="hs" data-panel="oba" data-id="1" style="cursor:pointer">
+              <circle class="hs-pulse" cx="328" cy="68" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+              <circle class="hs-ring"  cx="328" cy="68" r="13" fill="rgba(8,4,2,0.85)" stroke="#EB5D34" stroke-width="1.8"/>
+              <text x="328" y="72" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#EB5D34">1</text>
+            </g>
+            <g class="hs" data-panel="oba" data-id="2" style="cursor:pointer">
+              <circle class="hs-pulse" cx="328" cy="148" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+              <circle class="hs-ring"  cx="328" cy="148" r="13" fill="rgba(8,4,2,0.85)" stroke="#EB5D34" stroke-width="1.8"/>
+              <text x="328" y="152" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#EB5D34">2</text>
+            </g>
+            <g class="hs" data-panel="oba" data-id="3" style="cursor:pointer">
+              <circle class="hs-pulse" cx="210" cy="18" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+              <circle class="hs-ring"  cx="210" cy="18" r="13" fill="rgba(8,4,2,0.85)" stroke="#EB5D34" stroke-width="1.8"/>
+              <text x="210" y="22" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#EB5D34">3</text>
+            </g>
+            <g class="hs" data-panel="oba" data-id="4" style="cursor:pointer">
+              <circle class="hs-pulse" cx="288" cy="318" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+              <circle class="hs-ring"  cx="288" cy="318" r="13" fill="rgba(8,4,2,0.85)" stroke="#EB5D34" stroke-width="1.8"/>
+              <text x="288" y="322" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="8" font-weight="700" fill="#EB5D34">4</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+<!-- ── CONCENTRATOR SUNSHADES ── -->
+    <section class="diag-section reveal" id="diag-sunshade">
+      <div class="diag-svg">
+        <div class="sat-wrap">
+          <svg class="diag-svg-el" data-panel="sun" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="sunConc" cx="40%" cy="35%" r="60%"><stop offset="0%" stop-color="#d0a030"/><stop offset="100%" stop-color="#6a3808"/></radialGradient>
+            </defs>
+            <!-- baseplate (3) — titanium rectangle -->
+            <rect x="40" y="280" width="320" height="100" rx="4" fill="#3a3a3a" stroke="#686868" stroke-width="1.5"/>
+            <!-- M5 mounting points (4) -->
+            <circle cx="70"  cy="330" r="7" fill="#2a2a2a" stroke="#888" stroke-width="1.2"/>
+            <circle cx="330" cy="330" r="7" fill="#2a2a2a" stroke="#888" stroke-width="1.2"/>
+            <circle cx="70"  cy="355" r="7" fill="#2a2a2a" stroke="#888" stroke-width="1.2"/>
+            <circle cx="330" cy="355" r="7" fill="#2a2a2a" stroke="#888" stroke-width="1.2"/>
+            <!-- mounting bracket (2) -->
+            <rect x="160" y="255" width="80" height="30" rx="2" fill="#484848" stroke="#888" stroke-width="1.2"/>
+            <circle cx="175" cy="265" r="4" fill="#222" stroke="#888"/>
+            <circle cx="200" cy="265" r="4" fill="#222" stroke="#888"/>
+            <circle cx="225" cy="265" r="4" fill="#222" stroke="#888"/>
+            <!-- CRFP sunshade array (1) — 3x3 grid of sunshade tubes with black interior -->
+            <g>
+              <!-- row 1 -->
+              <circle cx="100" cy="110" r="48" fill="#1a0808" stroke="#c8862a" stroke-width="1.5"/>
+              <circle cx="100" cy="110" r="34" fill="#0e0404" stroke="#904010" stroke-width="1"/>
+              <circle cx="100" cy="110" r="16" fill="#080202" stroke="#c8862a" stroke-width="0.8"/>
+              <!-- CRFP sunshade fins (4 fins inside each tube) -->
+              <line x1="100" y1="80"  x2="100" y2="140" stroke="#2a1008" stroke-width="2"/>
+              <line x1="70"  y1="110" x2="130" y2="110" stroke="#2a1008" stroke-width="2"/>
+
+              <circle cx="200" cy="110" r="48" fill="#1a0808" stroke="#c8862a" stroke-width="1.5"/>
+              <circle cx="200" cy="110" r="34" fill="#0e0404" stroke="#904010" stroke-width="1"/>
+              <circle cx="200" cy="110" r="16" fill="#080202" stroke="#c8862a" stroke-width="0.8"/>
+              <line x1="200" y1="80"  x2="200" y2="140" stroke="#2a1008" stroke-width="2"/>
+              <line x1="170" y1="110" x2="230" y2="110" stroke="#2a1008" stroke-width="2"/>
+
+              <circle cx="300" cy="110" r="48" fill="#1a0808" stroke="#c8862a" stroke-width="1.5"/>
+              <circle cx="300" cy="110" r="34" fill="#0e0404" stroke="#904010" stroke-width="1"/>
+              <circle cx="300" cy="110" r="16" fill="#080202" stroke="#c8862a" stroke-width="0.8"/>
+              <line x1="300" y1="80"  x2="300" y2="140" stroke="#2a1008" stroke-width="2"/>
+              <line x1="270" y1="110" x2="330" y2="110" stroke="#2a1008" stroke-width="2"/>
+
+              <!-- row 2 -->
+              <circle cx="100" cy="215" r="48" fill="#1a0808" stroke="#c8862a" stroke-width="1.5"/>
+              <circle cx="100" cy="215" r="34" fill="#0e0404" stroke="#904010" stroke-width="1"/>
+              <circle cx="100" cy="215" r="16" fill="#080202" stroke="#c8862a" stroke-width="0.8"/>
+              <line x1="100" y1="185" x2="100" y2="245" stroke="#2a1008" stroke-width="2"/>
+              <line x1="70"  y1="215" x2="130" y2="215" stroke="#2a1008" stroke-width="2"/>
+
+              <circle cx="200" cy="215" r="48" fill="#1a0808" stroke="#c8862a" stroke-width="1.5"/>
+              <circle cx="200" cy="215" r="34" fill="#0e0404" stroke="#904010" stroke-width="1"/>
+              <circle cx="200" cy="215" r="16" fill="#080202" stroke="#c8862a" stroke-width="0.8"/>
+              <line x1="200" y1="185" x2="200" y2="245" stroke="#2a1008" stroke-width="2"/>
+              <line x1="170" y1="215" x2="230" y2="215" stroke="#2a1008" stroke-width="2"/>
+
+              <circle cx="300" cy="215" r="48" fill="#1a0808" stroke="#c8862a" stroke-width="1.5"/>
+              <circle cx="300" cy="215" r="34" fill="#0e0404" stroke="#904010" stroke-width="1"/>
+              <circle cx="300" cy="215" r="16" fill="#080202" stroke="#c8862a" stroke-width="0.8"/>
+              <line x1="300" y1="185" x2="300" y2="245" stroke="#2a1008" stroke-width="2"/>
+              <line x1="270" y1="215" x2="330" y2="215" stroke="#2a1008" stroke-width="2"/>
+            </g>
+            <!-- hotspots -->
+            <g class="hs" data-panel="sun" data-id="1" style="cursor:pointer">
+              <circle class="hs-pulse" cx="345" cy="68" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+              <circle class="hs-ring" cx="345" cy="68" r="13" fill="rgba(8,4,2,0.9)" stroke="#EB5D34" stroke-width="1.8"/>
+              <text x="345" y="72" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#EB5D34">1</text>
+            </g>
+            <g class="hs" data-panel="sun" data-id="2" style="cursor:pointer">
+              <circle class="hs-pulse" cx="237" cy="252" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+              <circle class="hs-ring" cx="237" cy="252" r="13" fill="rgba(8,4,2,0.9)" stroke="#EB5D34" stroke-width="1.8"/>
+              <text x="237" y="256" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#EB5D34">2</text>
+            </g>
+            <g class="hs" data-panel="sun" data-id="3" style="cursor:pointer">
+              <circle class="hs-pulse" cx="357" cy="285" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+              <circle class="hs-ring" cx="357" cy="285" r="13" fill="rgba(8,4,2,0.9)" stroke="#EB5D34" stroke-width="1.8"/>
+              <text x="357" y="289" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#EB5D34">3</text>
+            </g>
+            <g class="hs" data-panel="sun" data-id="4" style="cursor:pointer">
+              <circle class="hs-pulse" cx="357" cy="353" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+              <circle class="hs-ring" cx="357" cy="353" r="13" fill="rgba(8,4,2,0.9)" stroke="#EB5D34" stroke-width="1.8"/>
+              <text x="357" y="357" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#EB5D34">4</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="diag-text">
+        <div class="section-tag">Secondary Structure</div>
+        <h2 class="section-title">Concentrator<br><em>Sunshades</em></h2>
+        <p class="section-body">CRFP sunshades block UV, visible, and IR radiation from reaching X-ray detectors, protecting from thermal loads. Heritage design from NASA's NICER instrument.</p>
+        <div class="sat-panel" id="panel-sun">
+          <div class="sat-panel-default" id="panel-sun-default"><div class="sat-panel-hint"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" stroke="#EB5D34" stroke-width="1.2"/><text x="9" y="13" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="8" font-weight="700" fill="#EB5D34">i</text></svg><span>Select a component</span></div></div>
+          <div class="sat-panel-info" id="panel-sun-info" style="display:none;"><div class="sat-panel-header"><span class="sat-panel-num" id="panel-sun-num"></span><span class="sat-panel-name" id="panel-sun-name"></span></div><p class="sat-panel-desc" id="panel-sun-desc"></p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── REACTION WHEEL HUB ── -->
+    <section class="diag-section reveal" id="diag-rwheel">
+      <div class="diag-text">
+        <div class="section-tag">ADCS Hardware</div>
+        <h2 class="section-title">Reaction<br><em>Wheel Hub</em></h2>
+        <p class="section-body">Three Rocket Lab 60mNms reaction wheels on a tilted mounting hub for singularity avoidance. The Ti-6Al-4V baseplate provides low thermal expansion for stable alignment.</p>
+        <div class="sat-panel" id="panel-rw">
+          <div class="sat-panel-default" id="panel-rw-default"><div class="sat-panel-hint"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" stroke="#EB5D34" stroke-width="1.2"/><text x="9" y="13" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="8" font-weight="700" fill="#EB5D34">i</text></svg><span>Select a component</span></div></div>
+          <div class="sat-panel-info" id="panel-rw-info" style="display:none;"><div class="sat-panel-header"><span class="sat-panel-num" id="panel-rw-num"></span><span class="sat-panel-name" id="panel-rw-name"></span></div><p class="sat-panel-desc" id="panel-rw-desc"></p></div>
+        </div>
+      </div>
+      <div class="diag-svg">
+        <div class="sat-wrap">
+          <svg class="diag-svg-el" data-panel="rw" viewBox="0 0 420 380" xmlns="http://www.w3.org/2000/svg">
+            <!-- 6 baseplate -->
+            <rect x="60" y="280" width="300" height="70" rx="4" fill="#3a3a3a" stroke="#686868" stroke-width="1.5"/>
+            <!-- 4 M3 bolts at corners -->
+            <circle cx="85"  cy="295" r="5" fill="#222" stroke="#888" stroke-width="1"/>
+            <circle cx="335" cy="295" r="5" fill="#222" stroke="#888" stroke-width="1"/>
+            <circle cx="85"  cy="335" r="5" fill="#222" stroke="#888" stroke-width="1"/>
+            <circle cx="335" cy="335" r="5" fill="#222" stroke="#888" stroke-width="1"/>
+            <!-- 5 M4 clearance mounting interface -->
+            <rect x="155" y="260" width="110" height="22" rx="2" fill="#484848" stroke="#888" stroke-width="1.2"/>
+            <circle cx="180" cy="271" r="4" fill="#222" stroke="#888"/>
+            <circle cx="210" cy="271" r="4" fill="#222" stroke="#888"/>
+            <circle cx="240" cy="271" r="4" fill="#222" stroke="#888"/>
+            <!-- 3 Tilted reaction wheel mounting hub (triangle) -->
+            <polygon points="210,40 100,260 320,260" fill="#2a2a2a" stroke="#585858" stroke-width="1.5"/>
+            <!-- internal frame lines -->
+            <line x1="210" y1="40"  x2="210" y2="260" stroke="#484848" stroke-width="1"/>
+            <line x1="155" y1="150" x2="265" y2="150" stroke="#484848" stroke-width="1"/>
+            <!-- 1 Three reaction wheels (circles on hub face) -->
+            <circle cx="210" cy="100" r="38" fill="#1a1a1a" stroke="#585858" stroke-width="2"/>
+            <circle cx="210" cy="100" r="24" fill="#222" stroke="#686868" stroke-width="1.5"/>
+            <circle cx="210" cy="100" r="10" fill="#2a2a2a" stroke="#c8862a" stroke-width="1.2"/>
+            <circle cx="210" cy="100" r="4"  fill="#c8862a" opacity="0.7"/>
+
+            <circle cx="130" cy="220" r="34" fill="#1a1a1a" stroke="#585858" stroke-width="2"/>
+            <circle cx="130" cy="220" r="22" fill="#222" stroke="#686868" stroke-width="1.5"/>
+            <circle cx="130" cy="220" r="9"  fill="#2a2a2a" stroke="#c8862a" stroke-width="1.2"/>
+            <circle cx="130" cy="220" r="3"  fill="#c8862a" opacity="0.7"/>
+
+            <circle cx="290" cy="220" r="34" fill="#1a1a1a" stroke="#585858" stroke-width="2"/>
+            <circle cx="290" cy="220" r="22" fill="#222" stroke="#686868" stroke-width="1.5"/>
+            <circle cx="290" cy="220" r="9"  fill="#2a2a2a" stroke="#c8862a" stroke-width="1.2"/>
+            <circle cx="290" cy="220" r="3"  fill="#c8862a" opacity="0.7"/>
+            <!-- 2 Micro-D connectors (small rectangle on side) -->
+            <rect x="340" y="195" width="28" height="18" rx="1" fill="#181818" stroke="#585858" stroke-width="1"/>
+            <rect x="344" y="199" width="6" height="10" rx="1" fill="#101010"/>
+            <rect x="354" y="199" width="6" height="10" rx="1" fill="#101010"/>
+            <!-- hotspots -->
+            <g class="hs" data-panel="rw" data-id="1" style="cursor:pointer">
+              <circle class="hs-pulse" cx="246" cy="68" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+              <circle class="hs-ring" cx="246" cy="68" r="13" fill="rgba(4,4,4,0.9)" stroke="#EB5D34" stroke-width="1.8"/>
+              <text x="246" y="72" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#EB5D34">1</text>
+            </g>
+            <g class="hs" data-panel="rw" data-id="2" style="cursor:pointer">
+              <circle class="hs-pulse" cx="366" cy="193" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+              <circle class="hs-ring" cx="366" cy="193" r="13" fill="rgba(4,4,4,0.9)" stroke="#EB5D34" stroke-width="1.8"/>
+              <text x="366" y="197" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#EB5D34">2</text>
+            </g>
+            <g class="hs" data-panel="rw" data-id="3" style="cursor:pointer">
+              <circle class="hs-pulse" cx="246" cy="165" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+              <circle class="hs-ring" cx="246" cy="165" r="13" fill="rgba(4,4,4,0.9)" stroke="#EB5D34" stroke-width="1.8"/>
+              <text x="246" y="169" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#EB5D34">3</text>
+            </g>
+            <g class="hs" data-panel="rw" data-id="4" style="cursor:pointer">
+              <circle class="hs-pulse" cx="163" cy="243" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+              <circle class="hs-ring" cx="163" cy="243" r="13" fill="rgba(4,4,4,0.9)" stroke="#EB5D34" stroke-width="1.8"/>
+              <text x="163" y="247" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#EB5D34">4</text>
+            </g>
+            <g class="hs" data-panel="rw" data-id="5" style="cursor:pointer">
+              <circle class="hs-pulse" cx="262" cy="258" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+              <circle class="hs-ring" cx="262" cy="258" r="13" fill="rgba(4,4,4,0.9)" stroke="#EB5D34" stroke-width="1.8"/>
+              <text x="262" y="262" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#EB5D34">5</text>
+            </g>
+            <g class="hs" data-panel="rw" data-id="6" style="cursor:pointer">
+              <circle class="hs-pulse" cx="353" cy="283" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+              <circle class="hs-ring" cx="353" cy="283" r="13" fill="rgba(4,4,4,0.9)" stroke="#EB5D34" stroke-width="1.8"/>
+              <text x="353" y="287" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#EB5D34">6</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+    
+<!-- ── EXTERNAL EQUIPMENT ── -->
+    <section class="diag-section reveal" id="diag-external">
+      <div class="diag-text">
+        <div class="section-tag">External Hardware</div>
+        <h2 class="section-title">External Equipment<br>Mounting</h2>
+        <p class="section-body">Several AOCS systems require an external view to operate and are mounted on the outer structure. Click a component to learn more.</p>
+        <div class="sat-panel" id="panel-ext">
+          <div class="sat-panel-default" id="panel-ext-default"><div class="sat-panel-hint"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" stroke="#EB5D34" stroke-width="1.2"/><text x="9" y="13" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="8" font-weight="700" fill="#EB5D34">i</text></svg><span>Select a component</span></div></div>
+          <div class="sat-panel-info" id="panel-ext-info" style="display:none;"><div class="sat-panel-header"><span class="sat-panel-num" id="panel-ext-num"></span><span class="sat-panel-name" id="panel-ext-name"></span></div><p class="sat-panel-desc" id="panel-ext-desc"></p></div>
+        </div>
+      </div>
+      <div class="diag-svg">
+        <div class="sat-wrap">
+          <svg class="diag-svg-el" data-panel="ext" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="extBody" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1a1208"/><stop offset="100%" stop-color="#0a0804"/></linearGradient>
+              <linearGradient id="extPanel" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#0e1c2e"/><stop offset="100%" stop-color="#060e18"/></linearGradient>
+              <filter id="hg2"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <!-- main satellite box isometric -->
+            <polygon points="60,80 300,80 340,50 100,50" fill="#221a0a" stroke="#c8862a" stroke-width="1.5"/>
+            <rect x="60" y="80" width="240" height="230" fill="url(#extBody)" stroke="#c8862a" stroke-width="1.8"/>
+            <polygon points="300,80 340,50 340,280 300,310" fill="#0c0804" stroke="#c8862a" stroke-width="1.5"/>
+            <!-- solar panels -->
+            <rect x="2" y="120" width="56" height="140" rx="2" fill="url(#extPanel)" stroke="#1e3a5a" stroke-width="1.2"/>
+            <line x1="2" y1="153" x2="58" y2="153" stroke="#1e4a7a" stroke-width="0.6"/><line x1="2" y1="186" x2="58" y2="186" stroke="#1e4a7a" stroke-width="0.6"/><line x1="2" y1="219" x2="58" y2="219" stroke="#1e4a7a" stroke-width="0.6"/>
+            <line x1="20" y1="120" x2="20" y2="260" stroke="#1e4a7a" stroke-width="0.5"/><line x1="38" y1="120" x2="38" y2="260" stroke="#1e4a7a" stroke-width="0.5"/>
+            <rect x="58" y="178" width="4" height="24" fill="#c8862a"/>
+            <rect x="344" y="120" width="56" height="140" rx="2" fill="url(#extPanel)" stroke="#1e3a5a" stroke-width="1.2"/>
+            <line x1="344" y1="153" x2="400" y2="153" stroke="#1e4a7a" stroke-width="0.6"/><line x1="344" y1="186" x2="400" y2="186" stroke="#1e4a7a" stroke-width="0.6"/><line x1="344" y1="219" x2="400" y2="219" stroke="#1e4a7a" stroke-width="0.6"/>
+            <line x1="362" y1="120" x2="362" y2="260" stroke="#1e4a7a" stroke-width="0.5"/><line x1="380" y1="120" x2="380" y2="260" stroke="#1e4a7a" stroke-width="0.5"/>
+            <rect x="340" y="178" width="4" height="24" fill="#c8862a"/>
+            <!-- front face detail: X braces -->
+            <line x1="60" y1="80" x2="300" y2="310" stroke="#c8862a" stroke-width="0.5" opacity="0.2"/>
+            <line x1="300" y1="80" x2="60" y2="310" stroke="#c8862a" stroke-width="0.5" opacity="0.2"/>
+            <!-- 1 Star tracker (top, box on top face) -->
+            <rect x="155" y="40" width="40" height="28" rx="2" fill="#181828" stroke="#303050" stroke-width="1.2"/>
+            <circle cx="175" cy="54" r="9" fill="#0a0a18" stroke="#c8862a" stroke-width="0.8"/>
+            <circle cx="175" cy="54" r="4" fill="#12121e" stroke="#EB5D34" stroke-width="0.6"/>
+            <!-- 2 Propulsion module (bottom-centre, external strut) -->
+            <rect x="155" y="310" width="90" height="32" rx="2" fill="#101008" stroke="#282810" stroke-width="1.2"/>
+            <line x1="175" y1="310" x2="175" y2="295" stroke="#c8862a" stroke-width="1"/><line x1="220" y1="310" x2="220" y2="295" stroke="#c8862a" stroke-width="1"/>
+            <rect x="163" y="316" width="25" height="18" rx="1" fill="#1a1a08"/>
+            <rect x="194" y="316" width="25" height="18" rx="1" fill="#1a1a08"/>
+            <!-- 3 2x S-band antennas (side faces) -->
+            <path d="M68,140 Q80,124 92,140" fill="none" stroke="#c8862a" stroke-width="1.5"/>
+            <line x1="80" y1="140" x2="80" y2="158" stroke="#c8862a" stroke-width="1.2"/>
+            <rect x="72" y="158" width="16" height="10" rx="1" fill="#141414" stroke="#282828"/>
+            <path d="M288,190 Q300,174 312,190" fill="none" stroke="#c8862a" stroke-width="1.5"/>
+            <line x1="300" y1="190" x2="300" y2="208" stroke="#c8862a" stroke-width="1.2"/>
+            <rect x="292" y="208" width="16" height="10" rx="1" fill="#141414" stroke="#282828"/>
+            <!-- 4 Sun sensors (4 faces, small squares) -->
+            <rect x="62" y="230" width="16" height="16" rx="1" fill="#181408" stroke="#e8aa44" stroke-width="1"/>
+            <circle cx="70" cy="238" r="4" fill="#201a06" stroke="#e8aa44" stroke-width="0.8"/>
+            <rect x="62" y="110" width="16" height="16" rx="1" fill="#181408" stroke="#e8aa44" stroke-width="1"/>
+            <circle cx="70" cy="118" r="4" fill="#201a06" stroke="#e8aa44" stroke-width="0.8"/>
+            <rect x="280" y="110" width="16" height="16" rx="1" fill="#181408" stroke="#e8aa44" stroke-width="1"/>
+            <circle cx="288" cy="118" r="4" fill="#201a06" stroke="#e8aa44" stroke-width="0.8"/>
+            <rect x="280" y="230" width="16" height="16" rx="1" fill="#181408" stroke="#e8aa44" stroke-width="1"/>
+            <circle cx="288" cy="238" r="4" fill="#201a06" stroke="#e8aa44" stroke-width="0.8"/>
+            <!-- 5 Magnetotorquers (3 rods along axes) -->
+            <rect x="62" y="170" width="4" height="50" rx="1" fill="#183018" stroke="#204020"/>
+            <rect x="140" y="305" width="90" height="4" rx="1" fill="#183018" stroke="#204020"/>
+            <rect x="302" y="150" width="4" height="50" rx="1" fill="#183018" stroke="#204020"/>
+            <!-- hotspots -->
+            <g class="hs" data-panel="ext" data-id="1" style="cursor:pointer">
+              <circle class="hs-pulse" cx="192" cy="40" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+              <circle class="hs-ring" cx="192" cy="40" r="13" fill="rgba(8,4,2,0.85)" stroke="#EB5D34" stroke-width="1.8"/>
+              <text x="192" y="44" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#EB5D34">1</text>
+            </g>
+            <g class="hs" data-panel="ext" data-id="2" style="cursor:pointer">
+              <circle class="hs-pulse" cx="240" cy="313" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+              <circle class="hs-ring" cx="240" cy="313" r="13" fill="rgba(8,4,2,0.85)" stroke="#EB5D34" stroke-width="1.8"/>
+              <text x="240" y="317" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#EB5D34">2</text>
+            </g>
+            <g class="hs" data-panel="ext" data-id="3" style="cursor:pointer">
+              <circle class="hs-pulse" cx="100" cy="136" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+              <circle class="hs-ring" cx="100" cy="136" r="13" fill="rgba(8,4,2,0.85)" stroke="#EB5D34" stroke-width="1.8"/>
+              <text x="100" y="140" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#EB5D34">3</text>
+            </g>
+            <g class="hs" data-panel="ext" data-id="4" style="cursor:pointer">
+              <circle class="hs-pulse" cx="296" cy="107" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+              <circle class="hs-ring" cx="296" cy="107" r="13" fill="rgba(8,4,2,0.85)" stroke="#EB5D34" stroke-width="1.8"/>
+              <text x="296" y="111" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#EB5D34">4</text>
+            </g>
+            <g class="hs" data-panel="ext" data-id="5" style="cursor:pointer">
+              <circle class="hs-pulse" cx="76" cy="167" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+              <circle class="hs-ring" cx="76" cy="167" r="13" fill="rgba(8,4,2,0.85)" stroke="#EB5D34" stroke-width="1.8"/>
+              <text x="76" y="171" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#EB5D34">5</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PRIMARY STRUCTURE ── -->
+    <section class="diag-section reveal" id="diag-structure">
+      <div class="diag-svg">
+        <div class="sat-wrap">
+          <svg class="diag-svg-el" data-panel="str" viewBox="0 0 480 400" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="strMetal" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3a3a3a"/><stop offset="100%" stop-color="#1a1a1a"/></linearGradient>
+            </defs>
+            <!-- Main frame box -->
+            <polygon points="60,60 340,60 380,30 100,30" fill="#2a2a2a" stroke="#585858" stroke-width="1.5"/>
+            <rect x="60" y="60" width="280" height="310" fill="#111111" stroke="#585858" stroke-width="2"/>
+            <polygon points="340,60 380,30 380,340 340,370" fill="#0c0c0c" stroke="#585858" stroke-width="1.5"/>
+            <!-- 3 LV adapter panel top face -->
+            <ellipse cx="220" cy="44" rx="80" ry="12" fill="none" stroke="#888" stroke-width="1.2" stroke-dasharray="4,3"/>
+            <!-- X-braced panels — front face -->
+            <!-- Full height left X-brace (1=instrument side) -->
+            <rect x="62" y="62" width="128" height="306" fill="#0e0e0e" stroke="#484848" stroke-width="1"/>
+            <line x1="62" y1="62" x2="190" y2="368" stroke="#686868" stroke-width="1.8"/>
+            <line x1="190" y1="62" x2="62" y2="368" stroke="#686868" stroke-width="1.8"/>
+            <!-- Right two shorter X-braces (7=Y-direction) -->
+            <rect x="192" y="62" width="146" height="148" fill="#0e0e0e" stroke="#484848" stroke-width="1"/>
+            <line x1="192" y1="62" x2="338" y2="210" stroke="#686868" stroke-width="1.8"/>
+            <line x1="338" y1="62" x2="192" y2="210" stroke="#686868" stroke-width="1.8"/>
+            <rect x="192" y="222" width="146" height="146" fill="#0e0e0e" stroke="#484848" stroke-width="1"/>
+            <line x1="192" y1="222" x2="338" y2="368" stroke="#686868" stroke-width="1.8"/>
+            <line x1="338" y1="222" x2="192" y2="368" stroke="#686868" stroke-width="1.8"/>
+            <!-- 6 SADM connection plate (middle horizontal bar between two right panels) -->
+            <rect x="192" y="210" width="146" height="12" rx="1" fill="#3a3010" stroke="#c8862a" stroke-width="1.2"/>
+            <!-- 4 Central mounting sandwich panel -->
+            <rect x="62" y="190" width="128" height="12" rx="1" fill="#1a2a1a" stroke="#2a5a2a" stroke-width="1.2"/>
+            <!-- 5 Stiffened T-joint L-brackets (corners) -->
+            <rect x="62" y="58" width="14" height="14" rx="1" fill="#484848" stroke="#888" stroke-width="1"/>
+            <rect x="324" y="58" width="14" height="14" rx="1" fill="#484848" stroke="#888" stroke-width="1"/>
+            <rect x="62" y="366" width="14" height="14" rx="1" fill="#484848" stroke="#888" stroke-width="1"/>
+            <rect x="324" y="366" width="14" height="14" rx="1" fill="#484848" stroke="#888" stroke-width="1"/>
+            <!-- 2 X-direction X-braced (right face) -->
+            <line x1="340" y1="60" x2="380" y2="340" stroke="#686868" stroke-width="1.6" opacity="0.7"/>
+            <line x1="380" y1="60" x2="340" y2="340" stroke="#686868" stroke-width="1.6" opacity="0.7"/>
+            <!-- 1 M6 junction brackets (visible as small circles at intersections) -->
+            <circle cx="126" cy="215" r="5" fill="#484848" stroke="#888" stroke-width="1"/>
+            <circle cx="126" cy="62" r="5" fill="#484848" stroke="#888" stroke-width="1"/>
+            <circle cx="126" cy="368" r="5" fill="#484848" stroke="#888" stroke-width="1"/>
+            <!-- hotspots -->
+            <g class="hs" data-panel="str" data-id="1" style="cursor:pointer">
+              <circle class="hs-pulse" cx="136" cy="68" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+              <circle class="hs-ring" cx="136" cy="68" r="13" fill="rgba(4,4,4,0.9)" stroke="#EB5D34" stroke-width="1.8"/>
+              <text x="136" y="72" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#EB5D34">1</text>
+            </g>
+            <g class="hs" data-panel="str" data-id="2" style="cursor:pointer">
+              <circle class="hs-pulse" cx="358" cy="68" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+              <circle class="hs-ring" cx="358" cy="68" r="13" fill="rgba(4,4,4,0.9)" stroke="#EB5D34" stroke-width="1.8"/>
+              <text x="358" y="72" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#EB5D34">2</text>
+            </g>
+            <g class="hs" data-panel="str" data-id="3" style="cursor:pointer">
+              <circle class="hs-pulse" cx="250" cy="36" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+              <circle class="hs-ring" cx="250" cy="36" r="13" fill="rgba(4,4,4,0.9)" stroke="#EB5D34" stroke-width="1.8"/>
+              <text x="250" y="40" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#EB5D34">3</text>
+            </g>
+            <g class="hs" data-panel="str" data-id="4" style="cursor:pointer">
+              <circle class="hs-pulse" cx="184" cy="196" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+              <circle class="hs-ring" cx="184" cy="196" r="13" fill="rgba(4,4,4,0.9)" stroke="#EB5D34" stroke-width="1.8"/>
+              <text x="184" y="200" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#EB5D34">4</text>
+            </g>
+            <g class="hs" data-panel="str" data-id="5" style="cursor:pointer">
+              <circle class="hs-pulse" cx="338" cy="360" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+              <circle class="hs-ring" cx="338" cy="360" r="13" fill="rgba(4,4,4,0.9)" stroke="#EB5D34" stroke-width="1.8"/>
+              <text x="338" y="364" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#EB5D34">5</text>
+            </g>
+            <g class="hs" data-panel="str" data-id="6" style="cursor:pointer">
+              <circle class="hs-pulse" cx="338" cy="216" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+              <circle class="hs-ring" cx="338" cy="216" r="13" fill="rgba(4,4,4,0.9)" stroke="#EB5D34" stroke-width="1.8"/>
+              <text x="338" y="220" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#EB5D34">6</text>
+            </g>
+            <g class="hs" data-panel="str" data-id="7" style="cursor:pointer">
+              <circle class="hs-pulse" cx="338" cy="290" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+              <circle class="hs-ring" cx="338" cy="290" r="13" fill="rgba(4,4,4,0.9)" stroke="#EB5D34" stroke-width="1.8"/>
+              <text x="338" y="294" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#EB5D34">7</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="diag-text">
+        <div class="section-tag">Structural Systems</div>
+        <h2 class="section-title">Primary<br><em>Structure</em></h2>
+        <p class="section-body">Triangulated X-braced truss panels machined from Al 6061-T6. Diagonal members resolve bending and torsional loads as axial forces across multiple load paths.</p>
+        <div class="sat-panel" id="panel-str">
+          <div class="sat-panel-default" id="panel-str-default"><div class="sat-panel-hint"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" stroke="#EB5D34" stroke-width="1.2"/><text x="9" y="13" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="8" font-weight="700" fill="#EB5D34">i</text></svg><span>Select a component</span></div></div>
+          <div class="sat-panel-info" id="panel-str-info" style="display:none;"><div class="sat-panel-header"><span class="sat-panel-num" id="panel-str-num"></span><span class="sat-panel-name" id="panel-str-name"></span></div><p class="sat-panel-desc" id="panel-str-desc"></p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── LV ADAPTER PANEL ── -->
+    <section class="diag-section reveal" id="diag-lv">
+      <div class="diag-text">
+        <div class="section-tag">Launch Interface</div>
+        <h2 class="section-title">LV Adapter<br><em>Panel</em></h2>
+        <p class="section-body">Solid Al 6061-T6 with SurTec 650 coating. Spiderweb-shaped ribs distribute loads from the launch vehicle interface ring to all directions without stress concentrations.</p>
+        <div class="sat-panel" id="panel-lv">
+          <div class="sat-panel-default" id="panel-lv-default"><div class="sat-panel-hint"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" stroke="#EB5D34" stroke-width="1.2"/><text x="9" y="13" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="8" font-weight="700" fill="#EB5D34">i</text></svg><span>Select a component</span></div></div>
+          <div class="sat-panel-info" id="panel-lv-info" style="display:none;"><div class="sat-panel-header"><span class="sat-panel-num" id="panel-lv-num"></span><span class="sat-panel-name" id="panel-lv-name"></span></div><p class="sat-panel-desc" id="panel-lv-desc"></p></div>
+        </div>
+      </div>
+      <div class="diag-svg">
+        <div class="sat-wrap">
+          <svg class="diag-svg-el" data-panel="lv" viewBox="0 0 320 480" xmlns="http://www.w3.org/2000/svg">
+            <!-- Panel outline (tall rectangle, slightly angled like in image) -->
+            <rect x="60" y="20" width="200" height="440" rx="4" fill="#2a2a2a" stroke="#686868" stroke-width="2"/>
+            <!-- CRFP skin top layer -->
+            <rect x="64" y="24" width="192" height="432" rx="3" fill="#222222" stroke="#484848" stroke-width="0.8"/>
+            <!-- 1 M6 interface holes — corner dots -->
+            <circle cx="80" cy="44" r="5" fill="#111" stroke="#888" stroke-width="1.2"/>
+            <circle cx="240" cy="44" r="5" fill="#111" stroke="#888" stroke-width="1.2"/>
+            <circle cx="80" cy="436" r="5" fill="#111" stroke="#888" stroke-width="1.2"/>
+            <circle cx="240" cy="436" r="5" fill="#111" stroke="#888" stroke-width="1.2"/>
+            <!-- 2 M6 countersunk holes — edge holes -->
+            <circle cx="64" cy="160" r="4" fill="#111" stroke="#666" stroke-width="1"/>
+            <circle cx="64" cy="240" r="4" fill="#111" stroke="#666" stroke-width="1"/>
+            <circle cx="64" cy="320" r="4" fill="#111" stroke="#666" stroke-width="1"/>
+            <circle cx="256" cy="160" r="4" fill="#111" stroke="#666" stroke-width="1"/>
+            <circle cx="256" cy="240" r="4" fill="#111" stroke="#666" stroke-width="1"/>
+            <circle cx="256" cy="320" r="4" fill="#111" stroke="#666" stroke-width="1"/>
+            <!-- 3 LV separation adapter ring (spiderweb circle) -->
+            <circle cx="160" cy="240" r="90" fill="none" stroke="#888" stroke-width="2"/>
+            <circle cx="160" cy="240" r="70" fill="none" stroke="#686868" stroke-width="1"/>
+            <circle cx="160" cy="240" r="20" fill="#333" stroke="#888" stroke-width="1.5"/>
+            <!-- spiderweb ribs -->
+            <line x1="160" y1="150" x2="160" y2="330" stroke="#686868" stroke-width="1.2"/>
+            <line x1="70"  y1="240" x2="250" y2="240" stroke="#686868" stroke-width="1.2"/>
+            <line x1="96"  y1="176" x2="224" y2="304" stroke="#686868" stroke-width="1.2"/>
+            <line x1="224" y1="176" x2="96"  y2="304" stroke="#686868" stroke-width="1.2"/>
+            <line x1="116" y1="155" x2="204" y2="325" stroke="#585858" stroke-width="0.8"/>
+            <line x1="204" y1="155" x2="116" y2="325" stroke="#585858" stroke-width="0.8"/>
+            <line x1="70"  y1="200" x2="250" y2="280" stroke="#585858" stroke-width="0.8"/>
+            <line x1="70"  y1="280" x2="250" y2="200" stroke="#585858" stroke-width="0.8"/>
+            <!-- 28 threaded holes (ring of small dots) -->
+            <g opacity="0.7">
+              <circle cx="160" cy="150" r="3" fill="#888"/>
+              <circle cx="196" cy="158" r="3" fill="#888"/>
+              <circle cx="224" cy="176" r="3" fill="#888"/>
+              <circle cx="240" cy="210" r="3" fill="#888"/>
+              <circle cx="240" cy="248" r="3" fill="#888"/>
+              <circle cx="224" cy="280" r="3" fill="#888"/>
+              <circle cx="196" cy="302" r="3" fill="#888"/>
+              <circle cx="160" cy="330" r="3" fill="#888"/>
+              <circle cx="124" cy="302" r="3" fill="#888"/>
+              <circle cx="96"  cy="280" r="3" fill="#888"/>
+              <circle cx="80"  cy="248" r="3" fill="#888"/>
+              <circle cx="80"  cy="210" r="3" fill="#888"/>
+              <circle cx="96"  cy="176" r="3" fill="#888"/>
+              <circle cx="124" cy="158" r="3" fill="#888"/>
+            </g>
+            <!-- hotspots -->
+            <g class="hs" data-panel="lv" data-id="1" style="cursor:pointer">
+              <circle class="hs-pulse" cx="248" cy="38" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+              <circle class="hs-ring" cx="248" cy="38" r="13" fill="rgba(4,4,4,0.9)" stroke="#EB5D34" stroke-width="1.8"/>
+              <text x="248" y="42" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#EB5D34">1</text>
+            </g>
+            <g class="hs" data-panel="lv" data-id="2" style="cursor:pointer">
+              <circle class="hs-pulse" cx="264" cy="155" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+              <circle class="hs-ring" cx="264" cy="155" r="13" fill="rgba(4,4,4,0.9)" stroke="#EB5D34" stroke-width="1.8"/>
+              <text x="264" y="159" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#EB5D34">2</text>
+            </g>
+            <g class="hs" data-panel="lv" data-id="3" style="cursor:pointer">
+              <circle class="hs-pulse" cx="248" cy="330" r="16" fill="none" stroke="#EB5D34" stroke-width="1" opacity="0.4"/>
+              <circle class="hs-ring" cx="248" cy="330" r="13" fill="rgba(4,4,4,0.9)" stroke="#EB5D34" stroke-width="1.8"/>
+              <text x="248" y="334" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#EB5D34">3</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- ── MISSION BUDGET ── -->
+    <section class="budget-section reveal">
+      <div class="section-tag">Mission Parameters</div>
+      <h2 class="section-title">Mass, Volume<br>&amp; <em>Budget</em></h2>
+      <p class="section-body" style="max-width:600px;">
+        Key mission budgets and margins from the NEBULA-Xplorer System Design Description (SRON-NEBULA-SP-2025-024, Issue 1.1).
+        All values include ESA margin philosophy.
+      </p>
+
+      <div class="budget-grid">
+
+        <!-- Mass -->
+        <div class="budget-card">
+          <div class="budget-card-title">Mass</div>
+          <div class="budget-stat-row">
+            <span class="budget-key">Total S/C mass</span>
+            <span class="budget-val">59.5 <span class="budget-unit">kg</span></span>
+          </div>
+          <div class="budget-stat-row">
+            <span class="budget-key">Instrument mass</span>
+            <span class="budget-val">≤41.9 <span class="budget-unit">kg</span></span>
+          </div>
+          <div class="budget-stat-row">
+            <span class="budget-key">IRU enclosure</span>
+            <span class="budget-val">0.952 <span class="budget-unit">kg</span></span>
+          </div>
+        </div>
+
+        <!-- CoG / MMOI -->
+        <div class="budget-card">
+          <div class="budget-card-title">Centre of Gravity</div>
+          <div class="budget-stat-row">
+            <span class="budget-key">Stowed CoG (x/y/z)</span>
+            <span class="budget-val">453.9 / −1.0 / 43.1 <span class="budget-unit">mm</span></span>
+          </div>
+          <div class="budget-stat-row">
+            <span class="budget-key">Deployed CoG (x/y/z)</span>
+            <span class="budget-val">477.9 / −1.5 / 44.1 <span class="budget-unit">mm</span></span>
+          </div>
+          <div class="budget-stat-row">
+            <span class="budget-key">Stowed MMOI (Ixx/Iyy/Izz)</span>
+            <span class="budget-val">16.0 / 21.65 / 12.51 <span class="budget-unit">kg·m²</span></span>
+          </div>
+          <div class="budget-stat-row">
+            <span class="budget-key">Deployed MMOI</span>
+            <span class="budget-val">17.44 / 21.27 / 13.66 <span class="budget-unit">kg·m²</span></span>
+          </div>
+        </div>
+
+        <!-- Volume -->
+        <div class="budget-card">
+          <div class="budget-card-title">Volume (Falcon 9 Rideshare)</div>
+          <div class="budget-stat-row">
+            <span class="budget-key">Available total</span>
+            <span class="budget-val">0.798 <span class="budget-unit">m³</span></span>
+          </div>
+          <div class="budget-stat-row">
+            <span class="budget-key">Used total</span>
+            <span class="budget-val">≈0.542 <span class="budget-unit">m³</span></span>
+          </div>
+          <div class="budget-stat-row">
+            <span class="budget-key">Volume margin</span>
+            <span class="budget-val budget-good">32% <span class="budget-unit">available</span></span>
+          </div>
+          <div class="budget-stat-row">
+            <span class="budget-key">X / Y / Z margins</span>
+            <span class="budget-val">13.4 / 26.2 / 39.5 <span class="budget-unit">mm</span></span>
+          </div>
+        </div>
+
+        <!-- Power & Data -->
+        <div class="budget-card">
+          <div class="budget-card-title">Power &amp; Data</div>
+          <div class="budget-stat-row">
+            <span class="budget-key">IRU peak power</span>
+            <span class="budget-val">35.72 <span class="budget-unit">W</span></span>
+          </div>
+          <div class="budget-stat-row">
+            <span class="budget-key">Max data rate</span>
+            <span class="budget-val">76.4 <span class="budget-unit">kbps</span></span>
+          </div>
+          <div class="budget-stat-row">
+            <span class="budget-key">IRU component cost</span>
+            <span class="budget-val">~$249,708</span>
+          </div>
+          <div class="budget-stat-row">
+            <span class="budget-key">Natural frequency min.</span>
+            <span class="budget-val">≥40 <span class="budget-unit">Hz (SpaceX req.)</span></span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── SCIENCE TARGETS ── -->
+    <section class="science-section reveal">
+      <div class="section-tag">Science Case</div>
+      <h2 class="section-title">What NEBULA<br><em>Observes</em></h2>
+      <p class="section-body" style="max-width:700px;margin-bottom:48px;">
+        NEBULA-Xplorer targets X-ray binaries — systems where a black hole or neutron star devours
+        material from a companion star, generating bright, variable X-ray emission.
+        Continuous long-term observations impossible on existing facilities become routine for NEBULA.
+      </p>
+      <div class="science-grid">
+
+        <div class="science-target">
+          <div class="science-target-name">Cygnus X-1</div>
+          <div class="science-target-type">High-mass black hole X-ray binary</div>
+          <div class="science-target-desc">One of the brightest persistent X-ray sources in the sky. Exhibits unique spectral-timing variability on timescales from milliseconds to months — ideal for NEBULA's long-cadence, continuous observations.</div>
+        </div>
+
+        <div class="science-target">
+          <div class="science-target-name">IGR J17091−3624</div>
+          <div class="science-target-type">Black hole X-ray binary — transient</div>
+          <div class="science-target-desc">Shows "heartbeat" quasi-periodic oscillations (QPOs) that are not fully understood. Regular high-cadence monitoring by NEBULA will constrain how these QPO behaviours evolve physically and temporally.</div>
+        </div>
+
+        <div class="science-target">
+          <div class="science-target-name">Active Galactic Nuclei</div>
+          <div class="science-target-type">Supermassive black holes — scaling relations</div>
+          <div class="science-target-desc">Black hole processes have a mass-scaling relation: behaviour in stellar-mass black holes replicates on non-human timescales in AGN. Understanding stellar-mass binaries directly deepens our knowledge of galaxy evolution.</div>
+        </div>
+
+        <div class="science-target">
+          <div class="science-target-name">Neutron Star Binaries</div>
+          <div class="science-target-type">Compact object — accretion timing</div>
+          <div class="science-target-desc">X-ray binaries containing neutron stars are key laboratories for accretion physics. NEBULA's 200 cm² effective area at 1 keV enables high-count-rate timing analysis, advancing our understanding of dense matter physics.</div>
+        </div>
+
+      </div>
+    </section>
+
+  </div><!-- /#instrument -->
+
+
+  <!-- Easter egg toast + overlays -->
+  <div class="egg-toast" id="egg-toast">
+    <div class="egg-toast-icon" id="egg-toast-icon"></div>
+    <div>
+      <div class="egg-toast-title" id="egg-toast-title"></div>
+      <div class="egg-toast-text" id="egg-toast-text"></div>
+    </div>
+  </div>
+  <div class="xray-flash" id="xray-flash"></div>
+  <div class="egg-scanline" id="egg-scanline"></div>
 
     <form>
       <fieldset>
@@ -159,4 +1675,131 @@
     <script src="script.js"></script>
     <script src="easter-egg.js"></script>
   </body>
+</html>
+  <!-- Crew section -->
+  <section class="crew">
+    <div class="crew-container">
+      <div class="crew-info">
+        <h2>Crew</h2>
+        <div>
+          <p>Interested in participating? </p>
+          <p>Meet the team behind the Nebula Xplorer mission.</p>
+        </div>
+      </div>
+
+      <div class="crew-members">
+        
+        <div class="star-wrapper">
+          <div class="crew-member-stars"></div>
+          
+          <div class="crew-card-tooltip">
+            <img src="images/martin-grim.png" alt="">
+
+            <div>
+              <div>
+                <h3 class="crew-card-name">Martin Grim</h3>
+                <p class="crew-card-role">Section Head Electronics Engineering</p>
+              </div>
+
+              <a href="https://www.sron.nl/en/pillars/our-people/martin-grim/" target="_blank">Lees meer</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="star-wrapper">
+          <div class="crew-member-stars"></div>
+          
+          <div class="crew-card-tooltip">
+            <img src="images/benjamin-ricketts.jpg" alt="">
+
+            <div>
+              <div>
+                <h3 class="crew-card-name">Benjamin Ricketts</h3>
+                <p class="crew-card-role">PhD candidate</p>
+              </div>
+
+              <a href="https://www.sron.nl/en/pillars/our-people/benjamin-ricketts/" target="_blank">Lees meer</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="star-wrapper">
+          <div class="crew-member-stars"></div>
+          
+          <div class="crew-card-tooltip">
+            <img src="images/interns.jpeg" alt="">
+
+            <div>
+              <div>
+                <h3 class="crew-card-name">Interns</h3>
+                <p class="crew-card-role">Become a part of the NEBULA - Xplorer mission</p>
+              </div>
+
+              <a href="https://werkenbijsron.nl/en/internship-and-graduation/" target="_blank">Lees meer</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="star-wrapper">
+          <div class="crew-member-stars"></div>
+          <span class="tooltip">Student: Alex - Data Analyst</span>
+        </div>
+
+        <div class="star-wrapper">
+          <div class="crew-member-stars"></div>
+          <span class="tooltip">Student: Alex - Data Analyst</span>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <section class="internship-section parallax-with-text">
+    <h3>
+      Internships
+    </h3>
+
+
+    <div class="internship-wrapper">
+      <div>
+        <h4>Students</h4>
+        <p>
+          Interested in participating? For students from Dutch educational institutions, the following assignments are available in the coming year as part of the NEBULA - Xplorer mission
+        </p>
+      </div>
+    
+      <div>
+        <h4>NEBULA - Xplorer mission</h4>
+        <ul>
+          <li>Development of a structural-thermal model of the camera</li>
+          <li>Development of the camera's readout electronics</li>
+          <li>Development of the camera's signal processing system</li>
+          <li>Research into alternative launch platforms</li>
+          <li>Research into mechanical, optical, and electronic test systems</li>
+          <li>Research into materials and processes</li>
+        </ul>
+      </div>
+    
+      <div>
+        <h4>Forms</h4>
+        <p>
+          If you want to participate, please fill out the internship form.
+        </p>
+        <button class="internship-form"> <a href="https://werkenbijsron.nl/en/internship-and-graduation/" target="_blank">Internship form</a></button>
+      </div>
+
+      <div class="images">
+        <img src="images/pioneers.jpg" alt="">
+      </div>
+      
+      <div class="images">
+        <img src="images/launch.jpg" alt="">
+      </div>
+    </div>
+
+  </section>
+
+  <script src="script.js"></script>
+  <script src="easter-egg.js"></script>
+  <script src="instrument.js"></script>
+</body>
 </html>
