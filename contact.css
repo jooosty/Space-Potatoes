@@ -122,8 +122,8 @@ input {
   display: none;
 }
 
-.privacy a {
-  color: #eb5d34;
+.privacy a {    
+   color: #eb5d34;
   text-decoration: underline;
   transition: 0.3s ease;
 }
