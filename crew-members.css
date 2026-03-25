@@ -107,10 +107,12 @@
   
   & p{
     font-size: 0.8em;
+    color: rgba(255,255,255,0.5);
   }
 
   & p, a{
-    color: #EB5D34;
+    font-family: 'Rajdhani', sans-serif;
+    letter-spacing: 0.06em;
     font-style: italic;
   }
 
@@ -123,7 +125,7 @@
     font-family: 'Rajdhani', sans-serif;
     line-height: 1.85;
     letter-spacing: 0.06em;
-    color: rgba(255,255,255,0.5);
+    color: #EB5D34;
   }
 
   & a:hover{
