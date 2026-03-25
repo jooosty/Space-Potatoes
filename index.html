@@ -22,11 +22,11 @@
   <nav>
     <span class="nav-logo">Nebula Xplorer</span>
     <ul class="nav-links">
-      <li><a href="#">Mission</a></li>
+      <li><a href="#mission">Mission</a></li>
       <li><a href="#instrument">Instrument</a></li>
-      <li><a href="#">Science</a></li>
-      <li><a href="#">Crew</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="#science">Science</a></li>
+      <li><a href="#crew">Crew</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
     <button class="burger" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -67,11 +67,6 @@
     <div class="scroll-hint">
       <span>Explore Mission</span>
       <div class="arrow"></div>
-    </div>
-
-    <!-- Easter egg overlay -->
-    <div id="egg-overlay">
-      <canvas id="egg-canvas"></canvas>
     </div>
 
     <!-- Scroll hint -->
@@ -1533,7 +1528,7 @@
     </section>
 
     <!-- ── SCIENCE TARGETS ── -->
-    <section class="science-section reveal">
+    <section id="science" class="science-section reveal">
       <div class="section-tag">Science Case</div>
       <h2 class="section-title">What NEBULA<br><em>Observes</em></h2>
       <p class="section-body" style="max-width:700px;margin-bottom:48px;">
@@ -1584,100 +1579,8 @@
   <div class="xray-flash" id="xray-flash"></div>
   <div class="egg-scanline" id="egg-scanline"></div>
 
-    <form>
-      <fieldset>
-        <legend>
-          <span class="masked-text">Contact</span>
-        </legend>
-
-        <label for="naam">Naam</label>
-        <input type="text" id="naam" name="naam" required />
-
-        <label for="telefoon">Telefoonnummer</label>
-        <input
-          type="tel"
-          id="telefoon"
-          name="telefoon"
-          pattern="[0-9]+"
-          required
-        />
-
-        <label for="email">E-mail</label>
-        <input type="email" id="email" name="email" required />
-
-        <label for="bericht">Bericht</label>
-        <textarea id="bericht" name="bericht" rows="9"></textarea>
-
-        <label class="privacy">
-          <input type="checkbox" required />
-
-          <div class="planet">
-            <div class="maan"></div>
-          </div>
-
-          <span>
-            Ik heb het
-            <a
-              href="https://www.nwo-i.nl/en/privacy-policy/"
-              target="_blank"
-              rel="noopener noreferrer"
-              >privacybeleid</a
-            >
-            gelezen en accepteer het.
-          </span>
-        </label>
-      </fieldset>
-      <a class="button" href="#popup1">Verstuur</a>
-
-    </form>
-
-<div id="popup1" class="overlay">
-  <div class="popup">
-
-    <h2>Verzonden 🚀</h2>
-
-    <a class="close" href="#">&times;</a>
-
-    <div class="content">
-      Je bericht is succesvol verstuurd naar Nebula Explorer
-    </div>
-    <!--https://codepen.io/imprakash/pen/GgNMXO-->
-
-  </div>
-</div>
-
-    <footer>
-      <div class="kaart">
-        <img src="images/SRON-Leiden-e1742232793581.webp" alt="Leiden" />
-
-        <div class="blok">
-          <h3>Leiden</h3>
-          <p>Niels Bohrweg 4</p>
-          <p>2333 CA Leiden</p>
-          <p>The Netherlands</p>
-          <p>+31 (0)88 777 56 00</p>
-        </div>
-      </div>
-
-      <div class="kaart">
-        <img src="images/SRON-Groningen.webp" alt="Groningen" />
-
-        <div class="blok">
-          <h3>Groningen</h3>
-          <p>Landleven 12</p>
-          <p>9747 AD Groningen</p>
-          <p>The Netherlands</p>
-          <p>+31 (0)50 363 40 74</p>
-        </div>
-      </div>
-    </footer>
-
-    <script src="script.js"></script>
-    <script src="easter-egg.js"></script>
-  </body>
-</html>
   <!-- Crew section -->
-  <section class="crew">
+  <section id="crew" class="crew">
     <div class="crew-container">
       <div class="crew-info">
         <h2>Crew</h2>
@@ -1797,6 +1700,102 @@
     </div>
 
   </section>
+
+  <section id="contact">
+<form>
+      <fieldset>
+        <legend>
+          <span class="masked-text">Contact</span>
+        </legend>
+
+        <label for="naam">Naam</label>
+        <input type="text" id="naam" name="naam" required />
+
+        <label for="telefoon">Telefoonnummer</label>
+        <input
+          type="tel"
+          id="telefoon"
+          name="telefoon"
+          pattern="[0-9]+"
+          required
+        />
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="bericht">Bericht</label>
+        <textarea id="bericht" name="bericht" rows="9"></textarea>
+
+        <label class="privacy">
+          <input type="checkbox" required />
+
+          <div class="planet">
+            <div class="maan"></div>
+          </div>
+
+          <span>
+            Ik heb het
+            <a
+              href="https://www.nwo-i.nl/en/privacy-policy/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >privacybeleid</a
+            >
+            gelezen en accepteer het.
+          </span>
+        </label>
+      </fieldset>
+      <a class="button" href="#popup1">Verstuur</a>
+
+    </form>
+
+<div id="popup1" class="overlay">
+  <div class="popup">
+
+    <h2>Verzonden 🚀</h2>
+
+    <a class="close" href="#">&times;</a>
+
+    <div class="content">
+      Je bericht is succesvol verstuurd naar Nebula Explorer
+    </div>
+    <!--https://codepen.io/imprakash/pen/GgNMXO-->
+
+  </div>
+</div>
+  </section>
+
+
+    <footer>
+      <div class="kaart">
+        <img src="images/SRON-Leiden-e1742232793581.webp" alt="Leiden" />
+
+        <div class="blok">
+          <h3>Leiden</h3>
+          <p>Niels Bohrweg 4</p>
+          <p>2333 CA Leiden</p>
+          <p>The Netherlands</p>
+          <p>+31 (0)88 777 56 00</p>
+        </div>
+      </div>
+
+      <div class="kaart">
+        <img src="images/SRON-Groningen.webp" alt="Groningen" />
+
+        <div class="blok">
+          <h3>Groningen</h3>
+          <p>Landleven 12</p>
+          <p>9747 AD Groningen</p>
+          <p>The Netherlands</p>
+          <p>+31 (0)50 363 40 74</p>
+        </div>
+      </div>
+    </footer>
+
+  <!-- Easter egg overlay -->
+  <div id="egg-overlay">
+    <canvas id="egg-canvas"></canvas>
+  </div>
 
   <script src="script.js"></script>
   <script src="easter-egg.js"></script>
