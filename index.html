@@ -18,9 +18,12 @@
 </head>
 <body>
 
+  <div class="stars"></div>
+
   <!-- Navbar -->
   <nav>
-    <span class="nav-logo">Nebula Xplorer</span>
+    <!-- <span class="nav-logo">Nebula Xplorer</span> -->
+     <img src="/images/sron-logo-webp.webp" alt="logo" class="nav-logo">
     <ul class="nav-links">
       <li><a href="#mission">Mission</a></li>
       <li><a href="#instrument">Instrument</a></li>
@@ -67,6 +70,11 @@
     <div class="scroll-hint">
       <span>Explore Mission</span>
       <div class="arrow"></div>
+    </div>
+
+    <!-- Easter egg overlay -->
+    <div id="egg-overlay">
+      <canvas id="egg-canvas"></canvas>
     </div>
 
     <!-- Scroll hint -->
@@ -1579,7 +1587,8 @@
   <div class="xray-flash" id="xray-flash"></div>
   <div class="egg-scanline" id="egg-scanline"></div>
 
-  <!-- Crew section -->
+
+
   <section id="crew" class="crew">
     <div class="crew-container">
       <div class="crew-info">
@@ -1604,7 +1613,7 @@
                 <p class="crew-card-role">Section Head Electronics Engineering</p>
               </div>
 
-              <a href="https://www.sron.nl/en/pillars/our-people/martin-grim/" target="_blank">Lees meer</a>
+              <a href="https://www.sron.nl/en/pillars/our-people/martin-grim/" target="_blank">Read more</a>
             </div>
           </div>
         </div>
@@ -1621,7 +1630,7 @@
                 <p class="crew-card-role">PhD candidate</p>
               </div>
 
-              <a href="https://www.sron.nl/en/pillars/our-people/benjamin-ricketts/" target="_blank">Lees meer</a>
+              <a href="https://www.sron.nl/en/pillars/our-people/benjamin-ricketts/" target="_blank">Read more</a>
             </div>
           </div>
         </div>
@@ -1638,10 +1647,33 @@
                 <p class="crew-card-role">Become a part of the NEBULA - Xplorer mission</p>
               </div>
 
-              <a href="https://werkenbijsron.nl/en/internship-and-graduation/" target="_blank">Lees meer</a>
+              <a href="https://werkenbijsron.nl/en/internship-and-graduation/" target="_blank">Read more</a>
             </div>
           </div>
         </div>
+
+        <div class="star-wrapper">
+          <div class="crew-member-stars"></div>
+          <div class="ring"></div>
+          <div class="ring"></div>
+          <div class="ring"></div>
+        </div>
+
+        <div class="star-wrapper">
+          <div class="crew-member-stars"></div>
+          <div class="ring"></div>
+          <div class="ring"></div>
+          <div class="ring"></div>
+        </div>
+
+        <div class="star-wrapper">
+          <div class="crew-member-stars"></div>
+          <div class="ring"></div>
+          <div class="ring"></div>
+          <div class="ring"></div>
+        </div>
+
+        
 
         <!-- <div class="star-wrapper">
           <div class="crew-member-stars"></div>
@@ -1698,11 +1730,23 @@
         <img src="images/launch.jpg" alt="">
       </div>
     </div>
-
   </section>
+  
+  <section class = "stars-typing hidden-stars">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+</section>
 
   <section id="contact">
-<form>
+    <form>
       <fieldset>
         <legend>
           <span class="masked-text">Contact</span>
@@ -1765,8 +1809,7 @@
 </div>
   </section>
 
-
-    <footer>
+  <footer>
       <div class="kaart">
         <img src="images/SRON-Leiden-e1742232793581.webp" alt="Leiden" />
 
@@ -1792,12 +1835,8 @@
       </div>
     </footer>
 
-  <!-- Easter egg overlay -->
-  <div id="egg-overlay">
-    <canvas id="egg-canvas"></canvas>
-  </div>
-
   <script src="script.js"></script>
+  <script src="typing-easter-egg.js"></script>
   <script src="easter-egg.js"></script>
   <script src="instrument.js"></script>
 </body>

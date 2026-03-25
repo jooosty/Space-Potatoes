@@ -39,7 +39,10 @@ nav {
   letter-spacing: 0.25em;
   color: #eb5d34;
   text-transform: uppercase;
+  width: 5em;
+  height: auto;
 }
+
 
 .nav-links {
   display: flex;
@@ -332,7 +335,7 @@ nav {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-@media (max-width: 480px) {
+@media (max-width: 580px) {
   .burger {
     display: flex;
   }
