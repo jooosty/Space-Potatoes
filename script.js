@@ -29,7 +29,6 @@ navLinks.querySelectorAll('a').forEach(a =>
   })
 );
 
-
 // ── Active nav on scroll ──
 const navIds = ['mission', 'instrument', 'science', 'crew', 'contact'];
 const navAnchors = document.querySelectorAll('.nav-links a');
