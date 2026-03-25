@@ -28,3 +28,24 @@ navLinks.querySelectorAll('a').forEach(a =>
     burger.setAttribute('aria-expanded', false);
   })
 );
+
+// ── Active nav on scroll ──
+const navIds = ['mission', 'instrument', 'science', 'crew', 'contact'];
+const navAnchors = document.querySelectorAll('.nav-links a');
+
+function setActive() {
+  let current = '';
+  navIds.forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (window.scrollY >= el.offsetTop - window.innerHeight / 2) {
+      current = id;
+    }
+  });
+  navAnchors.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+}
+
+window.addEventListener('scroll', setActive, { passive: true });
+setActive(); // run once on load
