@@ -60,7 +60,7 @@
 
 .star-wrapper:nth-child(3) { 
   top: 10%;  
-  left: 75%; 
+  left: 80%; 
 }
 
 .star-wrapper:nth-child(4) { 
@@ -175,6 +175,11 @@
     align-items: center;
     gap: 0.8em;
 
+    & h2{
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2em;
+    }
+
     & p{
         font-family: 'Rajdhani', sans-serif;
         font-size: 0.95rem;
@@ -232,7 +237,7 @@
 
 .internship-section h3{
     font-size: 5em;
-    font-family: 'Rajdhani', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     color: #EB5D34;
 }
 
@@ -244,6 +249,7 @@
 
     & h4{
         font-family: 'Rajdhani', sans-serif;
+        font-size: 24px;
     }
 
     & p, li{
