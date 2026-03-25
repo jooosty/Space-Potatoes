@@ -238,11 +238,11 @@
 
   // ── Keybinds ──
   const KEY_MAP = {
-    'a': 'astronaut',
-    'g': 'comet',
-    'b': 'blackhole',
-    'l': 'laser',
-    's': 'supernova',
+    '1': 'astronaut',
+    '2': 'comet',
+    '3': 'blackhole',
+    '4': 'laser',
+    '5': 'supernova',
     'Escape': 'normal',
   };
   window.addEventListener('keydown', e => {
