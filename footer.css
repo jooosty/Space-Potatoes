@@ -1,0 +1,68 @@
+/*FOOTER*/
+footer {
+  display:block;
+  gap: 0.5em;
+  background: rgba(72, 39, 25, 0.9);
+  padding: 0.5em;
+  margin-top: 10em;
+}
+.kaart {
+  position: relative;
+  width: 100%;
+  padding-inline: 0.3em;
+
+}
+
+.kaart img {
+  width: 100%;
+
+
+}
+
+.kaart:hover img {
+  transform: scale(1.03);
+  transition: 0.5s;
+}
+
+/*Overlay block img*/
+.blok {
+  position: absolute;
+  top: 0;
+  left: 0.3em;
+  background: darkblue;
+  color: white;
+  padding: 0.4em;
+  width: 42%;
+  border-left: 0.4em solid #eb5d34;
+
+  /* titel zichtbaar */
+  height: 60px;
+  overflow: hidden;
+  transition: 0.5s ease-out;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  backdrop-filter: blur(4px);
+}
+
+/*Tekst verbergen*/
+.blok p {
+  opacity: 0;
+  transition: 0.3s;
+  transition-delay: 0.2s;
+}
+
+/*blok uitklappen*/
+.kaart:hover .blok {
+  height: 170px;
+}
+
+/*tekst zichtbaar maken bij hover*/
+.kaart:hover .blok p {
+  opacity: 1;
+}
+
+@media (min-width: 48em) {
+footer{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+}
