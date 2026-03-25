@@ -315,20 +315,34 @@
 
     // Supernova explosion
     if (mode === 'supernova') {
-      particles.forEach(p => {
-        p.x    += p.vx;
-        p.y    += p.vy;
-        p.vy   += 0.08;   // gravity
-        p.vx   *= 0.99;   // drag
-        p.life -= 0.02;
-        ctx.globalAlpha = Math.max(0, p.life);
+    particles.forEach(p => {
+        // update physics
+        p.x  += p.vx;
+        p.y  += p.vy;
+        p.vy += 0.08;   // gravity
+        p.vx *= 0.99;   // drag
+
+        // clamp life so it never goes negative
+        p.life = Math.max(0, p.life - 0.02);
+
+        // skip dead particles
+        if (p.life === 0) return;
+
+        // draw
+        ctx.globalAlpha = p.life;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size * p.life, 0, Math.PI * 2);
         ctx.fillStyle = p.col;
         ctx.fill();
-      });
-      particles = particles.filter(p => p.life > 0);
+    });
+
+    // remove dead particles
+    particles = particles.filter(p => p.life > 0);
+
+    // reset alpha (important!)
+    ctx.globalAlpha = 1;
     }
+
 
     // Astronaut: smooth lag follow
     if (mode === 'astronaut') {
