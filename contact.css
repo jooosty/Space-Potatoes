@@ -24,7 +24,6 @@ fieldset {
     padding-left: 0.1em;
     box-shadow: 0 9px 10px -7px #eb5d34;
 
-    
     legend::after {
       content: "";
       position: absolute;
@@ -59,21 +58,19 @@ fieldset {
   }
 }
 
-
 /*Contact*/
 .masked-text {
-  font-size: 2.5rem; 
+  font-size: 2.5rem;
   font-weight: bold;
   color: transparent;
 
-  background-image: url('https://images.unsplash.com/photo-1732535725600-f805d8b33c9c?q=80&w=1470&auto=format&fit=crop');
+  background-image: url("https://images.unsplash.com/photo-1732535725600-f805d8b33c9c?q=80&w=1470&auto=format&fit=crop");
   background-size: 200%;
   background-position: 0 50%;
   -webkit-text-stroke: #eb5d34;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
 
   animation: animate-background 6s linear infinite alternate;
 }
@@ -89,12 +86,10 @@ fieldset {
   /*https://prismic.io/blog/css-text-animations*/
 }
 
-
 input:focus,
 textarea:focus {
   outline: none;
-      border-bottom: 2px solid cyan;
-
+  border-bottom: 2px solid cyan;
 }
 
 /* focus */
@@ -121,14 +116,14 @@ input {
   color: white;
   cursor: pointer;
   line-height: 1.4;
-} 
+}
 
 .privacy input {
   display: none;
 }
 
 .privacy a {
-  color:#eb5d34;
+  color: #eb5d34;
   text-decoration: underline;
   transition: 0.3s ease;
 }
@@ -145,7 +140,6 @@ input {
   position: relative;
   transition: 0.2s;
   border: 2px solid #eb5d34;
-
 }
 .maan {
   width: 5px;
@@ -160,7 +154,7 @@ input {
 }
 /*planet actief*/
 .privacy input:checked + .planet {
-  background:#eb5d34;
+  background: #eb5d34;
   box-shadow: 0 0 13px #6ee7ff;
 }
 
@@ -172,21 +166,24 @@ input {
 
 /* animatie */
 @keyframes draai {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
-
-
 
 /*Button*/
 .button {
   margin-top: 3em;
   padding: 0.7em;
-  background-color:#eb5d34;
+  background-color: #eb5d34;
   color: white;
   border-bottom: 0.2em solid #e8e3e2;
   border-radius: 0.3em;
   align-self: flex-end;
+  text-align: center;
   width: 120px;
   color: #ece6e5;
   font-weight: 900;
@@ -197,7 +194,7 @@ input {
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
   visibility: hidden;
   opacity: 0;
   transition: 0.4s ease;
@@ -248,4 +245,3 @@ input {
   color: #8b5cf6;
 }
 /*https://codepen.io/imprakash/pen/GgNMXO*/
-
