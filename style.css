@@ -496,3 +496,46 @@ nav {
   }
 }
 
+
+
+/* ── CURSOR KEYBIND PANEL ── */
+#cursor-keybind-panel {
+  display: none;
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 99998;
+  background: rgba(8, 8, 18, 0.75);
+  border: 0.5px solid rgba(235, 93, 52, 0.25);
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.9;
+  pointer-events: none;
+  backdrop-filter: blur(10px);
+  user-select: none;
+}
+
+#cursor-keybind-panel p {
+  color: rgba(235, 93, 52, 0.6);
+  font-size: 0.55rem;
+  letter-spacing: 0.25em;
+  margin-bottom: 6px;
+}
+
+#cursor-keybind-panel kbd {
+  color: rgba(255, 255, 255, 0.75);
+  margin-right: 8px;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+@media (min-width: 960px) {
+  #cursor-keybind-panel {
+    display: block;
+  }
+}
