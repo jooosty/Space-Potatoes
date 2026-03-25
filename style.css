@@ -175,6 +175,7 @@ nav {
   text-transform: uppercase;
   color: rgba(255,255,255,0.4);
   animation: fadeInUp 1s 1.2s both;
+  pointer-events: none;
 }
 
 .scroll-hint .arrow {
