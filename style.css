@@ -39,7 +39,10 @@ nav {
   letter-spacing: 0.25em;
   color: #eb5d34;
   text-transform: uppercase;
+  width: 5em;
+  height: auto;
 }
+
 
 .nav-links {
   display: flex;
