@@ -368,6 +368,10 @@ nav {
     letter-spacing: 0.2em;
   }
 }
+
+.nav-links a.active {
+  color: #EB5D34;
+}
 /* ── INFO STRIP ── */
 .info-strip {
   position: relative;
