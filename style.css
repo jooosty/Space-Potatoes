@@ -6,6 +6,10 @@
   padding: 0;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   width: 100%;
   /* overflow: hidden; */
@@ -163,16 +167,17 @@ nav {
 
 .orange-shadow {
   position: absolute;
-  top: 10%;
+  top: 50%;
   left: 50%;
-  width: 150%;
-  height: 150%;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
-  transform: translate(-50%, 0);
+  transform: translate(-50%, -50%);
   z-index: 1;
   background: radial-gradient(circle, rgba(235, 93, 52, 0.2), transparent 70%);
   animation: wave-color-motion 5s infinite ease-in-out;
   will-change: transform;
+  pointer-events: none;
 }
 
 /* ── SCROLL INDICATOR ── */
@@ -491,11 +496,16 @@ nav {
     gap: 36px;
   }
   .info-bh-peek {
-    width: 260px;
-    height: 260px;
-    right: -50px;
+    width: 220px;
+    height: 220px;
+    right: -80px;
     top: -60px;
   }
+}
+
+/* Clip the peeking black hole so it never causes horizontal scroll */
+.info-strip {
+  overflow: hidden;
 }
 
 
