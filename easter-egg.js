@@ -1,4 +1,4 @@
-// ── EASTER EGG — click black hole 10x ──
+// ── EASTER EGG — click black hole 10x → big black hole, 20x → sanne reveal ──
 const blackHole = document.querySelector('.black-hole');
 const overlay   = document.getElementById('egg-overlay');
 const eggCanvas = document.getElementById('egg-canvas');
@@ -7,18 +7,41 @@ let clicks     = 0;
 let eggT       = 0;
 let eggRunning = false;
 
+// ── Sanne image state ──
+let sanneImg       = null;
+let sanneLoaded    = false;
+let sanneRevealed  = false;   // true once 20-click threshold is hit
+let sanneAlpha     = 0;       // fades in from 0 → 1
+
+// Pre-load the image so it's ready when needed
+const _img = new Image();
+_img.src = 'images/sanne.png';
+_img.onload = () => { sanneImg = _img; sanneLoaded = true; };
+
 blackHole.addEventListener('click', () => {
   clicks++;
   blackHole.classList.add('clicked');
   setTimeout(() => blackHole.classList.remove('clicked'), 150);
-  if (clicks >= 10) { clicks = 0; openEgg(); }
-});
 
+  if (clicks === 10) {
+    openEgg();
+  } else if (clicks >= 20) {
+    clicks = 0;          // reset counter so it can be triggered again
+    revealSanne();
+  }
+});
 
 function openEgg() {
   overlay.classList.add('visible');
   if (!eggRunning) { eggRunning = true; resizeEgg(); drawEgg(); }
 }
+
+function revealSanne() {
+  sanneRevealed = true;
+  // make sure the overlay / animation is running
+  if (!overlay.classList.contains('visible')) openEgg();
+}
+
 function resizeEgg() {
   eggCanvas.width  = window.innerWidth;
   eggCanvas.height = window.innerHeight;
@@ -48,6 +71,39 @@ function radialFill(ctx, x, y, r0, r1, stops) {
   stops.forEach(([pos, col]) => g.addColorStop(pos, col));
   ctx.beginPath(); ctx.arc(x, y, r1, 0, PI2);
   ctx.fillStyle = g; ctx.fill();
+}
+
+// ── Draw sanne.png clipped to a circle in the event horizon ──
+function drawSanne(cx, cy, R) {
+  if (!sanneLoaded) return;
+
+  // Fade in
+  if (sanneAlpha < 1) sanneAlpha = Math.min(1, sanneAlpha + 0.012);
+
+  const r = R * 0.92;   // slightly smaller than the black hole radius
+
+  eggCtx.save();
+  eggCtx.globalAlpha = sanneAlpha;
+
+  // Clip to circle
+  eggCtx.beginPath();
+  eggCtx.arc(cx, cy, r, 0, PI2);
+  eggCtx.clip();
+
+  // Draw image centred
+  eggCtx.drawImage(sanneImg, cx - r, cy - r, r * 2, r * 2);
+
+  // Subtle vignette so the edges blend into the black hole ring
+  const vignette = eggCtx.createRadialGradient(cx, cy, r * 0.55, cx, cy, r);
+  vignette.addColorStop(0,   'rgba(0,0,0,0)');
+  vignette.addColorStop(0.7, 'rgba(0,0,0,0)');
+  vignette.addColorStop(1,   'rgba(0,0,0,0.85)');
+  eggCtx.fillStyle = vignette;
+  eggCtx.beginPath();
+  eggCtx.arc(cx, cy, r, 0, PI2);
+  eggCtx.fill();
+
+  eggCtx.restore();
 }
 
 // ── Black hole draw loop ──
@@ -120,12 +176,15 @@ function drawEgg() {
     [1,    'rgba(0,0,0,0)'],
   ]);
 
-  // Event horizon
+  // Event horizon (solid black — drawn before sanne so image paints on top)
   eggCtx.beginPath(); eggCtx.arc(cx, cy, R, 0, PI2);
   eggCtx.fillStyle = '#000'; eggCtx.fill();
   arc(eggCtx, cx, cy, R, 0, PI2, 'rgba(80,20,5,0.5)', R*0.015);
 
-  // Photon ring — EB5D34 orange glow
+  // ── Sanne reveal (only after 20 clicks) ──
+  if (sanneRevealed) drawSanne(cx, cy, R);
+
+  // Photon ring drawn last so it sits on top of everything
   const pr = 0.8 + 0.2 * Math.sin(eggT * 0.055);
   eggCtx.save();
   eggCtx.translate(cx, cy); eggCtx.rotate(TILT); eggCtx.scale(1, SY*1.4);
