@@ -278,33 +278,33 @@
   to   { translate: var(--translate-to); }
 }
 
-.parallax-with-text {
-  .images {
-    view-timeline-name: --image;
-    position: relative;
-    display: flex;
-    aspect-ratio: 1;
-    justify-content: center;
-    overflow: clip;
-    img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 200%;
-      object-fit: cover;
-      display: block;
-      @media (prefers-reduced-motion: no-preference) {
-        --translate-from: 0 -50%;
-        --translate-to: 0 20%;
-        animation-name: translate-properties;
-        animation-timeline: --image;
-        animation-range: cover;
-        animation-timing-function: linear;
-        animation-fill-mode: both;
-      }
-    }
-  }
+.parallax-with-text .images {
+  view-timeline-name: --image;
+  view-timeline-axis: block;
+  position: relative;
+  display: flex;
+  aspect-ratio: 1;
+  justify-content: center;
+  overflow: hidden; /* hidden instead of clip — clip blocks scroll timelines in some browsers */
+  isolation: isolate;
+}
+
+.parallax-with-text .images img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150%; /* slightly less aggressive — works better with grid rows */
+  object-fit: cover;
+  display: block;
+  will-change: translate;
+  animation-name: translate-properties;
+  animation-timeline: --image;
+  animation-range: cover 0% 100%;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  --translate-from: 0 0%;
+  --translate-to: 0 -33%;
 }
 
 .internship-wrapper .images:nth-child(5) {
