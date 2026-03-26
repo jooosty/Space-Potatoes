@@ -1,0 +1,65 @@
+/* ── ROCKET SCROLLBAR ──────────────────────────────────────────────────────
+   Add this to style.css (or import as a separate sheet).
+   Also drop rocket-scrollbar.js before </body> in index.html.
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* 1. Hide the native scrollbar (keeps scroll functionality intact) */
+html {
+  scrollbar-width: none;          /* Firefox */
+}
+html::-webkit-scrollbar {
+  display: none;                  /* Chrome / Safari / Edge */
+}
+
+/* 2. Thin launch-trail track along the right edge */
+#rocket-track {
+  position: fixed;
+  top: 0;
+  right: 10px;
+  width: 2px;
+  height: 100%;
+  z-index: 99990;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(235, 93, 52, 0.12) 10%,
+    rgba(235, 93, 52, 0.12) 90%,
+    transparent
+  );
+}
+
+/* 3. Scrolled-progress fill — grows from bottom up to rocket */
+#rocket-track::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% - var(--scroll-pct, 0%));
+  background: linear-gradient(
+    to top,
+    rgba(235, 93, 52, 0.55),
+    rgba(110, 231, 255, 0.3)
+  );
+  transition: height 0.05s linear;
+}
+
+/* 4. The rocket itself */
+#rocket-thumb {
+  position: fixed;
+  right: -3px;          /* centre over the 2 px track */
+  width: 28px;
+  height: 28px;
+  z-index: 99991;
+  pointer-events: none;
+  transform: translateY(-50%);   /* anchor point = rocket centre */
+  filter: drop-shadow(0 0 4px #eb5d34);
+  transition: filter 0.2s ease;
+  will-change: top;
+}
+
+/* Subtle throb when in motion (class toggled by JS) */
+#rocket-thumb.burning {
+  filter: drop-shadow(0 0 8px #eb5d34) drop-shadow(0 0 14px rgba(235,93,52,0.5));
+}
