@@ -29,16 +29,16 @@ html::-webkit-scrollbar {
   );
 }
 
-/* 3. Scrolled-progress fill */
-#rocket-track::before {
+/* 3. Scrolled-progress fill — grows from bottom up to rocket */
+#rocket-track::after {
   content: '';
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
-  height: var(--scroll-pct, 0%);
+  height: calc(100% - var(--scroll-pct, 0%));
   background: linear-gradient(
-    to bottom,
+    to top,
     rgba(235, 93, 52, 0.55),
     rgba(110, 231, 255, 0.3)
   );
@@ -48,9 +48,9 @@ html::-webkit-scrollbar {
 /* 4. The rocket itself */
 #rocket-thumb {
   position: fixed;
-  right: 2px;           /* centre over the 2 px track */
-  width: 18px;
-  height: 18px;
+  right: -3px;          /* centre over the 2 px track */
+  width: 28px;
+  height: 28px;
   z-index: 99991;
   pointer-events: none;
   transform: translateY(-50%);   /* anchor point = rocket centre */

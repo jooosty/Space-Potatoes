@@ -17,7 +17,7 @@
   rocket.innerHTML = `
     <svg xmlns="http://www.w3.org/2000/svg"
          viewBox="0 0 18 32"
-         width="18" height="32"
+         width="28" height="50"
          aria-hidden="true">
 
       <!-- Exhaust flame (bottom, always visible) -->
@@ -54,9 +54,9 @@
     const maxScroll  = document.documentElement.scrollHeight - window.innerHeight;
     const pct        = maxScroll > 0 ? scrollTop / maxScroll : 0;
 
-    // Position rocket (top of viewport + pct of viewport height)
-    const minY = 16;                           // px from top edge
-    const maxY = window.innerHeight - 16;      // px from top edge
+    // Position rocket — moves top to bottom as you scroll
+    const minY = 16;                            // top of viewport
+    const maxY = window.innerHeight - 16;       // bottom of viewport
     const rocketY = minY + pct * (maxY - minY);
     rocket.style.top = rocketY + 'px';
 
