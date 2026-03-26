@@ -2,6 +2,10 @@
 // Keybinds: A = astronaut, G = gravity trail, B = black hole, L = laser, S = supernova, ESC = normal
 
 (function () {
+  // ── Skip on touch-only / mobile devices ──
+  const isTouch = window.matchMedia('(pointer: coarse)').matches;
+  if (isTouch) return;
+
   // ── Setup: canvas + cursor element ──
   const canvas = document.createElement('canvas');
   canvas.id = 'cursor-canvas';
