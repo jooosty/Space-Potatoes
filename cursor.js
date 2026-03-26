@@ -1,11 +1,7 @@
 // ── CURSOR MODES ──
-// Keybinds: A = astronaut, G = gravity trail, B = black hole, L = laser, S = supernova, ESC = normal
+// Keybinds: 1 = astronaut, 2 = comet, 3 = black hole, 4 = laser, 5 = supernova, ESC = normal
 
 (function () {
-  // ── Skip on touch-only / mobile devices ──
-  const isTouch = window.matchMedia('(pointer: coarse)').matches;
-  if (isTouch) return;
-
   // ── Setup: canvas + cursor element ──
   const canvas = document.createElement('canvas');
   canvas.id = 'cursor-canvas';
@@ -32,6 +28,7 @@
   let particles = [];
   let laserPoints = [];
   let astro = { x: -999, y: -999 };
+  let rafRunning = false;
 
   // ── Cursor SVG shapes ──
   const CURSORS = {
@@ -159,17 +156,46 @@
     const off = OFFSETS[m];
     cursorEl.style.transform = `translate(${off.x}px, ${off.y}px)`;
     showToast(TOAST_LABELS[m]);
-    document.body.style.cursor = 'none';
   }
-  setMode('normal');
 
-  // ── Hide default cursor globally ──
+  // ── Style tag: hides native cursor when custom cursor is active ──
   const styleTag = document.createElement('style');
-  styleTag.textContent = `
-    *, *::before, *::after { cursor: none !important; }
-    #cursor-canvas { cursor: none !important; }
-  `;
+  styleTag.textContent = `*, *::before, *::after { cursor: none !important; }`;
   document.head.appendChild(styleTag);
+
+  // ── Enable custom cursor ──
+  function enable() {
+    canvas.style.display   = '';
+    cursorEl.style.display = '';
+    styleTag.disabled      = false;
+    if (!rafRunning) { rafRunning = true; draw(); }
+  }
+
+  // ── Disable custom cursor, restore native ──
+  function disable() {
+    canvas.style.display   = 'none';
+    cursorEl.style.display = 'none';
+    styleTag.disabled      = true;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    rafRunning = false;
+  }
+
+  // ── Live pointer-type detection ──
+  // pointer: coarse = touchscreen  |  pointer: fine = mouse / trackpad
+  // Fires again if a mouse is plugged in, device is rotated, etc.
+  const mq = window.matchMedia('(pointer: coarse)');
+
+  function applyPointerType(isCoarse) {
+    if (isCoarse) {
+      disable();
+    } else {
+      setMode('normal');
+      enable();
+    }
+  }
+
+  applyPointerType(mq.matches);                            // run once on load
+  mq.addEventListener('change', e => applyPointerType(e.matches)); // live updates
 
   // ── Mouse tracking ──
   window.addEventListener('mousemove', e => {
@@ -256,6 +282,7 @@
 
   // ── Draw loop ──
   function draw() {
+    if (!rafRunning) return;  // stop when disabled
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     // Comet trail
@@ -278,7 +305,6 @@
       laserPoints.forEach(p => p.life -= 0.05);
       laserPoints = laserPoints.filter(p => p.life > 0);
       if (laserPoints.length > 2) {
-        // Outer glow
         ctx.save();
         ctx.shadowColor = '#6ee7ff';
         ctx.shadowBlur  = 12;
@@ -289,7 +315,6 @@
         ctx.lineWidth   = 6;
         ctx.globalAlpha = 1;
         ctx.stroke();
-        // Core beam
         ctx.beginPath();
         ctx.moveTo(laserPoints[0].x, laserPoints[0].y);
         laserPoints.forEach(p => ctx.lineTo(p.x, p.y));
@@ -319,34 +344,22 @@
 
     // Supernova explosion
     if (mode === 'supernova') {
-    particles.forEach(p => {
-        // update physics
+      particles.forEach(p => {
         p.x  += p.vx;
         p.y  += p.vy;
-        p.vy += 0.08;   // gravity
-        p.vx *= 0.99;   // drag
-
-        // clamp life so it never goes negative
+        p.vy += 0.08;
+        p.vx *= 0.99;
         p.life = Math.max(0, p.life - 0.02);
-
-        // skip dead particles
         if (p.life === 0) return;
-
-        // draw
         ctx.globalAlpha = p.life;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size * p.life, 0, Math.PI * 2);
         ctx.fillStyle = p.col;
         ctx.fill();
-    });
-
-    // remove dead particles
-    particles = particles.filter(p => p.life > 0);
-
-    // reset alpha (important!)
-    ctx.globalAlpha = 1;
+      });
+      particles = particles.filter(p => p.life > 0);
+      ctx.globalAlpha = 1;
     }
-
 
     // Astronaut: smooth lag follow
     if (mode === 'astronaut') {
@@ -354,13 +367,13 @@
       astro.x += (mx - astro.x) * 0.07;
       astro.y += (my - astro.y) * 0.07;
       const off = OFFSETS.astronaut;
-      cursorEl.style.left = (astro.x) + 'px';
-      cursorEl.style.top  = (astro.y) + 'px';
+      cursorEl.style.left = astro.x + 'px';
+      cursorEl.style.top  = astro.y + 'px';
       cursorEl.style.transform = `translate(${off.x}px, ${off.y}px)`;
     }
 
     ctx.globalAlpha = 1;
     requestAnimationFrame(draw);
   }
-  draw();
+
 })();
